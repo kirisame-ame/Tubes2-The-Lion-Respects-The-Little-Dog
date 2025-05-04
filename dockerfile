@@ -1,7 +1,7 @@
 # Multi-stage build for Little Alchemy app
 
 # Stage 1: Build the React frontend
-FROM node:23-alpine-slim AS frontend-builder
+FROM node:23-alpine AS frontend-builder
 WORKDIR /app/frontend
 COPY app/frontend/package.json app/frontend/package-lock.json* ./
 RUN npm install
