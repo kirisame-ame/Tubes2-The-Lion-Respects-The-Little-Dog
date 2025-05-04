@@ -23,7 +23,10 @@ func main() {
 	api := r.Group("/api")
 	{
 		api.GET("/hello", func(c *gin.Context) {
-			c.JSON(http.StatusOK, gin.H{"message": "Hello from Gin!"})
+			c.JSON(http.StatusOK, gin.H{"message": "はいいいいい!!"})
+		})
+		api.GET("/jovkon", func(c *gin.Context) {
+			c.JSON(http.StatusOK, gin.H{"message": "ルビーちゃん、何が好き？!"})
 		})
 	}
 
