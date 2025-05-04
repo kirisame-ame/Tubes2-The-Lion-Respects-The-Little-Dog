@@ -1,3 +1,5 @@
+# Deployed On
+https://littlealchetree.kirisame.jp.net/
 # Running Locally
 ## Frontend
 Go to app/frontend and run ```npm run dev```
