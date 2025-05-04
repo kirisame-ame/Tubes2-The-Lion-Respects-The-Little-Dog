@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import background from "./assets/images/bg.jpg";
 function App() {
   const [message, setMessage] = useState<string | null>(null);
