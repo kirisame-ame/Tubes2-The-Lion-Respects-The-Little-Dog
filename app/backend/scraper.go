@@ -205,15 +205,24 @@ func parseRecipes(recipeStr string) [][]string {
 	recipePairs := strings.Split(recipeStr, "|")
 	var recipes [][]string
 	for _, pair := range recipePairs {
-		parts := strings.Split(strings.TrimSpace(pair), "+")
-		if len(parts) == 2 {
-			left := strings.ToLower(strings.TrimSpace(parts[0]))
-			right := strings.ToLower(strings.TrimSpace(parts[1]))
-			recipes = append(recipes, []string{left, right})
+		pair = strings.TrimSpace(pair)
+		var left, right string
+
+		if strings.Contains(pair, "+") {
+			parts := strings.Split(pair, "+")
+			left = strings.ToLower(strings.TrimSpace(parts[0]))
+			right = strings.ToLower(strings.TrimSpace(parts[1]))
+		} else {
+			// No "+" present; treat both left and right as the same
+			left = strings.ToLower(pair)
+			right = left
 		}
+
+		recipes = append(recipes, []string{left, right})
 	}
 	return recipes
 }
+
 
 func parseTier(category string) string {
 	// Use a regular expression to match "Tier <number>"
