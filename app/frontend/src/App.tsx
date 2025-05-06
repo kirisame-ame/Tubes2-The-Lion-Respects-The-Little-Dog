@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
+import Spinner from "./components/Spinner";
 function App() {
     const [message, setMessage] = useState<string | null>(null);
     const [error, setError] = useState<string | null>(null);
+    const [isScraping, setIsScraping] = useState(false);
 
     useEffect(() => {
         (async () => {
             try {
                 setMessage("Loading Recipes...");
+                setIsScraping(true);
                 const response = await fetch("/api/scrape");
                 if (!response.ok) {
                     throw new Error("Network response was not ok");
@@ -18,6 +21,8 @@ function App() {
                 console.error("Error fetching data:", error);
                 setMessage(null);
                 setError("Failed to connect to the backend. Is it running?");
+            } finally {
+                setIsScraping(false);
             }
         })();
     }, []);
@@ -61,7 +66,7 @@ function App() {
                     Little Alchemy 2 Recipe Finder!
                 </h2>
             </div>
-
+            {isScraping && <Spinner />}
             {message && (
                 <div className="my-5 p-4 bg-green-100 rounded-md">
                     <p className="font-medium">
