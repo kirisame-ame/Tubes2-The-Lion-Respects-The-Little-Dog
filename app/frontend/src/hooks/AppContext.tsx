@@ -1,5 +1,11 @@
 import { createContext, useState, useContext, ReactNode } from "react";
 
+interface Entry {
+    category: string;
+    element: string;
+    recipes: string[];
+    imageUrl: string;
+}
 interface AppState {
     isScraping: boolean;
     target: string | null;
@@ -7,7 +13,7 @@ interface AppState {
     //traversal dfs/bfs
     direction: string | null;
     // direction top->down / bottom->up
-    recipes: any[];
+    recipes: Entry[];
 }
 
 type AppContextType = [

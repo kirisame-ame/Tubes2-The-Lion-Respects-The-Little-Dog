@@ -2,6 +2,12 @@ import { useEffect, useState } from "react";
 import { useAppContext } from "./hooks/AppContext";
 import Spinner from "./components/Spinner";
 import { ComboBox } from "./components/ComboBox";
+interface Entry {
+    category: string;
+    element: string;
+    recipes: string[];
+    imageUrl: string;
+}
 function App() {
     const [message, setMessage] = useState<string | null>(null);
     const [error, setError] = useState<string | null>(null);
@@ -27,10 +33,31 @@ function App() {
                 setMessage(null);
                 setError("Failed to connect to the backend. Is it running?");
             } finally {
-                setGlobalState({
-                    ...globalState,
-                    isScraping: false,
-                });
+                try {
+                    const response = await fetch("/api/entries");
+                    if (!response.ok) {
+                        throw new Error("Network response was not ok");
+                    }
+                    const data = await response.json();
+                    let parsedEntries: Entry[] = [];
+                    for (let i = 0; i < data.entries.length; i++) {
+                        const entry: Entry = {
+                            category: data.entries[i].Category,
+                            element: data.entries[i].Element,
+                            recipes: data.entries[i].Recipes,
+                            imageUrl: data.entries[i].ImageUrl,
+                        };
+                        parsedEntries.push(entry);
+                    }
+                    setGlobalState({
+                        ...globalState,
+                        recipes: parsedEntries,
+                        isScraping: false,
+                    });
+                    setError(null);
+                } catch (error) {
+                    setError("Failed parsing recipes" + error);
+                }
             }
         })();
     }, []);
@@ -50,14 +77,21 @@ function App() {
         }
     };
 
-    const handleButtonJovClick = async () => {
+    const handleSearchButtonClick = async () => {
         try {
-            const response = await fetch("/api/jovkon");
+            const response = await fetch(
+                "/api/search?target=" +
+                    globalState.target +
+                    "&traversal=" +
+                    globalState.traversal +
+                    "&direction=" +
+                    globalState.direction,
+            );
             if (!response.ok) {
                 throw new Error("Network response was not ok");
             }
             const data = await response.json();
-            setMessage(data.message);
+            setMessage(data.results[0]["Category"]);
             setError(null); // Clear any previous error
         } catch (error) {
             console.error("Error fetching data:", error);
@@ -81,7 +115,7 @@ function App() {
                         ✅ Backend connection successful!
                     </p>
                     <p>
-                        Message from server: <strong>{message}</strong>
+                        <strong>{message}</strong>
                     </p>
                 </div>
             )}
@@ -92,7 +126,10 @@ function App() {
                 </div>
             )}
             <div className="flex gap-x-5">
-                <ComboBox options={["DFS", "BFS"]} param={"target"} />
+                <ComboBox
+                    options={globalState.recipes.map((entry) => entry.element)}
+                    param={"target"}
+                />
                 <ComboBox options={["DFS", "BFS"]} param={"traversal"} />
                 <ComboBox
                     options={["Top-down", "Bottom-up"]}
@@ -107,12 +144,12 @@ function App() {
             <div className="flex justify-center mt-8">
                 <button
                     className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
-                    onClick={handleTestButtonClick}
+                    onClick={handleSearchButtonClick}
                 >
                     Click me
                 </button>
                 <button
-                    onClick={handleButtonJovClick}
+                    onClick={handleTestButtonClick}
                     className="ml-4 px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition-colors"
                 >
                     Call Jovkon API

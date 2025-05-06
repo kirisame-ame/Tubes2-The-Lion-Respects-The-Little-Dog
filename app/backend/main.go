@@ -38,9 +38,39 @@ func main() {
 		api.GET("/scrape",func(c *gin.Context){
 			success := scrape()
 			if success {
-				c.JSON(http.StatusOK, gin.H{"message": "Scraping completed!"})
+				c.JSON(http.StatusOK, gin.H{"message": "Loading completed!"})
 			} else {
-				c.JSON(http.StatusInternalServerError, gin.H{"message": "Scraping failed!"})
+				c.JSON(http.StatusInternalServerError, gin.H{"message": "Loading failed!"})
+			}
+		})
+		api.GET("/entries", func(c *gin.Context) {
+			entries := getEntries()
+			if len(entries) == 0 {
+				c.JSON(http.StatusNotFound, gin.H{"message": "No entries found"})
+				return
+			}
+			c.JSON(http.StatusOK, gin.H{"entries": entries})
+		})
+		api.GET("/search", func(c *gin.Context) {
+			target := c.Query("target")
+			traversal := c.Query("traversal")
+			direction := c.Query("direction")
+			if target == "" {
+				c.JSON(http.StatusBadRequest, gin.H{"error": "Target parameter is required"})
+				return
+			}
+			if traversal == "" {
+				c.JSON(http.StatusBadRequest, gin.H{"error": "Traversal parameter is required"})
+				return
+			}
+			if direction == ""{
+				c.JSON(http.StatusBadRequest, gin.H{"error": "Direction parameter is required"})
+			}
+			results := search(target,traversal,direction)
+			if len(results) == 0 {
+				c.JSON(http.StatusNotFound, gin.H{"message": "No results found"})
+			} else {
+				c.JSON(http.StatusOK, gin.H{"results": results})
 			}
 		})
 	}

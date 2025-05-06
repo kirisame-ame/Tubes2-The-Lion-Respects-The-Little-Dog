@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"html"
+	"io"
 	"log"
 	"net/http"
 	"os"
@@ -18,14 +19,14 @@ type Entry struct {
 	Category string
 	Element  string
 	Recipes  string
-	ImageURL string
+	ImageUrl string
 }
 
 // Json struct
 type ElementItem struct {
 	Element  string     `json:"Element"`
 	Recipes  [][]string `json:"Recipes"`
-	ImageURL string     `json:"ImageURL"`
+	ImageUrl string     `json:"ImageUrl"`
 }
 
 
@@ -121,7 +122,7 @@ func scrape() bool{
 				Category: category,
 				Element:  element,
 				Recipes:  strings.Join(uniqueRecipes, " | "),
-				ImageURL: imageURL,
+				ImageUrl: imageURL,
 			})
 		})
 	})
@@ -142,14 +143,14 @@ func scrape() bool{
 	defer csvWriter.Flush()
 
 	// Write header
-	if err := csvWriter.Write([]string{"Category", "Element", "Recipes", "ImageURL"}); err != nil {
+	if err := csvWriter.Write([]string{"Category", "Element", "Recipes", "ImageUrl"}); err != nil {
 		log.Fatal(err)
 		return false
 	}
 
 	// Write rows
 	for _, entry := range data {
-		row := []string{entry.Category, entry.Element, entry.Recipes, entry.ImageURL}
+		row := []string{entry.Category, entry.Element, entry.Recipes, entry.ImageUrl}
 		if err := csvWriter.Write(row); err != nil {
 			log.Fatal(err)
 			return false
@@ -166,7 +167,7 @@ func scrape() bool{
 		elementItem := ElementItem{
 			Element:  entry.Element,
 			Recipes:  recipes,
-			ImageURL: entry.ImageURL,
+			ImageUrl: entry.ImageUrl,
 		}
 
 		// Check if the tier already exists in jsonTable
@@ -259,4 +260,30 @@ func deduplicateRecipes(recipes []string) []string {
 		}
 	}
 	return unique
+}
+func getEntries() []Entry{
+	file, err := os.Open("data/elements.json")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer file.Close()
+	byteValue, _ := io.ReadAll(file)
+	var jsonTable []JsonTable
+	json.Unmarshal(byteValue, &jsonTable)
+	var entries []Entry
+	for _, table := range jsonTable {
+		for _, item := range table.Items {
+			recipes := "NULL"
+			if len(item.Recipes) > 0 {
+				recipes = strings.Join(item.Recipes[0], " + ")
+			}
+			entries = append(entries, Entry{
+				Category: table.Tier,
+				Element:  item.Element,
+				Recipes:  recipes,
+				ImageUrl: item.ImageUrl,
+			})
+		}
+	}
+	return entries
 }
