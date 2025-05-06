@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useAppContext } from "./hooks/AppContext";
 import Spinner from "./components/Spinner";
+import { ComboBox } from "./components/ComboBox";
 function App() {
     const [message, setMessage] = useState<string | null>(null);
     const [error, setError] = useState<string | null>(null);
@@ -90,7 +91,19 @@ function App() {
                     <p className="font-medium">❌ {error}</p>
                 </div>
             )}
-            <div></div>
+            <div>
+                <ComboBox options={["DFS", "BFS"]} param={"target"} />
+                <ComboBox options={["DFS", "BFS"]} param={"traversal"} />
+                <ComboBox
+                    options={["Top-down", "Bottom-up"]}
+                    param={"direction"}
+                />
+            </div>
+            <div className="flex flex-col justify-center mt-8 text-xyellow">
+                <h1>Target: {globalState.target}</h1>
+                <h1>Traversal: {globalState.traversal}</h1>
+                <h1>Direction: {globalState.direction}</h1>
+            </div>
             <div className="flex justify-center mt-8">
                 <button
                     className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
