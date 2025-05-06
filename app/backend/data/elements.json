@@ -25,6 +25,10 @@
         "Recipes": [
           [
             "fire",
+            "fire"
+          ],
+          [
+            "fire",
             "science"
           ],
           [
@@ -43,11 +47,19 @@
         "Recipes": [
           [
             "soil",
+            "soil"
+          ],
+          [
+            "soil",
             "big"
           ],
           [
             "continent",
             "small"
+          ],
+          [
+            "earth",
+            "earth"
           ],
           [
             "earth",
@@ -111,11 +123,23 @@
         "Recipes": [
           [
             "air",
+            "air"
+          ],
+          [
+            "air",
+            "atmosphere"
+          ],
+          [
+            "atmosphere",
             "atmosphere"
           ],
           [
             "geyser",
             "science"
+          ],
+          [
+            "ocean",
+            "ocean"
           ]
         ],
         "ImageUrl": "https://static.wikia.nocookie.net/little-alchemy/images/7/7a/Pressure_2.svg/revision/latest?cb=20210828104218"
@@ -123,6 +147,10 @@
       {
         "Element": "Puddle",
         "Recipes": [
+          [
+            "water",
+            "water"
+          ],
           [
             "pond",
             "small"
@@ -234,7 +262,15 @@
           ],
           [
             "land",
+            "land"
+          ],
+          [
+            "land",
             "earth"
+          ],
+          [
+            "mountain range",
+            "mountain range"
           ]
         ],
         "ImageUrl": "https://static.wikia.nocookie.net/little-alchemy/images/4/4d/Continent_2.svg/revision/latest?cb=20210827132923"
@@ -384,6 +420,10 @@
       {
         "Element": "Pond",
         "Recipes": [
+          [
+            "puddle",
+            "puddle"
+          ],
           [
             "puddle",
             "water"
@@ -604,6 +644,10 @@
             "big"
           ],
           [
+            "pond",
+            "pond"
+          ],
+          [
             "sea",
             "small"
           ]
@@ -653,6 +697,10 @@
           ],
           [
             "hill",
+            "hill"
+          ],
+          [
+            "hill",
             "earthquake"
           ],
           [
@@ -665,6 +713,10 @@
       {
         "Element": "Planet",
         "Recipes": [
+          [
+            "continent",
+            "continent"
+          ],
           [
             "continent",
             "ocean"
@@ -694,6 +746,10 @@
           [
             "science",
             "sun"
+          ],
+          [
+            "heat",
+            "heat"
           ],
           [
             "heat",
@@ -741,6 +797,10 @@
         "Recipes": [
           [
             "storm",
+            "storm"
+          ],
+          [
+            "storm",
             "wind"
           ],
           [
@@ -753,6 +813,10 @@
           ],
           [
             "wind",
+            "wind"
+          ],
+          [
+            "wind",
             "motion"
           ]
         ],
@@ -760,7 +824,20 @@
       },
       {
         "Element": "Wall",
-        "Recipes": null,
+        "Recipes": [
+          [
+            "brick",
+            "brick"
+          ],
+          [
+            "wood",
+            "wood"
+          ],
+          [
+            "stone",
+            "stone"
+          ]
+        ],
         "ImageUrl": "https://static.wikia.nocookie.net/little-alchemy/images/4/49/Wall_2.svg/revision/latest?cb=20210828104237"
       },
       {
@@ -802,6 +879,10 @@
           [
             "explosion",
             "energy"
+          ],
+          [
+            "explosion",
+            "explosion"
           ],
           [
             "explosion",
@@ -1011,6 +1092,10 @@
         "Recipes": [
           [
             "sand",
+            "sand"
+          ],
+          [
+            "sand",
             "land"
           ],
           [
@@ -1175,6 +1260,10 @@
         "Recipes": [
           [
             "wall",
+            "wall"
+          ],
+          [
+            "wall",
             "human"
           ],
           [
@@ -1251,6 +1340,10 @@
       {
         "Element": "Mountain range",
         "Recipes": [
+          [
+            "mountain",
+            "mountain"
+          ],
           [
             "mountain",
             "continent"
@@ -1397,6 +1490,10 @@
         "Recipes": [
           [
             "lake",
+            "lake"
+          ],
+          [
+            "lake",
             "water"
           ],
           [
@@ -1413,6 +1510,10 @@
       {
         "Element": "Solar system",
         "Recipes": [
+          [
+            "planet",
+            "planet"
+          ],
           [
             "planet",
             "sun"
@@ -1914,6 +2015,10 @@
         "Recipes": [
           [
             "rain",
+            "rain"
+          ],
+          [
+            "rain",
             "river"
           ],
           [
@@ -1952,6 +2057,10 @@
         "Recipes": [
           [
             "star",
+            "star"
+          ],
+          [
+            "star",
             "solar system"
           ],
           [
@@ -1964,11 +2073,19 @@
           ],
           [
             "solar system",
+            "solar system"
+          ],
+          [
+            "solar system",
             "space"
           ],
           [
             "solar system",
             "container"
+          ],
+          [
+            "space",
+            "space"
           ],
           [
             "supernova",
@@ -1980,6 +2097,10 @@
       {
         "Element": "Glasses",
         "Recipes": [
+          [
+            "glass",
+            "glass"
+          ],
           [
             "glass",
             "metal"
@@ -1994,6 +2115,10 @@
           ],
           [
             "human",
+            "lens"
+          ],
+          [
+            "lens",
             "lens"
           ]
         ],
@@ -2246,6 +2371,10 @@
         "Recipes": [
           [
             "sea",
+            "sea"
+          ],
+          [
+            "sea",
             "water"
           ],
           [
@@ -2468,10 +2597,18 @@
         "Recipes": [
           [
             "blade",
+            "blade"
+          ],
+          [
+            "blade",
             "paper"
           ],
           [
             "blade",
+            "sword"
+          ],
+          [
+            "sword",
             "sword"
           ],
           [
@@ -2758,6 +2895,14 @@
         "Recipes": [
           [
             "house",
+            "house"
+          ],
+          [
+            "family",
+            "family"
+          ],
+          [
+            "house",
             "container"
           ],
           [
@@ -2839,6 +2984,10 @@
       {
         "Element": "Archipelago",
         "Recipes": [
+          [
+            "island",
+            "island"
+          ],
           [
             "island",
             "sea"
@@ -2970,7 +3119,16 @@
       },
       {
         "Element": "Binoculars",
-        "Recipes": null,
+        "Recipes": [
+          [
+            "telescope",
+            "telescope"
+          ],
+          [
+            "glasses",
+            "glasses"
+          ]
+        ],
         "ImageUrl": "https://static.wikia.nocookie.net/little-alchemy/images/5/50/Binoculars_2.svg/revision/latest?cb=20210909182835"
       },
       {
@@ -2978,11 +3136,19 @@
         "Recipes": [
           [
             "village",
+            "village"
+          ],
+          [
+            "village",
             "skyscraper"
           ],
           [
             "village",
             "big"
+          ],
+          [
+            "skyscraper",
+            "skyscraper"
           ],
           [
             "skyscraper",
@@ -3031,7 +3197,12 @@
       },
       {
         "Element": "Double rainbow!",
-        "Recipes": null,
+        "Recipes": [
+          [
+            "rainbow",
+            "rainbow"
+          ]
+        ],
         "ImageUrl": "https://static.wikia.nocookie.net/little-alchemy/images/8/87/Double_rainbow%21_2.svg/revision/latest?cb=20210828134753"
       },
       {
@@ -3191,6 +3362,10 @@
       {
         "Element": "Galaxy cluster",
         "Recipes": [
+          [
+            "galaxy",
+            "galaxy"
+          ],
           [
             "galaxy",
             "container"
@@ -3750,6 +3925,10 @@
         "Element": "Storm",
         "Recipes": [
           [
+            "cloud",
+            "cloud"
+          ],
+          [
             "electricity",
             "cloud"
           ],
@@ -4171,6 +4350,10 @@
         "Element": "Ozone",
         "Recipes": [
           [
+            "oxygen",
+            "oxygen"
+          ],
+          [
             "electricity",
             "oxygen"
           ],
@@ -4425,6 +4608,10 @@
           [
             "space",
             "container"
+          ],
+          [
+            "galaxy cluster",
+            "galaxy cluster"
           ],
           [
             "galaxy cluster",
@@ -4725,6 +4912,10 @@
           ],
           [
             "snow",
+            "snow"
+          ],
+          [
+            "snow",
             "wind"
           ],
           [
@@ -4934,7 +5125,12 @@
       },
       {
         "Element": "Constellation",
-        "Recipes": null,
+        "Recipes": [
+          [
+            "star",
+            "star"
+          ]
+        ],
         "ImageUrl": "https://static.wikia.nocookie.net/little-alchemy/images/0/02/Constellation_2.svg/revision/latest?cb=20210829101400"
       },
       {
@@ -5151,6 +5347,142 @@
           [
             "life",
             "container"
+          ],
+          [
+            "bird",
+            "bird"
+          ],
+          [
+            "turtle",
+            "turtle"
+          ],
+          [
+            "lizard",
+            "lizard"
+          ],
+          [
+            "vulture",
+            "vulture"
+          ],
+          [
+            "phoenix",
+            "phoenix"
+          ],
+          [
+            "chicken",
+            "chicken"
+          ],
+          [
+            "dragon",
+            "dragon"
+          ],
+          [
+            "penguin",
+            "penguin"
+          ],
+          [
+            "owl",
+            "owl"
+          ],
+          [
+            "dinosaur",
+            "dinosaur"
+          ],
+          [
+            "duck",
+            "duck"
+          ],
+          [
+            "seagull",
+            "seagull"
+          ],
+          [
+            "eagle",
+            "eagle"
+          ],
+          [
+            "scorpion",
+            "scorpion"
+          ],
+          [
+            "spider",
+            "spider"
+          ],
+          [
+            "pigeon",
+            "pigeon"
+          ],
+          [
+            "fish",
+            "fish"
+          ],
+          [
+            "piranha",
+            "piranha"
+          ],
+          [
+            "parrot",
+            "parrot"
+          ],
+          [
+            "peacock",
+            "peacock"
+          ],
+          [
+            "hummingbird",
+            "hummingbird"
+          ],
+          [
+            "chameleon",
+            "chameleon"
+          ],
+          [
+            "ostrich",
+            "ostrich"
+          ],
+          [
+            "woodpecker",
+            "woodpecker"
+          ],
+          [
+            "bee",
+            "bee"
+          ],
+          [
+            "crow",
+            "crow"
+          ],
+          [
+            "frog",
+            "frog"
+          ],
+          [
+            "pterodactyl",
+            "pterodactyl"
+          ],
+          [
+            "ant",
+            "ant"
+          ],
+          [
+            "moth",
+            "moth"
+          ],
+          [
+            "butterfly",
+            "butterfly"
+          ],
+          [
+            "snake",
+            "snake"
+          ],
+          [
+            "flying fish",
+            "flying fish"
+          ],
+          [
+            "tyrannosaurus rex",
+            "tyrannosaurus rex"
           ]
         ],
         "ImageUrl": "https://static.wikia.nocookie.net/little-alchemy/images/d/df/Egg_2.svg/revision/latest?cb=20210828104210"
@@ -5172,6 +5504,10 @@
       {
         "Element": "Family",
         "Recipes": [
+          [
+            "human",
+            "human"
+          ],
           [
             "human",
             "house"
@@ -5467,8 +5803,116 @@
             "science"
           ],
           [
+            "science",
+            "science"
+          ],
+          [
             "philosophy",
             "science"
+          ],
+          [
+            "engineer",
+            "engineer"
+          ],
+          [
+            "hacker",
+            "hacker"
+          ],
+          [
+            "lumberjack",
+            "lumberjack"
+          ],
+          [
+            "farmer",
+            "farmer"
+          ],
+          [
+            "firefighter",
+            "firefighter"
+          ],
+          [
+            "electrician",
+            "electrician"
+          ],
+          [
+            "astronaut",
+            "astronaut"
+          ],
+          [
+            "warrior",
+            "warrior"
+          ],
+          [
+            "butcher",
+            "butcher"
+          ],
+          [
+            "doctor",
+            "doctor"
+          ],
+          [
+            "pilot",
+            "pilot"
+          ],
+          [
+            "baker",
+            "baker"
+          ],
+          [
+            "sailor",
+            "sailor"
+          ],
+          [
+            "surfer",
+            "surfer"
+          ],
+          [
+            "swimmer",
+            "swimmer"
+          ],
+          [
+            "cyclist",
+            "cyclist"
+          ],
+          [
+            "knight",
+            "knight"
+          ],
+          [
+            "monarch",
+            "monarch"
+          ],
+          [
+            "angler",
+            "angler"
+          ],
+          [
+            "mailman",
+            "mailman"
+          ],
+          [
+            "gardener",
+            "gardener"
+          ],
+          [
+            "philosophy",
+            "philosophy"
+          ],
+          [
+            "skier",
+            "skier"
+          ],
+          [
+            "diver",
+            "diver"
+          ],
+          [
+            "librarian",
+            "librarian"
+          ],
+          [
+            "alchemist",
+            "alchemist"
           ]
         ],
         "ImageUrl": "https://static.wikia.nocookie.net/little-alchemy/images/0/03/Idea_2.svg/revision/latest?cb=20210828111132"
@@ -5590,6 +6034,10 @@
       {
         "Element": "Love",
         "Recipes": [
+          [
+            "human",
+            "human"
+          ],
           [
             "cupid",
             "bow"
@@ -6297,6 +6745,10 @@
           [
             "snowball",
             "coal"
+          ],
+          [
+            "snowball",
+            "snowball"
           ]
         ],
         "ImageUrl": "https://static.wikia.nocookie.net/little-alchemy/images/a/a3/Snowman_2.svg/revision/latest?cb=20210828145436"
@@ -8081,6 +8533,10 @@
           ],
           [
             "flower",
+            "flower"
+          ],
+          [
+            "flower",
             "grass"
           ],
           [
@@ -8273,11 +8729,19 @@
         "Recipes": [
           [
             "grave",
+            "grave"
+          ],
+          [
+            "grave",
             "field"
           ],
           [
             "grave",
             "land"
+          ],
+          [
+            "gravestone",
+            "gravestone"
           ],
           [
             "gravestone",
@@ -8790,6 +9254,10 @@
           [
             "tool",
             "wheel"
+          ],
+          [
+            "tool",
+            "tool"
           ],
           [
             "tool",
@@ -9529,6 +9997,10 @@
         "Recipes": [
           [
             "thread",
+            "thread"
+          ],
+          [
+            "thread",
             "wire"
           ],
           [
@@ -9780,6 +10252,10 @@
           [
             "time",
             "corpse"
+          ],
+          [
+            "bone",
+            "bone"
           ],
           [
             "bone",
@@ -10446,6 +10922,10 @@
         "Recipes": [
           [
             "wheel",
+            "wheel"
+          ],
+          [
+            "wheel",
             "chain"
           ],
           [
@@ -10546,6 +11026,14 @@
           ],
           [
             "wheel",
+            "motorcycle"
+          ],
+          [
+            "bicycle",
+            "bicycle"
+          ],
+          [
+            "motorcycle",
             "motorcycle"
           ],
           [
@@ -11100,6 +11588,10 @@
         "Recipes": [
           [
             "tree",
+            "tree"
+          ],
+          [
+            "tree",
             "plant"
           ],
           [
@@ -11304,6 +11796,10 @@
           ],
           [
             "grass",
+            "grass"
+          ],
+          [
+            "grass",
             "barn"
           ],
           [
@@ -11392,6 +11888,10 @@
       {
         "Element": "Internet",
         "Recipes": [
+          [
+            "computer",
+            "computer"
+          ],
           [
             "computer",
             "wire"
@@ -11651,6 +12151,10 @@
           [
             "story",
             "time"
+          ],
+          [
+            "story",
+            "story"
           ],
           [
             "story",
@@ -12313,6 +12817,10 @@
           [
             "animal",
             "carrot"
+          ],
+          [
+            "rabbit",
+            "rabbit"
           ]
         ],
         "ImageUrl": "https://static.wikia.nocookie.net/little-alchemy/images/c/c1/Rabbit_2.svg/revision/latest?cb=20210903114739"
@@ -12894,6 +13402,10 @@
       {
         "Element": "Thread",
         "Recipes": [
+          [
+            "cotton",
+            "cotton"
+          ],
           [
             "cotton",
             "tool"
@@ -13494,6 +14006,10 @@
         "Element": "Book",
         "Recipes": [
           [
+            "newspaper",
+            "newspaper"
+          ],
+          [
             "paper",
             "legend"
           ],
@@ -13595,6 +14111,10 @@
           ],
           [
             "rock",
+            "rock"
+          ],
+          [
+            "rock",
             "earth"
           ]
         ],
@@ -13673,6 +14193,10 @@
       {
         "Element": "Bus",
         "Recipes": [
+          [
+            "car",
+            "car"
+          ],
           [
             "car",
             "train"
@@ -14069,6 +14593,10 @@
         "Recipes": [
           [
             "wheat",
+            "wheat"
+          ],
+          [
+            "wheat",
             "stone"
           ],
           [
@@ -14369,6 +14897,10 @@
         "Recipes": [
           [
             "hay",
+            "hay"
+          ],
+          [
+            "hay",
             "barn"
           ],
           [
@@ -14398,6 +14930,10 @@
             "boulder"
           ],
           [
+            "boulder",
+            "boulder"
+          ],
+          [
             "mountain",
             "small"
           ]
@@ -14418,6 +14954,10 @@
           [
             "bee",
             "time"
+          ],
+          [
+            "bee",
+            "bee"
           ],
           [
             "beehive",
@@ -15733,6 +16273,10 @@
         "Element": "Cookbook",
         "Recipes": [
           [
+            "recipe",
+            "recipe"
+          ],
+          [
             "book",
             "cook"
           ]
@@ -16326,7 +16870,15 @@
         "Recipes": [
           [
             "paper",
+            "paper"
+          ],
+          [
+            "paper",
             "story"
+          ],
+          [
+            "letter",
+            "letter"
           ]
         ],
         "ImageUrl": "https://static.wikia.nocookie.net/little-alchemy/images/7/76/Newspaper_2.svg/revision/latest?cb=20210828111137"
@@ -16334,6 +16886,10 @@
       {
         "Element": "Orchard",
         "Recipes": [
+          [
+            "fruit tree",
+            "fruit tree"
+          ],
           [
             "fruit tree",
             "field"
@@ -16433,7 +16989,12 @@
       },
       {
         "Element": "Pan flute",
-        "Recipes": null,
+        "Recipes": [
+          [
+            "flute",
+            "flute"
+          ]
+        ],
         "ImageUrl": "https://static.wikia.nocookie.net/little-alchemy/images/6/65/Pan_flute_2.svg/revision/latest?cb=20210901142442"
       },
       {
@@ -16589,6 +17150,10 @@
       {
         "Element": "Rock",
         "Recipes": [
+          [
+            "pebble",
+            "pebble"
+          ],
           [
             "pebble",
             "big"
@@ -17544,6 +18109,10 @@
           ],
           [
             "mailman",
+            "letter"
+          ],
+          [
+            "letter",
             "letter"
           ],
           [
