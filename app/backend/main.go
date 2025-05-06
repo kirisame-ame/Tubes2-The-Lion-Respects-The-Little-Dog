@@ -28,6 +28,14 @@ func main() {
 		api.GET("/jovkon", func(c *gin.Context) {
 			c.JSON(http.StatusOK, gin.H{"message": "ルビーちゃん、何が好き？!"})
 		})
+		api.GET("/scrape",func(c *gin.Context){
+			success := scrape()
+			if success {
+				c.JSON(http.StatusOK, gin.H{"message": "Scraping completed!"})
+			} else {
+				c.JSON(http.StatusInternalServerError, gin.H{"message": "Scraping failed!"})
+			}
+		})
 	}
 
 	// Serve frontend static files

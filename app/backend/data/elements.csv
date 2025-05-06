@@ -1,0 +1,716 @@
+Category,Element,Recipes
+Tier 1 elements,Dust,Earth + Air | Soil + Air | Land + Air
+Tier 1 elements,Energy,Fire | Fire + Science | Fire + Atmosphere | Heat + Science
+Tier 1 elements,Land,Soil | Soil + Big | Continent + Small | Earth | Earth + Stone
+Tier 1 elements,Lava,Earth + Fire | Earth + Heat | Earth + Liquid
+Tier 1 elements,Mist,Air + Water | Air + Steam | Air + Rain
+Tier 1 elements,Mud,Water + Earth | Water + Soil
+Tier 1 elements,Pressure,Air | Air + Atmosphere | Atmosphere | Geyser + Science | Ocean
+Tier 1 elements,Puddle,Water | Pond + Small
+Tier 1 elements,Smoke,Earth + Gas | Campfire + Water | Campfire + Time | Campfire + Storm | Fire + Plant | Fire + Grass | Fire + Tree | Fire + Wood | Fire + Air
+Tier 1 elements,Steam,Water + Heat | Water + Fire | Water + Lava | Water + Gas
+Tier 2 elements,Brick,Mud + Fire | Mud + Sun | Clay + Fire | Clay + Sun | Clay + Stone
+Tier 2 elements,Continent,Land + Big | Land | Land + Earth | Mountain range
+Tier 2 elements,Earthquake,Earth + Motion | Earth + Energy | Continent + Motion
+Tier 2 elements,Eruption,Pressure + Volcano | Pressure + Lava | Volcano + Time
+Tier 2 elements,Geyser,Steam + Earth | Steam + Hill | Steam + Mountain | Steam + Pressure
+Tier 2 elements,Granite,Pressure + Lava | Pressure + Stone | Pressure + Rock
+Tier 2 elements,Gunpowder,Charcoal + Mineral | Energy + Mineral | Energy + Charcoal | Fire + Dust | Energy + Dust
+Tier 2 elements,Heat,Fire + Idea | Fire + Science | Lava + Philosophy | Air + Energy
+Tier 2 elements,Obsidian,Lava + Water | Lava + Cold | Lava + Glass
+Tier 2 elements,Pond,Puddle | Puddle + Water | Puddle + Big | Lake + Small
+Tier 2 elements,Stone,Earth + Pressure | Earth + Solid | Air + Lava
+Tier 2 elements,Volcano,Lava + Earth | Lava + Mountain | Lava + Hill | Lava + Container | Fire + Mountain | Fire + Hill | Pressure + Mountain | Pressure + Hill
+Tier 2 elements,Wind,Motion + Air | Motion + Atmosphere | Air + Pressure
+Tier 3 elements,Chimney,House + Fireplace | House + Smoke | Smoke + Brick | Smoke + Fireplace | Smoke + Stone | Fireplace + Brick | Fireplace + Stone
+Tier 3 elements,Clay,Mud + Sand | Mud + Stone | Mineral + Sand | Mineral + Stone | Mineral + Rock | Stone + Liquid | Rock + Liquid
+Tier 3 elements,Explosion,Fire + Gunpowder | Fire + Petroleum | Gunpowder + Electricity | Gunpowder + Lightning | Pressure + Volcano | Pressure + Petroleum | Explosion + Petroleum | Heat + Petroleum | Lava + Petroleum | Volcano + Petroleum
+Tier 3 elements,Lake,Pond + Water | Pond + Big | Pond | Sea + Small
+Tier 3 elements,Metal,Stone + Fire | Stone + Heat | Ore + Fire | Ore + Heat | Ore + Tool
+Tier 3 elements,Mountain,Big + Hill | Earth + Earthquake | Earth + Hill | Hill | Hill + Earthquake | Earth + Big
+Tier 3 elements,Planet,Continent | Continent + Ocean | Earth + Space | Earth + Solar system | Earth + Sky
+Tier 3 elements,Plasma,Science + Star | Science + Sun | Heat | Heat + Pressure
+Tier 3 elements,Sand,Stone + Air | Stone + Wind | Air + Rock | Wind + Rock | Pebble + Air | Pebble + Wind | Pebble + Small
+Tier 3 elements,Tornado,Storm | Storm + Wind | Storm + Motion | Wind + Big | Wind | Wind + Motion
+Tier 3 elements,Wall,Brick | Wood | Stone
+Tier 3 elements,Warmth,Heat + Air | Heat + Human
+Tier 4 elements,Atmosphere,Air + Planet | Air + Sky
+Tier 4 elements,Atomic bomb,Explosion + Energy | Explosion | Explosion + Big
+Tier 4 elements,Avalanche,Earthquake + Snow | Earthquake + Glacier | Earthquake + Mountain | Earthquake + Mountain range | Wave + Glacier | Wave + Mountain | Wave + Mountain range | Sound + Glacier | Sound + Mountain | Sound + Mountain range | Gun + Glacier | Gun + Mountain | Gun + Mountain range
+Tier 4 elements,Beach,Sand + Ocean | Sand + Sea | Sand + Lake | Sand + Water | Sand + Wave
+Tier 4 elements,Blade,Stone + Metal | Stone + Steel | Rock + Metal | Rock + Steel
+Tier 4 elements,Boiler,Pressure + Metal | Pressure + Tool | Pressure + Container | Steam + Metal | Steam + Tool
+Tier 4 elements,Bullet,Gunpowder + Metal | Gunpowder + Steel | Gunpowder + Tool | Gunpowder + Container
+Tier 4 elements,Dam,River + Beaver | River + Wall | Water + Wall | Stream + Wall | Beaver + Tree | Beaver + Stream | Beaver + House | Beaver + Lake | Beaver + Water
+Tier 4 elements,Desert,Sand | Sand + Land | Sand + Cactus | Sand + Lizard | Sand + Vulture
+Tier 4 elements,Dune,Wind + Desert | Wind + Sand | Wind + Beach | Sand + Desert | Sandstorm + Desert
+Tier 4 elements,Firewall,Fire + Wall
+Tier 4 elements,Glass,Sand + Fire | Sand + Heat | Sand + Lightning | Sand + Electricity
+Tier 4 elements,Gold,Metal + Sun | Steel + Sun | Metal + Rainbow | Steel + Rainbow | Metal + Butter | Steel + Butter | Metal + Sand | Steel + Sand | Metal + Light | Steel + Light | Metal + Alchemist | Steel + Alchemist | Metal + Philosopher's stone | Steel + Philosopher's stone | Quicksilver + Philosopher's stone
+Tier 4 elements,Grenade,Explosion + Metal | Explosion + Steel | Explosion + Warrior
+Tier 4 elements,House,Wall | Wall + Human | Wall + Tool | Fireplace + Container | Family + Container
+Tier 4 elements,Mercury,Planet + Small | Planet + Heat
+Tier 4 elements,Moon,Sky + Cheese | Sky + Planet | Sky + Stone | Sky + Time | Stone + Planet | Night + Planet | Night + Stone | Night + Earth | Night + Cheese
+Tier 4 elements,Mountain range,Mountain | Mountain + Continent
+Tier 4 elements,Plow,Earth + Metal | Earth + Steel | Earth + Wood | Field + Metal | Field + Steel | Field + Wood | Field + Tool
+Tier 4 elements,River,Lake + Motion | Stream + Big | Water + Mountain | Rain + Mountain | Rain + Hill
+Tier 4 elements,Rust,Air + Metal | Air + Steel | Metal + Oxygen | Steel + Oxygen
+Tier 4 elements,Sandstone,Sand + Stone | Sand + Rock | Sand + Earth
+Tier 4 elements,Sandstorm,Sand + Storm | Sand + Tornado | Sand + Motion | Desert + Storm | Desert + Tornado | Desert + Motion | Desert + Wind
+Tier 4 elements,Sea,Lake | Lake + Water | Lake + Big | Ocean + Small
+Tier 4 elements,Solar system,Planet | Planet + Sun | Planet + Container | Sun + Container | Mars + Container | Mercury + Container | Venus + Container | Jupiter + Container | Saturn + Container
+Tier 4 elements,Sun,Sky + Light | Sky + Fire | Day + Space | Day + Sky | Day + Light | Planet + Fire | Planet + Light
+Tier 4 elements,Venus,Planet + Acid rain | Planet + Smog | Planet + Volcano
+Tier 4 elements,Waterfall,River + Mountain | River + Mountain range | River + Hill | Lake + Mountain | Lake + Mountain range | Lake + Hill
+Tier 4 elements,Wave,Ocean + Wind | Ocean + Storm | Ocean + Hurricane | Sea + Wind | Sea + Storm | Sea + Hurricane | Lake + Wind | Lake + Storm | Lake + Hurricane
+Tier 5 elements,Aquarium,Glass + Water | Glass + Fish | Glass + Puddle | Glass + Pond | Fish + Container | Small + Swimming pool
+Tier 5 elements,Aurora,Electricity + Atmosphere | Electricity + Antarctica | Electricity + Sky | Electricity + Arctic | Sky + Antarctica | Sky + Arctic | Sun + Atmosphere
+Tier 5 elements,Bank,Gold + House | Gold + Skyscraper | Gold + City | Safe + House | Safe + Skyscraper | Safe + City | Money + House | Money + Skyscraper | Money + City | Money + Container | House + Vault
+Tier 5 elements,Black hole,Pressure + Star | Pressure + Sun | Darkness + Star | Darkness + Sun
+Tier 5 elements,Blender,Blade + Glass | Blade + Electricity | Blade + Windmill | Blade + Wind turbine | Blade + Motion
+Tier 5 elements,Bridge,Wood + River | Metal + River | Steel + River | Stream + Wood | Stream + Metal | Stream + Steel
+Tier 5 elements,Cloud,Atmosphere + Mist | Atmosphere + Water | Sky + Mist | Sky + Water
+Tier 5 elements,Current,Ocean + Motion | Ocean + Heat | Ocean + Cold | Ocean + Science | Sea + Motion | Sea + Heat | Sea + Cold | Sea + Science
+Tier 5 elements,Eclipse,Sun + Moon
+Tier 5 elements,Factory,House + Chimney | House + Tool
+Tier 5 elements,Field,Farmer + Earth | Farmer + Land | Farmer + Soil | Tool + Earth | Tool + Land | Tool + Soil | Plow + Earth | Plow + Land | Plow + Soil
+Tier 5 elements,Fireworks,Explosion + Sky | Explosion + Atmosphere
+Tier 5 elements,Flood,Rain | Rain + River | Rain + Lake | Rain + Big | Rain + Time | House + River | House + Tsunami | River + City | Tsunami + City
+Tier 5 elements,Galaxy,Star | Star + Solar system | Star + Space | Star + Container | Solar system | Solar system + Space | Solar system + Container | Space | Supernova + Container
+Tier 5 elements,Glasses,Glass | Glass + Metal | Glass + Steel | Glass + Human | Human + Lens | Lens
+Tier 5 elements,Gun,Bullet + Metal | Bullet + Steel | Bullet + Bow | Bullet + Container | Bow + Metal | Bow + Steel | Bow + Gunpowder
+Tier 5 elements,Hourglass,Sand + Glass | Sand + Time | Sand + Container | Glass + Time | Time + Container
+Tier 5 elements,Hurricane,Ocean + Tornado | Sea + Tornado | Ocean + Storm | Sea + Storm
+Tier 5 elements,Island,Volcano + Sea | Volcano + Ocean | Maui's fishhook + Ocean | Maui's fishhook + Sea
+Tier 5 elements,Katana,Blade + Heat | Blade + Shuriken | Blade + Ninja | Sword + Shuriken | Sword + Ninja
+Tier 5 elements,Mars,Planet + Rust | Planet + Desert
+Tier 5 elements,Meteoroid,Space + Stone | Space + Rock | Space + Boulder | Solar system + Stone | Solar system + Rock | Solar system + Boulder | Sun + Stone | Sun + Rock | Sun + Boulder
+Tier 5 elements,Mirror,Glass + Metal | Glass + Steel | Glass + Wood
+Tier 5 elements,Oasis,Desert + Water | Desert + Puddle | Desert + Pond | Desert + River | Desert + Lake | Desert + Stream | Desert + Tree | Desert + Palm
+Tier 5 elements,Ocean,Sea | Sea + Water | Sea + Big | Tide + Container
+Tier 5 elements,Primordial soup,Lava + Ocean | Lava + Sea | Planet + Ocean | Planet + Sea | Earth + Ocean | Earth + Sea
+Tier 5 elements,Pyramid,Desert + Stone | Desert + Grave | Desert + Graveyard | Desert + Gravestone | Desert + Mountain | Desert + Hill | Mummy + Container | Container + Book of the dead
+Tier 5 elements,Rainbow,Rain + Sun | Rain + Light | Water + Light | Water + Sun | Cloud + Light | Prism + Sun | Prism + Light
+Tier 5 elements,Rocket,Atmosphere + Airplane | Atmosphere + Metal | Atmosphere + Steel | Atmosphere + Train | Atmosphere + Machine | Atmosphere + Car | Atmosphere + Boat | Atmosphere + Steamboat | Atmosphere + Pirate ship
+Tier 5 elements,Safe,Metal + Money | Metal + Gold | Steel + Money | Steel + Gold | Container + Gun | Container + Gold
+Tier 5 elements,Salt,Sea + Sun | Sea + Fire | Sea + Mineral | Ocean + Sun | Ocean + Fire | Ocean + Mineral
+Tier 5 elements,Scissors,Blade | Blade + Paper | Blade + Sword | Sword | Sword + Paper
+Tier 5 elements,Sky,Air + Cloud | Sun + Atmosphere | Sun + Moon | Cloud + Atmosphere
+Tier 5 elements,Solar cell,Sun + Tool | Sun + Machine | Sun + Electricity | Sun + Energy | Tool + Light
+Tier 5 elements,Sound,Wave + Air | Wave + Human | Wave + Animal | Wave + Wolf
+Tier 5 elements,Space station,Space + House | Space + Wall | Space + Village | Atmosphere + House | Atmosphere + Wall | Atmosphere + Village
+Tier 5 elements,Supernova,Explosion + Star | Explosion + Sun | Explosion + Galaxy | Explosion + Space
+Tier 5 elements,Swimming pool,House + Lake | House + Swimmer | Aquarium + Big
+Tier 5 elements,Sword,Blade + Metal | Blade + Steel | Blade + Wood
+Tier 5 elements,Telescope,Glass + Sky | Glass + Star | Glass + Space | Glass + Moon | Glass + Planet | Glass + Mars | Glass + Mercury | Glass + Venus | Glass + Saturn | Glass + Jupiter | Glass + Galaxy | Glass + Galaxy cluster | Glass + Universe | Glass + Supernova
+Tier 5 elements,Tide,Ocean + Moon | Ocean + Time | Sea + Moon | Sea + Time
+Tier 5 elements,Tsunami,Sea + Earthquake | Sea + Explosion | Sea + Meteor | Ocean + Earthquake | Ocean + Explosion | Ocean + Meteor
+Tier 5 elements,Village,House | Family | House + Container | House + Bakery | Bakery + Container
+Tier 5 elements,Windmill,Wind + House | Wind + Wheel | Wind + Wheat | Wind + Flour | Wheel + Wall
+Tier 6 elements,Acid rain,Rain + Smoke | Rain + Smog | Rain + Sickness | Rain + City | Cloud + Smoke | Cloud + Smog | Cloud + Sickness
+Tier 6 elements,Archipelago,Island | Island + Sea | Island + Ocean
+Tier 6 elements,Barn,House + Cow | House + Livestock | House + Hay | House + Farm | House + Field | House + Sheep | House + Goat | House + Babe the blue ox | Container + Livestock | Container + Cow | Container + Horse | Container + Pig | Container + Hay | Container + Sheep | Container + Hay bale | Container + Goat | Container + Babe the blue ox
+Tier 6 elements,Bayonet,Gun + Blade | Gun + Sword | Gun + Axe
+Tier 6 elements,Bell,Sound + Metal | Sound + Steel | Sound + Wood | Metal + Hammer | Steel + Hammer
+Tier 6 elements,Binoculars,Telescope | Glasses
+Tier 6 elements,City,Village | Village + Skyscraper | Village + Big | Skyscraper | Skyscraper + Container | Skyscraper + Bank | Skyscraper + Post office | Bank + Container | Bank + Post office
+Tier 6 elements,Day,Sun + Sky | Sun + Night | Sun + Time | Time + Dawn
+Tier 6 elements,Double rainbow!,Rainbow
+Tier 6 elements,Electricity,Metal + Lightning | Steel + Lightning | Storm + Science | Wind turbine + Wind | Wind turbine + Motion | Wind turbine + Storm | Wind turbine + Sandstorm | Solar cell + Sun | Solar cell + Light | Solar cell + Star
+Tier 6 elements,Excalibur,Sword + Stone | Sword + Legend | Sword + Story | Sword + Monarch | Sword + Lake | Sword + Fairy tale
+Tier 6 elements,Fence,Wood + Wall | Wood + Field | Wood + Garden | Field + Wall | Grass + Wall | Garden + Wall
+Tier 6 elements,Flamethrower,Gun + Fire | Gun + Campfire | Gun + Volcano
+Tier 6 elements,Fog,Cloud + Earth | Cloud + Hill | Cloud + Mountain | Cloud + City | Cloud + Field | Cloud + Forest
+Tier 6 elements,Galaxy cluster,Galaxy | Galaxy + Container
+Tier 6 elements,Hangar,Airplane + Container | Airplane + House | Airplane + Wall | Airplane + Barn | Seaplane + Container | Seaplane + House | Seaplane + Wall | Seaplane + Barn | Helicopter + Container | Helicopter + House | Helicopter + Wall | Helicopter + Barn | Rocket + Container | Rocket + House | Rocket + Wall | Rocket + Barn | Spaceship + Container | Spaceship + House | Spaceship + Wall | Spaceship + Barn
+Tier 6 elements,Horizon,Earth + Sky | Continent + Sky | Land + Sky | Lake + Sky | Ocean + Sky | Sea + Sky
+Tier 6 elements,Jupiter,Planet + Cloud | Planet + Storm | Planet + Big | Planet + Gas | Planet + Zeus | Saturn + Big
+Tier 6 elements,Life,Primordial soup + Electricity | Primordial soup + Time | Primordial soup + Storm | Primordial soup + Volcano | Primordial soup + Lightning | Primordial soup + Energy | Electricity + Ocean | Electricity + Sea | Electricity + Lake | Lightning + Ocean | Lightning + Sea | Lightning + Lake
+Tier 6 elements,Light sword,Sword + Light | Sword + Electricity | Sword + Energy | Sword + Space | Sword + Force knight
+Tier 6 elements,Lightning,Electricity + Cloud | Electricity + Storm | Electricity + Rain | Energy + Cloud | Energy + Storm | Energy + Rain | Land + Storm | Zeus + Tool | Cyclops + Tool
+Tier 6 elements,Meteor,Meteoroid + Atmosphere | Meteoroid + Sky | Meteoroid + Air | Meteoroid + Night | Meteoroid + Day
+Tier 6 elements,Night,Sky + Moon | Time + Moon | Time + Day | Time + Twilight
+Tier 6 elements,Paint,Water + Rainbow | Water + Double rainbow! | Water + Pencil | Pottery + Rainbow | Pottery + Double rainbow! | Tool + Rainbow | Tool + Double rainbow! | Liquid + Rainbow | Liquid + Double rainbow! | Liquid + Pencil
+Tier 6 elements,Park,City + Forest | City + Garden | City + Grass | City + Field | Village + Forest | Village + Garden | Village + Grass | Village + Field
+Tier 6 elements,Prism,Glass + Rainbow | Glass + Double rainbow! | Crystal ball + Rainbow | Crystal ball + Double rainbow!
+Tier 6 elements,Rain,Cloud + Heat | Cloud + Pressure | Cloud + Water
+Tier 6 elements,Ruins,Time + Castle | Time + House | Time + Village | Time + City | Time + Skyscraper | Time + Hospital | Time + Farm
+Tier 6 elements,Safety glasses,Glasses + Tool | Glasses + Explosion | Glasses + Engineer | Glasses + Bulletproof vest | Glasses + Armor
+Tier 6 elements,Skyscraper,House + Sky | House + Big | House + Cloud | Village + Sky
+Tier 6 elements,Space,Star + Sky | Star + Sun | Star + Moon | Solar system + Night | Solar system + Sky
+Tier 6 elements,Storm,Cloud | Electricity + Cloud | Electricity + Atmosphere | Rain + Wind
+Tier 6 elements,Stun gun,Gun + Electricity | Gun + Wire | Gun + Energy | Bow + Electricity | Bow + Energy
+Tier 6 elements,Sunglasses,Glasses + Sun | Glasses + Beach | Glasses + Day | Glasses + Sky | Glasses + Light
+Tier 6 elements,Swim goggles,Glasses + Water | Glasses + Lake | Glasses + Sea | Glasses + Ocean | Glasses + River | Sunglasses + Water | Sunglasses + Lake | Sunglasses + Sea | Sunglasses + Ocean | Sunglasses + River
+Tier 6 elements,Water gun,Gun + Water | Gun + Stream | Gun + Puddle
+Tier 7 elements,Alien,Life + Space | Life + Galaxy | Life + Galaxy cluster | Life + Solar system | Life + Mars | Life + Venus | Life + Mercury | Life + Saturn | Life + Jupiter
+Tier 7 elements,Animal,Life + Land | Life + Forest | Life + Mountain | Life + Mountain range | Life + Beach | Life + Desert
+Tier 7 elements,Bacteria,Life + Primordial soup | Life + Small | Life + Mud
+Tier 7 elements,Clock,Time + Electricity | Time + Wheel | Time + Tool | Time + Machine | Sundial + Machine | Sundial + Tool | Sundial + Wheel | Sundial + Electricity | Cuckoo + Container | Watch + Big
+Tier 7 elements,Darkness,Sky + Night | Sky + Twilight
+Tier 7 elements,Dawn,Day + Night | Time + Night
+Tier 7 elements,Death,Time + Life | Corpse + Philosophy | Skeleton + Philosophy | Grave + Philosophy | Graveyard + Philosophy
+Tier 7 elements,Farm,Farmer + House | Farmer + Barn | Farmer + Container | House + Barn | House + Tractor
+Tier 7 elements,Human,Time + Animal | Time + Monkey | Clay + Life | Tool + Animal | Tool + Monkey
+Tier 7 elements,Light bulb,Glass + Electricity | Glass + Light | Light + Container
+Tier 7 elements,Magic,Life + Rainbow | Life + Double rainbow! | Energy + Witch | Energy + Wizard
+Tier 7 elements,Ozone,Oxygen | Electricity + Oxygen | Electricity + Atmosphere | Electricity + Air
+Tier 7 elements,Phoenix,Fire + Bird | Fire + Life | Fire + Death | Fire + Egg
+Tier 7 elements,Plankton,Water + Life | Ocean + Life | Sea + Life | Bacteria + Water | Bacteria + Ocean | Bacteria + Sea
+Tier 7 elements,Robot,Life + Armor | Life + Metal | Life + Steel | Golem + Armor | Golem + Metal | Golem + Steel
+Tier 7 elements,Smog,Smoke + Fog | City + Smoke | City + Fog | City + Atmosphere | City + Air
+Tier 7 elements,Snow,Rain + Cold | Rain + Mountain | Rain + Mountain range | Steam + Cold
+Tier 7 elements,Soil,Earth + Life | Earth + Organic matter | Land + Life | Land + Organic matter
+Tier 7 elements,Spaceship,Space + Airplane | Space + Metal | Space + Steel | Space + Pirate ship | Space + Boat | Space + Steamboat | Space + Car | Astronaut + Container
+Tier 7 elements,Star,Night + Sky | Night + Telescope | Space + Telescope | Sky + Space | Night + Space | Sun + Space
+Tier 7 elements,Twilight,Day + Night | Day + Time
+Tier 7 elements,Universe,Space + Container | Galaxy cluster | Galaxy cluster + Container | Primordial soup + Cosmic egg
+Tier 7 elements,Wind turbine,Windmill + Electricity | Windmill + Machine | Windmill + Electrician | Wind + Electricity
+Tier 7 elements,Wire,Metal + Electricity | Metal + Rope | Steel + Electricity | Steel + Rope | Electricity + Rope
+Tier 8 elements,Alarm clock,Clock + Sound | Clock + Dawn | Clock + Bell | Watch + Sound | Watch + Dawn | Watch + Bell
+Tier 8 elements,Alchemist,Human + Gold | Gold + Philosophy
+Tier 8 elements,Allergy,Human + Dust | Human + Pollen
+Tier 8 elements,Antarctica,Desert + Snow | Desert + Ice | Continent + Snow | Continent + Ice
+Tier 8 elements,Archeologist,Ruins + Human | Ruins + Science
+Tier 8 elements,Astronaut,Human + Space | Human + Spaceship | Human + Space station | Human + Rocket | Human + Moon | Human + Mars | Human + Solar system | Human + Mercury | Human + Jupiter | Human + Saturn | Human + Venus | Human + Moon rover
+Tier 8 elements,Astronomer,Human + Telescope
+Tier 8 elements,Beaver,Animal + Wood | Animal + Dam | Animal + River | Animal + Stream
+Tier 8 elements,Bird,Animal + Sky | Animal + Air | Animal + Airplane | Egg + Sky | Egg + Air | Egg + Airplane | Time + Dinosaur | Time + Pterodactyl
+Tier 8 elements,Blizzard,Snow + Storm | Snow + Hurricane | Snow + Tornado | Snow | Snow + Wind | Snow + Big
+Tier 8 elements,Blood,Human + Blade | Warrior + Sword
+Tier 8 elements,Butterfly,Animal + Flower | Animal + Garden | Animal + Rainbow | Animal + Double rainbow!
+Tier 8 elements,Cable car,Mountain + Car | Mountain + Wire | Mountain + Rope | Mountain range + Car | Mountain range + Wire | Mountain range + Rope
+Tier 8 elements,Camel,Desert + Horse | Desert + Animal | Desert + Livestock | Desert + Cow | Desert + Saddle | Desert + Horseshoe | Sand + Horse | Sand + Livestock | Sand + Cow | Dune + Animal | Dune + Horse | Dune + Livestock | Dune + Cow
+Tier 8 elements,Cat,Animal + Milk | Animal + Coconut milk | Animal + Night
+Tier 8 elements,Chain,Rope + Metal | Rope + Steel | Wire + Metal | Wire + Steel
+Tier 8 elements,Cold,Human + Rain | Human + Mountain range | Human + Mountain | Human + Snow | Human + Wind | Human + Storm | Space + Thermometer
+Tier 8 elements,Constellation,Star
+Tier 8 elements,Corpse,Human + Bullet | Human + Blade | Human + Death | Human + Grim reaper | Human + Time | Human + Explosion | Human + Arrow | Jiangshi + Mirror | Jiangshi + Peach of immortality
+Tier 8 elements,Crystal ball,Glass + Witch | Glass + Wizard | Glass + Magic | Snow globe + Witch | Snow globe + Wizard | Snow globe + Magic
+Tier 8 elements,Cyborg,Robot + Human | Robot + Engineer | Robot + Lumberjack | Robot + Sailor | Robot + Baker | Robot + Cook | Robot + Doctor | Robot + Farmer | Robot + Firefighter | Robot + Pilot | Robot + Astronaut | Robot + Electrician
+Tier 8 elements,Dew,Grass + Fog | Grass + Water | Grass + Dawn | Plant + Fog | Plant + Dawn | Tree + Fog | Tree + Dawn | Water + Dawn | Fog + Dawn
+Tier 8 elements,Domestication,Animal + Human | Animal + Farmer | Animal + Science | Farmer + Science
+Tier 8 elements,Dynamite,Gunpowder + Wire | Gunpowder + Pipe | Gunpowder + Container
+Tier 8 elements,Egg,Life + Container | Bird | Turtle | Lizard | Vulture | Phoenix | Chicken | Dragon | Penguin | Owl | Dinosaur | Duck | Seagull | Eagle | Scorpion | Spider | Pigeon | Fish | Piranha | Parrot | Peacock | Hummingbird | Chameleon | Ostrich | Woodpecker | Bee | Crow | Frog | Pterodactyl | Ant | Moth | Butterfly | Snake | Flying fish | Tyrannosaurus rex
+Tier 8 elements,Electrician,Human + Electricity | Human + Wire
+Tier 8 elements,Family,Human | Human + House | Love + Container
+Tier 8 elements,Farmer,Human + Plant | Human + Grass | Human + Pitchfork | Human + Field | Human + Barn | Human + Plow | Human + Orchard
+Tier 8 elements,Firefighter,Human + Fire | Human + Firetruck | Human + Fire extinguisher
+Tier 8 elements,Fish,Animal + Water | Animal + Sea | Animal + Ocean | Animal + Lake | Egg + Water | Egg + Sea | Egg + Ocean | Egg + Lake
+Tier 8 elements,Force knight,Human + Light sword | Warrior + Light sword | Knight + Light sword
+Tier 8 elements,Frog,Animal + Pond | Animal + Puddle | Egg + Pond | Egg + Puddle
+Tier 8 elements,Glacier,Mountain + Ice | Mountain + Snow | Mountain range + Ice | Mountain range + Snow | Time + Ice
+Tier 8 elements,Gravestone,Grave + Stone | Grave + Rock | Death + Stone | Death + Rock | Graveyard + Stone | Graveyard + Rock
+Tier 8 elements,Hacker,Human + Computer | Human + Computer mouse | Human + Glasses | Human + Internet
+Tier 8 elements,Hero,Human + Legend | Dragon + Knight | Human + Story | Human + Lightning
+Tier 8 elements,Horse,Animal + Field | Animal + Horseshoe | Animal + Saddle | Animal + Land | Livestock + Hay | Livestock + Barn | Livestock + Horseshoe | Livestock + Saddle
+Tier 8 elements,Idea,Human + Light bulb | Light bulb + Engineer | Light bulb + Science | Science | Philosophy + Science | Engineer | Hacker | Lumberjack | Farmer | Firefighter | Electrician | Astronaut | Warrior | Butcher | Doctor | Pilot | Baker | Sailor | Surfer | Swimmer | Cyclist | Knight | Monarch | Angler | Mailman | Gardener | Philosophy | Skier | Diver | Librarian | Alchemist
+Tier 8 elements,Igloo,House + Ice | House + Cold | House + Snow | House + Snowman
+Tier 8 elements,Lamp,Light bulb + Metal | Light bulb + Steel
+Tier 8 elements,Light,Electricity + Light bulb | Electricity + Flashlight
+Tier 8 elements,Livestock,Animal + Field | Animal + Farmer | Animal + Barn | Animal + Domestication
+Tier 8 elements,Lizard,Stone + Animal | Rock + Animal | Swamp + Animal | Heat + Animal | Egg + Stone | Egg + Rock | Egg + Swamp | Dinosaur + Small | Blood + Cold
+Tier 8 elements,Love,Human | Cupid + Bow | Cupid + Arrow
+Tier 8 elements,Meat,Tool + Livestock | Tool + Chicken | Tool + Pig | Tool + Cow | Tool + Animal | Tool + Fish | Tool + Swordfish | Tool + Flying fish | Tool + Shark | Tool + Frog | Axe + Livestock | Axe + Chicken | Axe + Pig | Axe + Cow | Axe + Animal | Axe + Fish | Axe + Swordfish | Axe + Flying fish | Axe + Shark | Axe + Frog | Sword + Livestock | Sword + Chicken | Sword + Pig | Sword + Cow | Sword + Animal | Sword + Shark | Butcher + Livestock | Butcher + Chicken | Butcher + Pig | Butcher + Cow | Butcher + Animal | Butcher + Fish | Butcher + Swordfish | Butcher + Flying fish | Butcher + Shark | Butcher + Frog | Net + Fish | Net + Swordfish | Net + Shark | Net + Piranha | Net + Flying fish
+Tier 8 elements,Microscope,Bacteria + Glass | Bacteria + Glasses | Bacteria + Safety glasses | Bacteria + Lens | Tool + Lens
+Tier 8 elements,Monarch,Human + Castle | Human + Excalibur
+Tier 8 elements,Mummy,Pyramid + Corpse | Pyramid + Fabric | Pyramid + Human | Corpse + Fabric | Corpse + Book of the dead | Human + Book of the dead
+Tier 8 elements,Organic matter,Life + Death | Life + Science | Bacteria + Death | Corpse + Science
+Tier 8 elements,Painter,Human + Canvas | Human + Paint | Human + Painting
+Tier 8 elements,Pig,Mud + Livestock | Mud + Animal | Mud + Cow
+Tier 8 elements,Plant,Tree + Small | Seed + Water | Seed + Soil | Seed + Land | Seed + Earth | Grass + Big | Algae + Land | Algae + Earth | Life + Soil | Rain + Soil
+Tier 8 elements,Potter,Human + Clay | Human + Pottery
+Tier 8 elements,Sailor,Human + Boat | Human + Sailboat | Human + Steamboat | Human + Sea | Human + Ocean | Human + Lake
+Tier 8 elements,Samurai,Human + Katana
+Tier 8 elements,Science,Human + Telescope | Human + Microscope | Human + Universe
+Tier 8 elements,Scorpion,Animal + Sand | Animal + Dune | Spider + Sand | Spider + Dune | Spider + Desert
+Tier 8 elements,Shuriken,Star + Blade | Star + Sword | Star + Metal | Star + Steel | Ninja + Blade
+Tier 8 elements,Sickness,Human + Bacteria | Human + Swamp | Human + Sickness
+Tier 8 elements,Ski goggles,Snow + Glasses | Snow + Sunglasses | Cold + Glasses | Cold + Sunglasses | Glacier + Glasses | Glacier + Sunglasses | Skier + Glasses | Skier + Sunglasses
+Tier 8 elements,Skier,Human + Ski goggles | Human + Mountain | Human + Mountain range
+Tier 8 elements,Sloth,Animal + Time | Tree + Manatee
+Tier 8 elements,Snake,Animal + Rope | Animal + Wire | Electric eel + Land
+Tier 8 elements,Snow globe,Crystal ball + Ice | Crystal ball + Cold | Crystal ball + Snow | Crystal ball + Snowman | Crystal ball + Snowball | Crystal ball + Snowmobile | Crystal ball + Santa | Crystal ball + Christmas tree | Crystal ball + Christmas stocking | Crystal ball + Blizzard | Glass + Snow | Glass + Snowman | Glass + Snowball | Glass + Snowmobile | Glass + Santa | Glass + Christmas tree | Glass + Christmas stocking | Glass + Blizzard
+Tier 8 elements,Snowball,Snow + Human | Snow + Stone | Snow + Rock | Snow + Earth
+Tier 8 elements,Snowman,Snow + Human | Snow + Carrot | Snow + Coal | Snowball + Carrot | Snowball + Coal | Snowball
+Tier 8 elements,Starfish,Star + Fish | Star + Ocean | Star + Sea
+Tier 8 elements,Sundial,Sun + Wheel | Sun + Tool | Sun + Clock | Sun + Watch | Light + Wheel | Light + Tool | Light + Clock | Light + Watch | Day + Wheel | Day + Tool
+Tier 8 elements,Surfer,Human + Wave | Human + Beach
+Tier 8 elements,Swimmer,Human + Water | Human + Swim goggles | Human + Pond | Human + Swimming pool
+Tier 8 elements,Tool,Human + Metal | Human + Steel | Human + Wood | Human + Stone | Human + Rock | Wood + Metal | Wood + Steel | Wood + Stone | Wood + Rock
+Tier 8 elements,Turtle,Egg + Sand | Egg + Beach | Animal + Beach
+Tier 8 elements,Ufo,Alien + Rocket | Alien + Airplane | Alien + Spaceship | Alien + Space station | Alien + Sky | Alien + Container
+Tier 8 elements,Warrior,Human + Sword | Human + Bow
+Tier 8 elements,Watch,Clock + Human | Clock + Small
+Tier 8 elements,Wizard,Human + Magic | Human + Unicorn | Human + Rainbow | Human + Double rainbow!
+Tier 8 elements,Wolf,Animal + Moon | Animal + Dog | Dog + Forest | Dog + Blood
+Tier 9 elements,Airplane,Bird + Metal | Bird + Steel | Bird + Machine | Bird + Steam engine | Bird + Train | Bird + Car | Bird + Boat | Bird + Steamboat | Bird + Sailboat | Owl + Metal | Owl + Steel | Owl + Machine | Owl + Steam engine | Vulture + Metal | Vulture + Steel | Vulture + Machine | Duck + Metal | Duck + Steel | Duck + Machine | Seagull + Metal | Seagull + Steel | Seagull + Machine | Bat + Metal | Bat + Steel | Bat + Machine | Eagle + Metal | Eagle + Steel | Eagle + Machine | Pigeon + Metal | Pigeon + Steel | Pigeon + Machine | Hummingbird + Metal | Hummingbird + Steel | Hummingbird + Machine | Crow + Metal | Crow + Steel | Crow + Machine | Pilot + Container
+Tier 9 elements,Algae,Water + Plant | Water + Grass | Grass + Pond | Grass + Lake
+Tier 9 elements,Alligator,Lizard + Swamp | Lizard + River | Lizard + Lake
+Tier 9 elements,Angel,Human + Bird | Human + Light | Human + Heaven | Human + Good | Good + Demon | Good + Deity
+Tier 9 elements,Arctic,Cold + Sea | Cold + Ocean
+Tier 9 elements,Ash,Fire + Mineral | Fire + Plant | Fire + Tree | Fire + Grass | Fire + Paper | Campfire + Water | Campfire + Time | Campfire + Rain | Campfire + Paper | Vampire + Sun | Vampire + Dawn | Vampire + Holy grail | Vampire + Holy water
+Tier 9 elements,Bacon,Pig + Fire | Pig + Campfire | Ham + Fire | Ham + Campfire
+Tier 9 elements,Birdcage,Bird + Container | Bird + Safe | Bird + Wall | Bird + Cage
+Tier 9 elements,Birdhouse,Bird + House | Bird + Wall | Egg + Container
+Tier 9 elements,Bone,Time + Corpse | Vulture + Corpse | Vulture + Meat | Wolf + Corpse | Wolf + Meat
+Tier 9 elements,Butcher,Human + Meat | Human + Ham
+Tier 9 elements,Cactus,Sand + Plant | Sand + Tree | Desert + Plant | Desert + Tree
+Tier 9 elements,Cage,Wolf + Metal | Wolf + Steel | Wolf + Wall | Fox + Metal | Fox + Steel | Fox + Wall | Lion + Metal | Lion + Steel | Lion + Wall | Hamster + Container | Hamster + House | Hamster + Wall
+Tier 9 elements,Carbon dioxide,Human + Oxygen | Animal + Oxygen | Fish + Oxygen | Bird + Oxygen | Plant + Night | Tree + Night | Grass + Night
+Tier 9 elements,Carrot,Vegetable + Snowman | Vegetable + Grass | Vegetable + Garden | Snowman + Sun
+Tier 9 elements,Castle,Knight + Stone | Knight + Wall | Knight + House | Knight + Container | Warrior + Stone | Warrior + Wall | Warrior + House | Vampire + House | Vampire + Wall | Monarch + Container | Monarch + House | Monarch + Wall | Paladin + Stone | Paladin + Wall | Paladin + House | Paladin + Container
+Tier 9 elements,Catnip,Cat + Plant | Cat + Grass | Cat + Flower | Baast + Plant
+Tier 9 elements,Cave,House + Wolf | House + Lion | House + Fox | House + Bat | Container + Wolf | Container + Lion | Container + Fox | Container + Bat
+Tier 9 elements,Centaur,Horse + Human | Horse + Story
+Tier 9 elements,Chameleon,Lizard + Rainbow | Lizard + Double rainbow! | Snake + Rainbow | Snake + Double rainbow! | Turtle + Rainbow | Turtle + Double rainbow!
+Tier 9 elements,Charcoal,Fire + Wood | Fire + Tree | Fire + Corpse | Fire + Organic matter
+Tier 9 elements,Chicken,Bird + Domestication | Bird + Livestock | Bird + Farmer | Bird + Farm | Bird + Barn | Egg + Domestication | Egg + Livestock | Egg + Farmer | Egg + Barn | Egg + Farm
+Tier 9 elements,Chill,Air + Cold | Human + Cold | Human + Ice
+Tier 9 elements,Coal,Pressure + Organic matter | Earth + Peat | Stone + Peat | Rock + Peat | Time + Peat | Pressure + Peat
+Tier 9 elements,Computer,Hacker + Tool | Hacker + Electricity | Hacker + Wire | Hacker + Machine | Email + Container
+Tier 9 elements,Cotton,Plant + Cloud | Plant + Fabric | Plant + Thread | Plant + Wool | Plant + Sheep
+Tier 9 elements,Cow,Livestock + Barn | Livestock + Field | Livestock + Farmer | Livestock + Grass
+Tier 9 elements,Crow,Bird + Scarecrow | Bird + Field | Pigeon + Scarecrow | Pigeon + Field | Owl + Scarecrow | Owl + Field | Hummingbird + Scarecrow | Hummingbird + Field
+Tier 9 elements,Cuckoo,Bird + Clock | Bird + Alarm clock | Owl + Clock | Owl + Alarm clock | Hummingbird + Clock | Hummingbird + Alarm clock
+Tier 9 elements,Dinosaur,Lizard + Time | Lizard + Big
+Tier 9 elements,Dog,Wolf + Domestication | Wolf + Farmer | Wolf + Farm | Wolf + Barn | Wolf + Field | Wolf + Bone | Wolf + Campfire
+Tier 9 elements,Don quixote,Windmill + Knight | Windmill + Story | Windmill + Legend | Windmill + Hero
+Tier 9 elements,Dragon,Lizard + Fire | Lizard + Air | Lizard + Sky | Lizard + Airplane | Lizard + Story | Lizard + Legend | Dinosaur + Monster
+Tier 9 elements,Duck,Bird + Water | Bird + Pond | Bird + Lake | Duckling + Time | Duckling + Big | Owl + Water | Owl + Pond | Owl + Lake | Pigeon + Water | Pigeon + Pond | Pigeon + Lake | Chicken + Water | Chicken + Pond | Chicken + Lake
+Tier 9 elements,Eagle,Bird + Mountain | Bird + Mountain range
+Tier 9 elements,Egg timer,Egg + Clock | Egg + Alarm clock | Egg + Watch
+Tier 9 elements,Electric eel,Fish + Electricity
+Tier 9 elements,Family tree,Tree + Family | Tree + Village | Time + Family
+Tier 9 elements,Firestation,House + Firefighter | House + Firetruck | Firefighter + Land | Firefighter + Village | Firefighter + City
+Tier 9 elements,Fishing rod,Fish + Tool | Fish + Wood | Fish + Wire | Fish + Thread | Swordfish + Tool | Swordfish + Wood | Swordfish + Wire | Swordfish + Thread | Piranha + Tool | Piranha + Wood | Piranha + Wire | Piranha + Thread
+Tier 9 elements,Flashlight,Tool + Light | Tool + Light bulb | Tool + Lamp | Human + Lamp
+Tier 9 elements,Flower,Plant + Garden | Plant + Rainbow | Plant + Double rainbow! | Grass + Garden | Grass + Seed | Grass + Rainbow | Grass + Double rainbow! | Garden + Seed
+Tier 9 elements,Flying fish,Fish + Bird | Fish + Sky | Fish + Air
+Tier 9 elements,Fossil,Dinosaur + Earth | Dinosaur + Stone | Dinosaur + Rock | Dinosaur + Time | Bone + Time | Bone + Earth | Bone + Stone | Bone + Rock | Corpse + Stone | Corpse + Rock | Grave + Time | Skeleton + Earth | Skeleton + Stone | Skeleton + Rock | Skeleton + Time
+Tier 9 elements,Frankenstein's monster,Corpse + Legend | Corpse + Lightning | Corpse + Electricity | Corpse + Story | Zombie + Electricity | Zombie + Lightning | Monster + Story | Monster + Corpse
+Tier 9 elements,Fridge,Cold + Metal | Cold + Steel | Cold + Machine | Cold + Electricity | Cold + Container | Ice + Metal | Ice + Steel | Ice + Container | Ice cream + Container
+Tier 9 elements,Garden,Plant + Grass | Plant + House | Plant + Lawn | Flower | Flower + Grass | Flower + Plant | Flower + House | Flower + Lawn | Flower + Container
+Tier 9 elements,Gas,Air + Idea | Air + Science | Energy + Liquid
+Tier 9 elements,Ghost,Graveyard + Night | Graveyard + Story | Graveyard + Legend | Graveyard + Curse | Grave + Night | Grave + Story | Grave + Legend | Grave + Curse | Gravestone + Night | Gravestone + Legend | Gravestone + Story | Castle + Night | Night + Story | Night + Legend
+Tier 9 elements,Goat,Livestock + Mountain | Livestock + Mountain range | Livestock + Hill | Cow + Mountain | Cow + Mountain range | Cow + Hill
+Tier 9 elements,Grass,Plant + Earth | Plant + Land
+Tier 9 elements,Grave,Earth + Coffin | Earth + Corpse | Field + Coffin | Field + Corpse | Forest + Corpse | Forest + Coffin | Gravestone + Grave | Gravestone + Coffin | Coffin + Container
+Tier 9 elements,Graveyard,Grave | Grave + Field | Grave + Land | Gravestone | Gravestone + Field | Gravestone + Land | Gravestone + Container
+Tier 9 elements,Greenhouse,Glass + Plant | Glass + Grass | Glass + Tree | Glass + Garden | Aquarium + Plant | Aquarium + Tree | Aquarium + Grass | Plant + Container
+Tier 9 elements,Ham,Smoke + Meat | Smoke + Pig
+Tier 9 elements,Hammer,Tool + Metal | Tool + Steel | Tool + Stone | Tool + Rock | Tool + Woodpecker
+Tier 9 elements,Hedge,Plant + Fence | Leaf + Fence | Garden + Fence | Plant + Wall | Leaf + Wall | Garden + Wall
+Tier 9 elements,Hippo,Horse + River | Horse + Water | Cow + River | Cow + Water
+Tier 9 elements,Horseshoe,Horse + Metal | Horse + Steel
+Tier 9 elements,Hospital,House + Sickness | House + Ambulance | House + Doctor | Wall + Sickness | Wall + Ambulance | Wall + Doctor | Doctor + Container
+Tier 9 elements,Hummingbird,Bird + Flower | Bird + Garden | Bird + Small | Bird + Bee | Bird + Butterfly | Flower + Owl | Flower + Pigeon | Flower + Seagull | Garden + Owl | Garden + Pigeon | Garden + Seagull
+Tier 9 elements,Ice,Water + Cold | Water + Solid | Puddle + Cold | Puddle + Solid
+Tier 9 elements,Iceberg,Sea + Ice | Sea + Antarctica | Sea + Arctic | Ocean + Ice | Ocean + Antarctica | Ocean + Arctic
+Tier 9 elements,Ivy,Plant + Wall | Grass + Wall
+Tier 9 elements,Jerky,Meat + Sun | Steak + Sun | Meat + Heat | Steak + Heat
+Tier 9 elements,Knight,Human + Armor | Warrior + Armor | Warrior + Hero | Warrior + Horse
+Tier 9 elements,Lava lamp,Lamp + Lava | Lamp + Fire | Lamp + Volcano
+Tier 9 elements,Leather,Blade + Cow | Blade + Pig | Blade + Sheep | Sword + Cow | Sword + Pig | Sword + Sheep | Tool + Cow | Tool + Pig | Tool + Sheep
+Tier 9 elements,Lens,Glass + Tool | Glass + Engineer
+Tier 9 elements,Lighthouse,Light + House | Light + Ocean | Light + Sea | Light + Beach | Spotlight + House | Spotlight + Ocean | Spotlight + Sea | Spotlight + Beach
+Tier 9 elements,Lion,Cat + Animal | Cat + Blood | Cat + Big | Cat + Monarch
+Tier 9 elements,Liquid,Water + Science | Water + Idea | Energy + Solid
+Tier 9 elements,Machine,Tool + Wheel | Tool | Tool + Chain | Tool + Engineer | Boiler + Wheel | Boiler + Tool | Boiler + Chain
+Tier 9 elements,Magma,Lava + Science | Volcano + Science
+Tier 9 elements,Medusa,Snake + Human | Snake + Story | Snake + Legend | Snake + Hero
+Tier 9 elements,Mermaid,Fish + Human | Fish + Legend | Fish + Magic | Fish + Swimmer | Fish + Selkie | Swimmer + Magic
+Tier 9 elements,Mineral,Organic matter + Stone | Organic matter + Rock | Organic matter + Earth | Organic matter + Boulder | Organic matter + Hill | Organic matter + Mountain
+Tier 9 elements,Moss,Stone + Plant | Stone + Grass | Stone + Algae | Rock + Plant | Rock + Grass | Rock + Algae | Boulder + Plant | Boulder + Grass | Boulder + Algae
+Tier 9 elements,Moth,Butterfly + Moon | Butterfly + Night | Butterfly + Candle | Butterfly + Light | Butterfly + Lamp | Butterfly + Flashlight
+Tier 9 elements,Motion,Wind + Science | Wind + Idea | Wind + Philosophy | Tornado + Science | Tornado + Philosophy | Stream + Science | Stream + Philosophy | River + Science | River + Philosophy
+Tier 9 elements,Nest,Bird + Tree | Bird + Hay | Bird + Grass | Bird + House | Egg + Hay | Egg + Tree | Egg + Grass | Egg + Container
+Tier 9 elements,Ninja,Human + Shuriken
+Tier 9 elements,Ninja turtle,Turtle + Ninja | Turtle + Shuriken | Turtle + Katana
+Tier 9 elements,Omelette,Egg + Fire | Egg + Heat | Egg + Tool
+Tier 9 elements,Optical fiber,Wire + Light | Rope + Light | Light + Internet
+Tier 9 elements,Ostrich,Bird + Earth | Bird + Sand | Bird + Big
+Tier 9 elements,Owl,Bird + Night | Bird + Wizard | Bird + Moon | Bird + Twilight
+Tier 9 elements,Oxygen,Sun + Plant | Sun + Tree | Sun + Grass | Sun + Algae | Carbon dioxide + Plant | Carbon dioxide + Tree | Carbon dioxide + Grass | Carbon dioxide + Algae
+Tier 9 elements,Peacock,Bird + Leaf | Bird + Rainbow | Bird + Double rainbow!
+Tier 9 elements,Pegasus,Horse + Bird | Horse + Sky | Unicorn + Bird | Unicorn + Sky
+Tier 9 elements,Penguin,Bird + Antarctica | Bird + Snow | Bird + Ice | Bird + Cold | Animal + Antarctica
+Tier 9 elements,Philosophy,Human + Story | Human + Idea | Egg + Chicken
+Tier 9 elements,Pigeon,Bird + City | Bird + Letter | Bird + Statue | Bird + Skyscraper | Bird + Village
+Tier 9 elements,Piggy bank,Pig + Money | Pig + Pottery | Pig + Gold
+Tier 9 elements,Piranha,Fish + Blood | Fish + Wolf
+Tier 9 elements,Pirate,Sailor + Sword | Sailor + Bayonet | Sailor + Pirate ship | Sailor + Gun
+Tier 9 elements,Platypus,Beaver + Duck | Beaver + Bird | Beaver + Seagull
+Tier 9 elements,Pollen,Plant + Dust | Plant + Wind | Flower + Dust | Flower + Wind
+Tier 9 elements,Pottery,Clay + Wheel | Clay + Tool
+Tier 9 elements,Reed,Plant + Pond | Plant + Puddle | Plant + Swamp | Plant + River | Grass + Pond | Grass + Puddle | Grass + Swamp | Grass + River
+Tier 9 elements,Ring,Diamond + Metal | Diamond + Steel | Diamond + Gold | Love + Gold | Love + Diamond | Love + Metal | Love + Steel
+Tier 9 elements,Roe,Egg + Fish | Egg + Water | Egg + Ocean | Egg + Sea | Egg + Lake | Egg + Flying fish
+Tier 9 elements,Rope,Thread | Thread + Wire | Wire + Tool | Tool + Boat | Tool + Sailboat | Tool + Pirate ship
+Tier 9 elements,Rose,Love + Plant | Love + Flower | Blade + Plant | Blade + Flower
+Tier 9 elements,Saddle,Horse + Leather | Horse + Tool | Horse + Fabric
+Tier 9 elements,Seagull,Bird + Sea | Bird + Ocean | Bird + Beach | Pigeon + Sea | Pigeon + Ocean | Pigeon + Beach | Rat + Sea | Rat + Ocean | Rat + Beach
+Tier 9 elements,Seahorse,Horse + Water | Horse + Sea | Horse + Ocean | Horse + Lake | Horse + Fish
+Tier 9 elements,Seasickness,Sickness + Sea | Sickness + Ocean | Sickness + Lake | Sickness + Boat | Sickness + Sailboat | Sickness + Steamboat
+Tier 9 elements,Seaweed,Plant + Sea | Plant + Ocean | Plant + Lake | Grass + Sea | Grass + Ocean
+Tier 9 elements,Shark,Wolf + Sea | Wolf + Ocean | Wolf + Fish | Blood + Sea | Blood + Ocean | Blood + Fish
+Tier 9 elements,Sheep,Livestock + Wool | Livestock + Hill | Livestock + Land | Livestock + Cloud | Goat + Domestication | Mountain goat + Domestication
+Tier 9 elements,Skeleton,Time + Corpse | Bone | Bone + Corpse
+Tier 9 elements,Snowboard,Snow + Wood | Snow + Surfer | Ice + Wood | Ice + Surfer | Surfer + Mountain | Surfer + Mountain range
+Tier 9 elements,Solid,Earth + Idea | Earth + Science
+Tier 9 elements,Spotlight,Light + Machine | Light + Metal | Light + Steel
+Tier 9 elements,Steak,Meat + Bbq | Meat + Fire | Cow + Bbq | Cow + Fire
+Tier 9 elements,Stethoscope,Doctor + Tool | Doctor + Drum | Doctor + Sound | Tool + Sound | Tool + Hospital
+Tier 9 elements,Story,Human + Campfire | Human + Hero
+Tier 9 elements,Sunflower,Sun + Plant | Sun + Flower
+Tier 9 elements,Swordfish,Fish + Sword | Fish + Blade | Shark + Sword | Shark + Blade
+Tier 9 elements,Tobacco,Plant + Fire | Plant + Smoke | Grass + Smoke
+Tier 9 elements,Toolbox,Tool + Container | Tool + Safe | Tool + Box | Hammer + Container | Hammer + Box | Ruler + Container | Ruler + Box | Steel wool + Container | Steel wool + Box | Chain + Box | Chain + Container
+Tier 9 elements,Toucan,Bird + Rainbow | Bird + Double rainbow! | Bird + Palm | Palm + Owl | Palm + Seagull | Palm + Pigeon
+Tier 9 elements,Tree,Plant + Big | Plant + Wood | Plant + Time | Nest + Container
+Tier 9 elements,Umbrella,Rain + Tool | Rain + Fabric | Storm + Tool | Storm + Fabric
+Tier 9 elements,Unicorn,Horse + Legend | Horse + Story | Horse + Magic | Horse + Rainbow | Horse + Double rainbow!
+Tier 9 elements,Vampire,Human + Blood | Human + Vampire | Human + Bat
+Tier 9 elements,Vegetable,Farmer + Field | Farmer + Forest | Farmer + Plant | Plant + Field | Plant + Domestication
+Tier 9 elements,Vulture,Corpse + Bird | Corpse + Eagle | Corpse + Owl | Corpse + Hummingbird | Corpse + Pigeon | Corpse + Penguin | Corpse + Chicken | Corpse + Duck | Desert + Bird | Desert + Eagle | Desert + Owl | Desert + Hummingbird | Desert + Pigeon | Desert + Penguin | Desert + Duck
+Tier 9 elements,Wand,Wizard + Wood | Wizard + Sword | Wizard + Tool | Wizard + Pencil
+Tier 9 elements,Werewolf,Human + Wolf | Human + Werewolf | Wolf + Monster
+Tier 9 elements,Wheel,Motion + Tool | Motion + Stone | Motion + Metal | Motion + Steel | Tool + Water | Tool + Stream | Tool + River
+Tier 9 elements,Wild boar,Pig + Animal | Pig + Forest | Pig + Hill
+Tier 9 elements,Windsurfer,Wind + Surfer
+Tier 9 elements,Zombie,Corpse + Life | Corpse + Story | Corpse + Bacteria | Human + Zombie | Corpse + Necromancer
+Tier 10 elements,Alpaca,Sheep + Mountain | Sheep + Mountain range | Sheep + Mountain goat
+Tier 10 elements,Angler,Human + Fishing rod | Sailor + Fishing rod
+Tier 10 elements,Ant,Grass + Animal | Grass + Spider
+Tier 10 elements,Battery,Container + Electricity | Container + Energy | Electricity + Mineral | Electricity + Ore
+Tier 10 elements,Bee,Animal + Flower | Animal + Garden
+Tier 10 elements,Bicycle,Wheel | Wheel + Chain | Wheel + Machine
+Tier 10 elements,Big,Universe + Philosophy | Galaxy + Philosophy | Galaxy cluster + Philosophy | Solar system + Philosophy | Sun + Philosophy | Planet + Philosophy
+Tier 10 elements,Bonsai tree,Tree + Pottery | Tree + Scissors | Tree + Wire | Tree + Small
+Tier 10 elements,Cannon,Gunpowder + Pirate ship | Gunpowder + Castle | Gun + Pirate ship | Gun + Castle
+Tier 10 elements,Car,Wheel + Metal | Wheel + Steel | Wheel + Bicycle | Wheel + Motorcycle | Bicycle | Motorcycle | Motorcycle + Machine | Wagon + Combustion engine | Cart + Combustion engine
+Tier 10 elements,Cauldron,Witch + Metal | Witch + Steel | Witch + Fireplace | Witch + Campfire | Pottery + Metal | Pottery + Steel
+Tier 10 elements,Caviar,Roe + Salt | Roe + Cook
+Tier 10 elements,Chicken coop,Chicken + House | Chicken + Wall | Chicken + Barn | Chicken + Container | Cockatrice + House | Cockatrice + Barn | Cockatrice + Container
+Tier 10 elements,Chicken soup,Chicken + Water | Chicken + Liquid | Chicken wing + Water | Chicken wing + Liquid
+Tier 10 elements,Chicken wing,Chicken + Bone | Chicken + Bbq
+Tier 10 elements,Christmas tree,Tree + Light bulb | Tree + Star | Tree + Candle | Tree + Light | Tree + Gift
+Tier 10 elements,Coconut,Palm + Fruit | Palm + Nuts | Palm + Vegetable | Palm + Meat | Beach + Fruit | Beach + Vegetable
+Tier 10 elements,Combustion engine,Petroleum + Machine | Petroleum + Wheel | Petroleum + Steam engine | Explosion + Machine | Explosion + Steam engine
+Tier 10 elements,Computer mouse,Computer + Mouse | Computer + Animal
+Tier 10 elements,Container,Philosophy + Safe | Philosophy + Pottery | Philosophy + House | Philosophy + Box | Philosophy + Bottle | Philosophy + Bucket
+Tier 10 elements,Cook,Human + Fruit | Human + Vegetable | Human + Campfire | Human + Nuts
+Tier 10 elements,Coral,Tree + Sea | Tree + Ocean | Fossil + Sea | Fossil + Ocean | Bone + Sea | Bone + Ocean
+Tier 10 elements,Cyclist,Human + Wheel | Human + Bicycle
+Tier 10 elements,Diamond,Coal + Pressure
+Tier 10 elements,Doctor,Human + Hospital | Human + Stethoscope
+Tier 10 elements,Doge,Dog + Internet | Dog + Computer
+Tier 10 elements,Doghouse,Dog + House | Dog + Wall | Dog + Container | Husky + House | Husky + Wall | Husky + Container
+Tier 10 elements,Drone,Robot + Airplane | Robot + Helicopter | Robot + Paper airplane | Robot + Seaplane
+Tier 10 elements,Dry ice,Carbon dioxide + Cold | Carbon dioxide + Ice
+Tier 10 elements,Duckling,Egg + Duck
+Tier 10 elements,Engineer,Human + Machine | Human + Steam engine
+Tier 10 elements,Fairy tale,Story + Monarch | Story + Castle | Story + Knight | Story + Dragon | Story + Unicorn | Story + Faerie | Story + Elf
+Tier 10 elements,Faun,Human + Goat | Human + Mountain goat | Legend + Goat | Legend + Mountain goat | Wizard + Goat | Wizard + Mountain goat | Magic + Goat | Magic + Mountain goat
+Tier 10 elements,Fire extinguisher,Carbon dioxide + Fire | Carbon dioxide + Pressure | Carbon dioxide + Metal | Carbon dioxide + Steel | Carbon dioxide + Boiler
+Tier 10 elements,Forest,Tree | Tree + Plant | Tree + Land | Tree + Container
+Tier 10 elements,Fox,Chicken + Animal | Chicken + Wolf | Chicken + Dog | Chicken coop + Animal | Chicken coop + Wolf | Chicken coop + Dog
+Tier 10 elements,Fruit,Flower + Time | Flower + Rain | Flower + Water | Flower + Tree | Tree + Farmer | Farmer + Orchard
+Tier 10 elements,Gardener,Human + Garden | Farmer + Garden
+Tier 10 elements,Gnome,Garden + Statue | Garden + Legend | Garden + Story | Garden + Fairy tale
+Tier 10 elements,Golem,Clay + Story | Clay + Legend | Story + Statue | Statue + Life | Statue + Legend
+Tier 10 elements,Hail,Ice + Rain | Ice + Cloud | Ice + Storm | Ice + Wind | Ice + Steam | Ice + Sky
+Tier 10 elements,Harp,Angel + Music | Angel + Musician | Angel + Wire | Wire + Music
+Tier 10 elements,Hay,Grass + Scythe | Grass + Farmer | Grass + Sun | Grass | Grass + Barn | Grass + Farm | Grass + Pitchfork | Pitchfork + Barn | Pitchfork + Farm | Pitchfork + Farmer
+Tier 10 elements,Helicopter,Airplane + Blade | Airplane + Windmill | Airplane + Wind turbine | Seaplane + Blade | Seaplane + Windmill | Seaplane + Wind turbine
+Tier 10 elements,Husky,Dog + Snow | Dog + Ice | Dog + Antarctica | Dog + Arctic | Dog + Blizzard | Dog + Glacier
+Tier 10 elements,Internet,Computer | Computer + Wire | Computer + Web | Computer + Net
+Tier 10 elements,Jack-o'-lantern,Pumpkin + Fire | Pumpkin + Candle | Pumpkin + Light | Pumpkin + Night | Pumpkin + Ghost | Pumpkin + Skeleton | Vegetable + Ghost | Vegetable + Skeleton | Vegetable + Night
+Tier 10 elements,Juice,Fruit + Pressure | Fruit + Earth | Fruit + Stone | Fruit + Rock | Fruit + Explosion | Fruit + Water | Vegetable + Pressure | Vegetable + Stone | Vegetable + Rock | Vegetable + Explosion | Vegetable + Water
+Tier 10 elements,Kaiju,Dinosaur + City | Dinosaur + Skyscraper | Dinosaur + Legend | Dinosaur + Story | Monster + City | Monster + Skyscraper
+Tier 10 elements,Lasso,Rope + Cow | Rope + Horse | Rope + Pig | Rope + Wild boar | Rope + Sheep | Rope + Goat
+Tier 10 elements,Lawn,Grass + House | Grass + Container | Grass + Lawn mower | Field + Lawn mower
+Tier 10 elements,Lawn mower,Grass + Tool | Grass + Machine | Scythe + Electricity | Scythe + Helicopter | Scythe + Windmill | Scythe + Tool | Scythe + Machine | Scythe + Motion | Helicopter + Field
+Tier 10 elements,Leaf,Tree + Wind | Flower + Wind | Orchard + Wind | Forest + Wind
+Tier 10 elements,Legend,Story + Time | Story | Story + Big | Story + Fairy tale | Fairy tale + Time | Fairy tale + Big
+Tier 10 elements,Lumberjack,Human + Axe | Human + Chainsaw | Human + Wood | Human + Tree
+Tier 10 elements,Manatee,Cow + Sea | Cow + Ocean | Cow + Fish | Cow + Lake | Cow + River
+Tier 10 elements,Milk,Cow + Farmer | Cow + Tool | Cow + Water | Cow + Liquid | Goat + Farmer | Goat + Tool | Goat + Water | Goat + Liquid
+Tier 10 elements,Minotaur,Human + Cow | Cow + Werewolf | Cow + Story | Cow + Legend | Cow + Monster
+Tier 10 elements,Mold,Bread + Time | Bread + Bacteria | Fruit + Time | Fruit + Bacteria | Vegetable + Time | Vegetable + Bacteria
+Tier 10 elements,Monkey,Animal + Tree
+Tier 10 elements,Mountain goat,Goat + Mountain | Goat + Mountain range
+Tier 10 elements,Narwhal,Unicorn + Fish | Unicorn + Sea | Unicorn + Ocean | Unicorn + Water | Unicorn + Shark | Unicorn + Swordfish | Unicorn + Flying fish
+Tier 10 elements,Nessie,Lake + Legend | Lake + Story | Dinosaur + Legend | Dinosaur + Story
+Tier 10 elements,Net,Angler + Rope | Fishing rod + Rope | Fish + Rope | Swordfish + Rope | Flying fish + Rope
+Tier 10 elements,Nuts,Tree + Farmer | Tree + Field | Tree + Domestication
+Tier 10 elements,Oil,Sunflower + Pressure | Sunflower + Stone | Sunflower + Wheel | Sunflower + Windmill
+Tier 10 elements,Ore,Hammer + Boulder | Hammer + Earth | Hammer + Rock | Hammer + Stone | Hammer + Hill | Hammer + Mountain
+Tier 10 elements,Paleontologist,Human + Dinosaur | Human + Fossil | Science + Dinosaur | Science + Fossil
+Tier 10 elements,Palm,Tree + Beach | Tree + Island | Tree + Sand
+Tier 10 elements,Parachute,Pilot + Fabric | Pilot + Umbrella | Airplane + Fabric | Airplane + Umbrella | Umbrella + Sky | Umbrella + Atmosphere
+Tier 10 elements,Parrot,Bird + Pirate | Bird + Pirate ship | Pigeon + Pirate | Pigeon + Pirate ship
+Tier 10 elements,Peat,Swamp + Plant | Swamp + Time | Swamp + Pressure | Time + Grass
+Tier 10 elements,Perfume,Flower + Water | Flower + Steam | Flower + Alcohol | Rose + Water | Rose + Steam | Rose + Alcohol | Sunflower + Water | Sunflower + Steam | Sunflower + Alcohol
+Tier 10 elements,Petroleum,Fossil + Pressure | Fossil + Time | Fossil + Liquid | Fossil + Water
+Tier 10 elements,Pilot,Human + Airplane | Human + Seaplane
+Tier 10 elements,Pipe,Tobacco + Wood | Tobacco + Tool
+Tier 10 elements,Pirate ship,Sailboat + Pirate | Boat + Pirate | Steam engine + Pirate | Pirate + Container | Pirate + House
+Tier 10 elements,Polar bear,Animal + Ice | Animal + Arctic
+Tier 10 elements,Potato,Earth + Vegetable
+Tier 10 elements,Pterodactyl,Dinosaur + Air | Dinosaur + Sky | Dinosaur + Bird | Dinosaur + Eagle | Dinosaur + Vulture | Dinosaur + Airplane
+Tier 10 elements,Pumpkin,Vegetable + Field | Vegetable + Farmer | Vegetable + Jack-o'-lantern | Plant + Jack-o'-lantern
+Tier 10 elements,Quicksilver,Metal + Liquid
+Tier 10 elements,Rabbit,Animal + Carrot | Rabbit
+Tier 10 elements,Rivulet,Stream + Small | Puddle + Motion
+Tier 10 elements,Sand castle,Castle + Sand | Castle + Beach | Castle + Desert | Castle + Dune
+Tier 10 elements,Sap,Tree + Blade
+Tier 10 elements,Saturn,Ring + Planet | Jupiter + Small
+Tier 10 elements,Scalpel,Blade + Doctor | Blade + Hospital | Blade + Ambulance | Sword + Doctor | Sword + Hospital | Sword + Ambulance
+Tier 10 elements,Scythe,Blade + Grass | Blade + Wheat | Sword + Grass | Sword + Wheat | Axe + Grass | Axe + Wheat
+Tier 10 elements,Seal,Dog + Sea | Dog + Ocean | Dog + Arctic | Dog + Water | Dog + Lake
+Tier 10 elements,Seaplane,Airplane + Water | Airplane + Sea | Airplane + Ocean | Airplane + Lake
+Tier 10 elements,Seed,Pollen + Plant | Pollen + Bee | Time + Flower
+Tier 10 elements,Skateboard,Wheel + Snowboard | Wheel + Skier | Wheel + Ski goggles
+Tier 10 elements,Small,Philosophy + Bacteria | Philosophy + Oxygen | Philosophy + Carbon dioxide | Philosophy + Ozone | Philosophy + Pebble | Philosophy + Rivulet | Philosophy + Ant | Philosophy + Spider | Philosophy + Bee | Philosophy + Scorpion | Philosophy + Confetti | Philosophy + Seahorse
+Tier 10 elements,Snowboarder,Human + Snowboard
+Tier 10 elements,Soda,Carbon dioxide + Water | Carbon dioxide + Juice | Carbon dioxide + Tea
+Tier 10 elements,Sphinx,Statue + Lion | Statue + Desert | Statue + Pyramid | Lion + Stone
+Tier 10 elements,Statue,Stone + Hammer | Boulder + Hammer | Medusa + Human | Medusa + Hacker | Medusa + Engineer | Medusa + Lumberjack | Medusa + Pilot | Medusa + Sailor | Medusa + Farmer | Medusa + Firefighter | Medusa + Surfer | Medusa + Astronaut | Medusa + Butcher | Medusa + Doctor | Medusa + Baker | Medusa + Drunk | Medusa + Mirror | Troll + Sun | Troll + Dawn | Cockatrice + Human | Cockatrice + Hacker | Cockatrice + Engineer | Cockatrice + Lumberjack | Cockatrice + Pilot | Cockatrice + Sailor | Cockatrice + Farmer | Cockatrice + Firefighter | Cockatrice + Surfer | Cockatrice + Astronaut | Cockatrice + Butcher | Cockatrice + Doctor | Cockatrice + Baker | Cockatrice + Drunk | Cockatrice + Mirror
+Tier 10 elements,Steam engine,Steam + Machine | Steam + Wheel | Boiler + Wheel
+Tier 10 elements,Steel,Metal + Coal | Metal + Charcoal | Metal + Mineral | Metal + Ash
+Tier 10 elements,Stream,Pond + Motion | Rivulet + Big | River + Small
+Tier 10 elements,Sushi,Fish + Seaweed | Caviar + Seaweed
+Tier 10 elements,Swamp,Mud + Grass | Mud + Tree | Tree + Lake | Algae + Lake | Algae + Pond | Reed + Lake | Reed + Pond | Reed + Mud
+Tier 10 elements,The one ring,Ring + Volcano | Ring + Magic
+Tier 10 elements,Thread,Cotton | Cotton + Tool | Cotton + Wheel | Cotton + Machine
+Tier 10 elements,Treehouse,Tree + House | Tree + Wood
+Tier 10 elements,Trojan horse,Horse + Wood | Horse + Machine | Horse + Statue
+Tier 10 elements,Tunnel,Engineer + Mountain | Engineer + Mountain range | Engineer + Hill | Train + Mountain | Train + Mountain range | Train + Hill | Cave + Mountain | Cave + Mountain range | Cave + Hill
+Tier 10 elements,Tyrannosaurus rex,Dinosaur + Meat | Dinosaur + Blood | Dinosaur + Monarch
+Tier 10 elements,Vase,Pottery + Plant | Pottery + Flower | Pottery + Rose | Container + Flower | Container + Rose | Bottle + Plant | Bottle + Flower | Bottle + Rose
+Tier 10 elements,Water lily,Flower + Pond | Flower + Puddle | Flower + Lake | Flower + Stream
+Tier 10 elements,Wheat,Grass + Farmer | Grass + Domestication | Grass + Field
+Tier 10 elements,Wood,Tree + Tool | Tree + Axe | Tree + Chainsaw | Tree + Sword | Tree + Lumberjack | Forest + Tool | Forest + Axe | Forest + Chainsaw | Forest + Sword | Forest + Lumberjack | Tree + Paul bunyan | Forest + Paul bunyan
+Tier 10 elements,Woodpecker,Bird + Wood | Bird + Tree | Bird + Forest
+Tier 10 elements,Wool,Sheep + Tool | Sheep + Scissors | Sheep + Blade
+Tier 10 elements,Yeti,Mountain + Story | Mountain + Legend | Mountain range + Story | Mountain range + Legend | Glacier + Story | Glacier + Legend | Antarctica + Story | Antarctica + Legend | Monster + Mountain | Monster + Mountain range | Monster + Glacier | Monster + Antarctica
+Tier 10 elements,Zoo,Animal + Container | Animal + Cage
+Tier 11 elements,Alcohol,Time + Juice | Wheat + Fruit | Wheat + Juice | Fruit + Sun
+Tier 11 elements,Ambulance,Car + Hospital | Car + Doctor
+Tier 11 elements,Ant farm,Farm + Ant | Ant + Jar | Ant + Glass | Anthill + Farm | Anthill + Jar
+Tier 11 elements,Anthill,Ant + House | Ant + Container | Ant + Hill | Ant + Earth | Ant + Land | Ant + Soil
+Tier 11 elements,Arrow,Wood + Bullet | Wood + Bow
+Tier 11 elements,Aviary,Big + Birdcage
+Tier 11 elements,Axe,Wood + Blade | Wood + Tool | Wood + Stone | Tool + Lumberjack | Tool + Paul bunyan
+Tier 11 elements,Banana,Fruit + Monkey
+Tier 11 elements,Beehive,House + Bee | Tree + Bee | Forest + Bee | Wall + Bee | Wood + Bee | Container + Bee
+Tier 11 elements,Beekeeper,Human + Beehive | Human + Bee | Farmer + Beehive | Farmer + Bee
+Tier 11 elements,Blood bag,Blood + Container | Blood + Sack | Blood + Bottle
+Tier 11 elements,Boat,Wood + Water | Wood + Sea | Wood + Ocean | Wood + Lake | Wood + River
+Tier 11 elements,Book,Newspaper | Paper + Legend | Paper + Wood | Container + Story | Container + Fairy tale | Container + Legend | Container + Idea
+Tier 11 elements,Bottle,Container + Milk | Container + Water | Container + Coconut milk | Container + Juice | Container + Oil | Container + Alcohol | Container + Wine | Container + Beer | Container + Chocolate milk | Container + Soda | Container + Perfume | Container + Liquid
+Tier 11 elements,Boulder,Big + Rock | Big + Stone | Small + Hill | Rock + Stone | Rock | Rock + Earth
+Tier 11 elements,Bow,Wood + Rope | Wood + Wire | Tool + Elf | Tool + Cupid
+Tier 11 elements,Broom,Wood + Hay | Tool + Baba yaga
+Tier 11 elements,Bucket,Container + Wood | Container + Yogurt | Container + Paint | Bottle + River | Bottle + Paint | Chicken wing + Container | Chicken wing + Box
+Tier 11 elements,Bus,Car | Car + Train | Car + City | Car + Big
+Tier 11 elements,Butter,Milk + Pressure | Milk + Energy | Milk + Motion | Milk + Tool
+Tier 11 elements,Butterfly net,Butterfly + Net | Bee + Net
+Tier 11 elements,Campfire,Fire + Wood
+Tier 11 elements,Cart,Wheel + Wood
+Tier 11 elements,Cashmere,Mountain goat + Thread | Mountain goat + Fabric | Mountain goat + Tool | Mountain goat + Scissors | Mountain goat + Wool
+Tier 11 elements,Cereal,Wheat + Milk | Wheat + Chocolate milk | Wheat + Coconut milk
+Tier 11 elements,Chainsaw,Axe + Machine | Axe + Electricity | Axe + Motion | Lumberjack + Machine | Lumberjack + Electricity
+Tier 11 elements,Cheese,Milk + Tool | Milk + Time | Milk + Cook | Milk + Bacteria
+Tier 11 elements,Christmas stocking,Fireplace + Wool | Christmas tree + Wool | Reindeer + Wool | Santa + Wool
+Tier 11 elements,Closet,Container + Broom | Container + Toolbox | Container + Umbrella | Container + Robot vacuum | Container + Vacuum cleaner
+Tier 11 elements,Coconut milk,Coconut + Milk | Coconut + Tool | Coconut + Hammer | Coconut + Sword | Coconut + Blade | Coconut + Axe
+Tier 11 elements,Coffin,Wood + Corpse | Container + Corpse | Container + Vampire
+Tier 11 elements,Cutting board,Wood + Cook
+Tier 11 elements,Drum,Wood + Leather | Wood + Fabric | Wood + Music
+Tier 11 elements,Electric car,Electricity + Car | Electricity + Wagon | Car + Wind turbine | Wagon + Wind turbine | Solar cell + Car | Solar cell + Wagon
+Tier 11 elements,Fabric,Thread + Machine | Thread + Tool | Thread + Wheel
+Tier 11 elements,Fireplace,Campfire + House | Campfire + Brick | Campfire + Wall | Campfire + Container | Wood + Container
+Tier 11 elements,Firetruck,Firefighter + Car | Firefighter + Wagon | Fire + Car | Fire + Wagon | Fire extinguisher + Car | Fire extinguisher + Wagon
+Tier 11 elements,Flour,Wheat | Wheat + Stone | Wheat + Windmill | Wheat + Wheel | Wheat + Rock
+Tier 11 elements,Flute,Wood + Wind | Wood + Air
+Tier 11 elements,Fountain,Statue + Water | Statue + Stream
+Tier 11 elements,French fries,Oil + Vegetable | Oil + Potato | Fire + Potato
+Tier 11 elements,Fruit tree,Fruit + Tree | Fruit + Plant | Fruit + Wood
+Tier 11 elements,Garage,Car + House | Car + Container | Car + Wall | Car + Barn | Ambulance + House | Ambulance + Container | Ambulance + Wall | Ambulance + Barn | Motorcycle + House | Motorcycle + Container | Motorcycle + Wall | Motorcycle + Barn | Bus + House | Bus + Container | Bus + Wall | Bus + Barn | Sleigh + House | Sleigh + Container | Sleigh + Wall | Sleigh + Barn | Electric car + House | Electric car + Container | Electric car + Wall | Electric car + Barn | Snowmobile + House | Snowmobile + Container | Snowmobile + Wall | Snowmobile + Barn | Tractor + House | Tractor + Container | Tractor + Wall | Tractor + Barn | Rv + House | Rv + Container | Rv + Wall | Rv + Barn | Ice cream truck + House | Ice cream truck + Container | Ice cream truck + Wall | Ice cream truck + Barn
+Tier 11 elements,Grim reaper,Human + Scythe | Corpse + Scythe | Zombie + Scythe | Death + Scythe | Boat + Scythe | River + Scythe | Scythe + Deity
+Tier 11 elements,Gust,Wind + Small | Air + Small
+Tier 11 elements,Hay bale,Hay | Hay + Barn | Hay + Tractor | Hay + Machine
+Tier 11 elements,Hill,Big + Boulder | Earth + Boulder | Stone + Boulder | Boulder | Mountain + Small
+Tier 11 elements,Honey,Bee + Flower | Bee + Beehive | Bee + Time | Bee | Beehive + Beekeeper
+Tier 11 elements,Ice cream,Milk + Cold | Milk + Ice | Milk + Snow
+Tier 11 elements,Ice sculpture,Ice + Statue
+Tier 11 elements,Jam,Juice + Sugar | Juice + Fruit | Juice + Machine | Fruit + Machine | Fruit + Heat
+Tier 11 elements,Knife,Blade + Cook | Sword + Cook
+Tier 11 elements,Laptop,Computer + Small
+Tier 11 elements,Little alchemy (element),Small + Alchemist
+Tier 11 elements,Log cabin,Wood + House
+Tier 11 elements,Maple syrup,Sap + Heat | Sap + Sugar
+Tier 11 elements,Mayonnaise,Egg + Oil
+Tier 11 elements,Moon rover,Moon + Car | Moon + Electric car
+Tier 11 elements,Motorcycle,Bicycle + Machine | Bicycle + Metal | Bicycle + Steel | Bicycle + Steam engine | Bicycle + Combustion engine
+Tier 11 elements,Needle,Thread + Metal | Thread + Steel | Thread + Tool
+Tier 11 elements,Paper,Wood + Pressure | Wood + Water | Wood + Blender | Wood + Machine
+Tier 11 elements,Peanut butter,Nuts + Butter | Nuts + Pressure
+Tier 11 elements,Pebble,Small + Earth | Small + Stone | Small + Rock
+Tier 11 elements,Pencil,Wood + Coal | Wood + Charcoal
+Tier 11 elements,Penicillin,Mold + Doctor | Mold + Science | Mold + Idea | Mold + Hospital
+Tier 11 elements,Pinocchio,Wood + Life | Wood + Story | Golem + Story
+Tier 11 elements,Pitchfork,Hay + Tool | Hay + Metal | Hay + Steel | Tool + Demon
+Tier 11 elements,Popsicle,Juice + Ice | Juice + Cold | Juice + Snow | Juice + Wood
+Tier 11 elements,Quicksand,Sand + Swamp
+Tier 11 elements,Rainforest,Rain + Forest
+Tier 11 elements,Rat,Animal + Pirate ship | Animal + Sailboat | Mouse + Pirate ship | Mouse + Sailboat | Mouse + City | Mouse + Skyscraper | Mouse + Village | Mouse + Big
+Tier 11 elements,Reindeer,Animal + Santa | Livestock + Santa | Animal + Christmas tree | Livestock + Christmas tree | Animal + Christmas stocking
+Tier 11 elements,Restaurant,House + Cook
+Tier 11 elements,Roller coaster,Park + Train | Park + Car | Park + Cart | Park + Wagon
+Tier 11 elements,Rv,House + Car | House + Bus
+Tier 11 elements,Sack,Container + Flour | Container + Salt | Container + Letter
+Tier 11 elements,Santa,Christmas tree + Human | Christmas tree + Legend | Christmas tree + Story | Christmas stocking + Human | Christmas stocking + Legend | Christmas stocking + Story
+Tier 11 elements,Scarecrow,Hay + Human | Hay + Statue | Hay + Golem | Hay + Sack | Farm + Statue | Barn + Statue | Pumpkin + Sack | Jack-o'-lantern + Sack
+Tier 11 elements,Scuba tank,Container + Air | Container + Atmosphere | Container + Oxygen
+Tier 11 elements,Sewing machine,Needle + Machine | Needle + Electricity | Needle + Robot | Thread + Machine | Thread + Electricity | Thread + Robot
+Tier 11 elements,Shovel,Tool + Gardener
+Tier 11 elements,Silo,Wheat + Container | Wheat + House | Wheat + Barn | Wheat + Wall | Wheat + Farm | Wheat + Safe | Wheat + Bank
+Tier 11 elements,Smoothie,Fruit + Blender | Fruit + Ice | Fruit + Cold
+Tier 11 elements,Snowmobile,Snow + Motorcycle | Snow + Car | Glacier + Motorcycle | Glacier + Car | Ice + Motorcycle | Ice + Car
+Tier 11 elements,Soap,Oil + Ash | Oil + Wax | Oil + Clay | Wax + Ash | Wax + Clay
+Tier 11 elements,Spider,Animal + Thread | Animal + Web | Animal + Net
+Tier 11 elements,Squirrel,Mouse + Tree | Mouse + Plant | Mouse + Nuts | Animal + Nuts
+Tier 11 elements,Steamboat,Steam engine + Boat | Steam engine + Sailboat | Steam engine + Pirate ship | Steam engine + Ocean | Steam engine + Sea
+Tier 11 elements,Steel wool,Wool + Steel | Wool + Metal | Wool + Wire
+Tier 11 elements,Sugar,Fruit + Fire | Fruit + Energy | Juice + Fire | Juice + Energy | Alcohol + Fire | Alcohol + Energy | Beer + Fire | Beer + Energy | Wine + Fire | Wine + Energy
+Tier 11 elements,Sweater,Wool + Tool | Wool + Human
+Tier 11 elements,Tailor,Human + Sewing machine | Human + Needle | Human + Thread
+Tier 11 elements,Tank,Car + Armor | Car + Gun | Car + Metal | Car + Steel
+Tier 11 elements,Tea,Leaf + Water | Leaf + Human | Leaf + Heat
+Tier 11 elements,Thermometer,Quicksilver + Glass | Quicksilver + Tool | Quicksilver + Engineer
+Tier 11 elements,Titanic,Boat + Iceberg | Steamboat + Iceberg | Iceberg + Legend | Steamboat + Legend
+Tier 11 elements,Tractor,Car + Farmer | Car + Field | Car + Cow | Wagon + Farmer | Wagon + Field | Wagon + Cow
+Tier 11 elements,Train,Steam engine + Metal | Steam engine + Steel | Steam engine + Wheel | Steam engine + Wagon
+Tier 11 elements,Vault,Safe + Big
+Tier 11 elements,Water pipe,Water + Pipe
+Tier 11 elements,Witch,Broom + Wizard | Broom + Human | Broom + Legend | Broom + Story | Broom + Magic | Broom + Cauldron | Cauldron + Story | Cauldron + Legend
+Tier 11 elements,Yogurt,Bacteria + Milk | Bacteria + Ice cream
+Tier 12 elements,Apron,Fabric + Cook | Fabric + Baker
+Tier 12 elements,Armor,Metal + Fabric | Steel + Fabric
+Tier 12 elements,Bandage,Fabric + Blood | Fabric + Sword | Fabric + Blade
+Tier 12 elements,Batter,Milk + Flour | Coconut milk + Flour
+Tier 12 elements,Bbq,Campfire + Metal | Campfire + Steel | Campfire + Garden | Campfire + House | Campfire + Meat
+Tier 12 elements,Beer,Alcohol + Wheat
+Tier 12 elements,Box,Container + Pizza | Container + Pencil | Container + Cereal | Container + Cookie | Container + Donut | Container + Cake | Container + Crayon
+Tier 12 elements,Candy cane,Sugar + Christmas tree | Sugar + Christmas stocking | Sugar + Santa | Sugar + Reindeer
+Tier 12 elements,Canvas,Fabric + Paint
+Tier 12 elements,Caramel,Sugar + Heat
+Tier 12 elements,Chocolate,Sugar + Milk | Sugar + Oil | Sugar + Coconut milk | Sugar + Seed
+Tier 12 elements,Cigarette,Tobacco + Paper
+Tier 12 elements,Confetti,Paper + Scissors | Paper + Blade
+Tier 12 elements,Cookbook,Recipe | Book + Cook
+Tier 12 elements,Cotton candy,Sugar + Air | Sugar + Thread | Sugar + Cloud
+Tier 12 elements,Crayon,Rainbow + Pencil | Rainbow + Wax | Double rainbow! + Pencil | Double rainbow! + Wax | Pencil + Paint | Wax + Paint
+Tier 12 elements,Cup,Container + Smoothie | Container + Tea | Container + Milk shake | Bottle + Smoothie | Bottle + Tea | Bottle + Milk shake
+Tier 12 elements,Diver,Scuba tank + Human | Scuba tank + Swimmer | Scuba tank + Sea | Scuba tank + Ocean | Scuba tank + Lake
+Tier 12 elements,Dough,Flour + Water | Flour + Puddle | Flour + Rain
+Tier 12 elements,Drunk,Human + Alcohol | Human + Beer | Human + Wine
+Tier 12 elements,Excavator,Shovel + Big | Shovel + Car
+Tier 12 elements,Flying squirrel,Squirrel + Bird | Squirrel + Hummingbird | Squirrel + Seagull | Squirrel + Pigeon | Squirrel + Air | Squirrel + Airplane | Squirrel + Seaplane | Squirrel + Helicopter
+Tier 12 elements,Fork,Pitchfork + Small
+Tier 12 elements,Frozen yogurt,Yogurt + Cold | Yogurt + Ice
+Tier 12 elements,Gift,Christmas tree + Santa | Christmas tree + Wrapping paper | Santa + Christmas stocking | Santa + Chimney | Santa + Fireplace | Santa + Cookie | Santa + Milk | Santa + Wrapping paper | Christmas stocking + Wrapping paper | Fireplace + Wrapping paper
+Tier 12 elements,Hamburger,Meat + Bread | Meat + Cheese
+Tier 12 elements,Hamster,Mouse + Wheel | Mouse + Domestication | Rat + Wheel | Rat + Domestication
+Tier 12 elements,Hedgehog,Animal + Needle | Mouse + Needle | Rat + Needle
+Tier 12 elements,Ice cream truck,Ice cream + Car | Ice cream + Bus | Ice cream + Wagon
+Tier 12 elements,Iced tea,Tea + Ice | Tea + Cold
+Tier 12 elements,Jar,Jam + Container | Jam + Bottle | Jam + Glass | Jam + Bucket
+Tier 12 elements,Kite,Paper + Wind | Paper + Sky | Paper + Air
+Tier 12 elements,Letter,Paper + Pencil
+Tier 12 elements,Library,Book + Container | Book + House
+Tier 12 elements,Map,Paper + Land | Paper + Hill | Paper + Mountain | Paper + Mountain range | Paper + Continent | Paper + Ocean | Paper + Sea | Paper + Lake | Paper + River | Paper + City | Paper + Village
+Tier 12 elements,Marshmallows,Sugar + Campfire
+Tier 12 elements,Milk shake,Ice cream + Milk | Ice cream + Yogurt | Ice cream + Water
+Tier 12 elements,Money,Paper + Gold | Paper + Diamond | Paper + Bank
+Tier 12 elements,Mouse,Animal + Cheese | Cheese + Barn | Cheese + House | Cheese + Farm | Cheese + Wall
+Tier 12 elements,Mousetrap,Cheese + Wood | Cheese + Metal | Cheese + Steel | Mouse + Blade
+Tier 12 elements,Musician,Human + Flute | Human + Music | Human + Sheet music | Human + Drum | Human + Pan flute
+Tier 12 elements,Newspaper,Paper | Paper + Story | Letter
+Tier 12 elements,Orchard,Fruit tree | Fruit tree + Field | Fruit tree + Tree | Fruit tree + Farmer | Fruit tree + Farm | Fruit tree + Forest | Fruit tree + Container
+Tier 12 elements,Origami,Paper + Bird | Paper + Animal | Paper + Eagle | Paper + Seagull | Paper + Owl | Paper + Pigeon | Paper + Cow | Paper + Horse | Paper + Dog | Paper + Cat | Paper + Lion | Paper + Hummingbird | Paper + Chicken | Paper + Penguin | Paper + Duck | Paper + Vulture
+Tier 12 elements,Pan flute,Flute
+Tier 12 elements,Paper airplane,Airplane + Paper
+Tier 12 elements,Pasta,Flour + Egg
+Tier 12 elements,Pencil sharpener,Pencil + Blade | Pencil + Blender | Pencil + Sword
+Tier 12 elements,Pizza,Cheese + Dough | Cheese + Bread | Cheese + Wheel
+Tier 12 elements,Printer,Computer + Paper | Computer + Newspaper
+Tier 12 elements,Recipe,Paper + Flour | Paper + Meat | Paper + Baker | Paper + Bakery | Paper + Vegetable | Paper + Fruit | Paper + Cook | Newspaper + Flour | Newspaper + Meat | Newspaper + Baker | Newspaper + Bakery | Newspaper + Vegetable | Newspaper + Fruit
+Tier 12 elements,Robot vacuum,Robot + Vacuum cleaner | Robot + Broom | Computer + Vacuum cleaner | Computer + Broom
+Tier 12 elements,Rock,Pebble | Pebble + Big | Boulder + Small
+Tier 12 elements,Ruler,Wood + Pencil
+Tier 12 elements,Sailboat,Boat + Wind | Boat + Fabric | Steamboat + Wind | Steamboat + Fabric
+Tier 12 elements,Sandpaper,Sand + Paper | Sand + Fabric
+Tier 12 elements,Sleigh,Cart + Snow | Cart + Ice | Cart + Arctic | Cart + Antarctica | Wagon + Snow | Wagon + Ice | Wagon + Arctic | Wagon + Antarctica
+Tier 12 elements,Smoke signal,Fabric + Campfire | Fabric + Smoke | Smoke + Letter
+Tier 12 elements,Spoon,Shovel + Small
+Tier 12 elements,Sprinkles,Sugar + Confetti | Sugar + Paint | Sugar + Rainbow | Sugar + Double rainbow!
+Tier 12 elements,Syringe,Doctor + Needle | Tool + Needle
+Tier 12 elements,Tablet,Laptop + Small
+Tier 12 elements,Tent,Fabric + Wood | Fabric + House | Fabric + Village | Fabric + Wall
+Tier 12 elements,Trainyard,Train + Container | Train + House | Train + Wall | Train + Garage
+Tier 12 elements,Vacuum cleaner,Broom + Electricity | Broom + Machine
+Tier 12 elements,Vine,Rainforest + Rope | Rainforest + Thread | Rainforest + Wire
+Tier 12 elements,Wagon,Cart + Horse | Cart + Fabric | Cart + House | Cart + Wall | Cart + Cow
+Tier 12 elements,Wax,Beehive + Bee | Beehive + Wall | Beehive + Blade | Beehive + Sword | Beehive + Tool | Beehive + Beekeeper
+Tier 12 elements,Web,Spider + Thread | Spider + Cotton | Spider + Fabric | Spider + Net
+Tier 12 elements,Wine,Alcohol + Fruit | Alcohol + Juice | Tool + Dionysus
+Tier 12 elements,Wrapping paper,Paper + Gift | Paper + Christmas tree | Paper + Christmas stocking | Paper + Santa
+Tier 12 elements,Writer,Human + Book | Human + Pencil
+Tier 13 elements,Armadillo,Armor + Animal | Armor + Dog | Armor + Cat
+Tier 13 elements,Baker,Human + Bakery | Human + Bread | Human + Banana bread | Human + Pizza | Human + Toast | Human + Batter | Human + Pie | Human + Donut | Human + Cookie | Human + Cookie dough | Human + Dough
+Tier 13 elements,Banana bread,Bread + Banana | Dough + Banana
+Tier 13 elements,Barrel,Wine + Container | Wine + Wood
+Tier 13 elements,Bat,Mouse + Sky | Mouse + Air | Mouse + Bird | Mouse + Hummingbird | Mouse + Atmosphere
+Tier 13 elements,Bread,Dough + Fire | Dough + Energy
+Tier 13 elements,Bulletproof vest,Bullet + Armor | Gun + Armor
+Tier 13 elements,Candle,Wax + Thread | Wax + Fire | Wax + Light | Wax + Flashlight | Wax + Lamp
+Tier 13 elements,Cheeseburger,Cheese + Hamburger | Cheese + Sandwich
+Tier 13 elements,Chocolate milk,Chocolate + Milk | Chocolate + Coconut milk
+Tier 13 elements,Circus,Tent + Big | Tent + Animal
+Tier 13 elements,Cookie cutter,Blade + Dough | Blade + Cookie dough
+Tier 13 elements,Cookie dough,Dough + Cookie | Dough + Sugar | Dough + Chocolate
+Tier 13 elements,Donut,Dough + Oil | Dough + Wheel | Cookie dough + Oil | Cookie dough + Wheel
+Tier 13 elements,Email,Letter + Computer | Letter + Computer mouse | Letter + Internet | Letter + Electricity
+Tier 13 elements,Gingerbread house,House + Gingerbread man | House + Dough | House + Cookie dough | House + Cookie | House + Donut | House + Cake
+Tier 13 elements,Gingerbread man,Dough + Life | Dough + Magic | Dough + Story | Cookie + Life | Cookie + Magic | Cookie + Story | Cookie dough + Life | Cookie dough + Magic | Cookie dough + Story
+Tier 13 elements,Hot chocolate,Chocolate milk + Heat | Chocolate + Heat
+Tier 13 elements,Librarian,Human + Library
+Tier 13 elements,Mac and cheese,Cheese + Pasta
+Tier 13 elements,Mail truck,Car + Letter | Car + Mailman | Car + Post office
+Tier 13 elements,Mailbox,Letter + Box | Letter + Metal | Letter + Steel | Letter + Wood | Mailman + Box | Mailman + Metal | Mailman + Steel | Mailman + Wood
+Tier 13 elements,Mailman,Human + Letter | Human + Newspaper | Letter + Mailbox
+Tier 13 elements,Music,Musician + Flute | Musician + Sheet music | Musician + Drum | Musician + Pan flute
+Tier 13 elements,Painting,Canvas + Paint | Canvas + Painter
+Tier 13 elements,Paper cup,Cup + Paper
+Tier 13 elements,Paraglider,Kite + Big
+Tier 13 elements,Pie,Dough + Fruit | Cookie dough + Fruit | Dough + Meat | Fruit + Baker | Fruit + Bakery
+Tier 13 elements,Post office,Mailman + House | Mailman + Wall | Mailman + Container | Mailman + Letter | Letter | Letter + House | Letter + Wall
+Tier 13 elements,Smartphone,Small + Tablet
+Tier 13 elements,Spaghetti,Pasta + Thread | Pasta + Wire | Pasta + Rope
+Tier 13 elements,String phone,Paper cup + Wire | Paper cup + Thread | Cup + Wire | Cup + Thread
+Tier 13 elements,Treasure map,Map + Pirate | Map + Pirate ship | Map + Treasure | Map + Island
+Tier 13 elements,Vinegar,Wine + Time | Wine + Air | Wine + Oxygen
+Tier 14 elements,Bakery,House + Bread | House + Baker | House + Donut | House + Cake | City + Bread | City + Baker | City + Donut | City + Cake | Village + Bread | Village + Baker | Village + Donut | Village + Cake | Baker + Container
+Tier 14 elements,Cake,Dough + Candle | Donut + Candle | Bread + Sugar
+Tier 14 elements,Cookie,Cookie dough + Heat | Cookie dough + Fire | Cookie dough + Baker | Cookie dough + Cookie cutter | Dough + Cookie cutter
+Tier 14 elements,Fortune cookie,Paper + Cookie | Paper + Cookie dough | Paper + Gingerbread man
+Tier 14 elements,Sandwich,Bread + Meat | Bread + Bacon | Bread + Ham | Bread + Cheese | Bread + Vegetable
+Tier 14 elements,Sheet music,Music + Paper | Music + Book
+Tier 14 elements,Toast,Sandwich + Fire | Bread + Fire
+Tier 14 elements,Treasure,Treasure map + Pirate | Treasure map + Pirate ship | Treasure map + Island | Treasure map + Sailor
+Tier 15 elements,Grilled cheese,Cheese + Toast
+Tier 15 elements,Picnic,Sandwich + Grass | Sandwich + Beach | Sandwich + Lawn | Sandwich + Garden | Sandwich + Fabric

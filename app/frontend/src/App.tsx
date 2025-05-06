@@ -1,7 +1,26 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 function App() {
     const [message, setMessage] = useState<string | null>(null);
     const [error, setError] = useState<string | null>(null);
+
+    useEffect(() => {
+        (async () => {
+            try {
+                setMessage("Loading Recipes...");
+                const response = await fetch("/api/scrape");
+                if (!response.ok) {
+                    throw new Error("Network response was not ok");
+                }
+                const data = await response.json();
+                setMessage(data.message);
+                setError(null);
+            } catch (error) {
+                console.error("Error fetching data:", error);
+                setMessage(null);
+                setError("Failed to connect to the backend. Is it running?");
+            }
+        })();
+    }, []);
 
     const handleTestButtonClick = async () => {
         try {
