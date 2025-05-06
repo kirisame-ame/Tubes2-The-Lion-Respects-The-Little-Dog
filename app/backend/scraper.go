@@ -2,7 +2,7 @@ package main
 
 import (
 	"encoding/csv"
-	// "encoding/json"
+	"encoding/json"
 	"fmt"
 	"html"
 	"log"
@@ -19,6 +19,19 @@ type Entry struct {
 	Element  string
 	Recipes  string
 	ImageURL string
+}
+
+// Json struct
+type ElementItem struct {
+	Element  string     `json:"Element"`
+	Recipes  [][]string `json:"Recipes"`
+	ImageURL string     `json:"ImageURL"`
+}
+
+
+type JsonTable struct {
+	Tier  string           `json:"Tier"`
+	Items []ElementItem `json:"Items"`
 }
 
 func scrape() bool{
@@ -144,7 +157,73 @@ func scrape() bool{
 	}
 
 	fmt.Printf("Clean CSV created with %d entries!\n", len(data))
+
+	// jsonify the data
+	var jsonTable []JsonTable
+	for _, entry := range data {
+		tier := parseTier(entry.Category)
+		recipes := parseRecipes(entry.Recipes)
+		elementItem := ElementItem{
+			Element:  entry.Element,
+			Recipes:  recipes,
+			ImageURL: entry.ImageURL,
+		}
+
+		// Check if the tier already exists in jsonTable
+		found := false
+		for i := range jsonTable {
+			if jsonTable[i].Tier == tier {
+			jsonTable[i].Items = append(jsonTable[i].Items, elementItem)
+			found = true
+			break
+			}
+		}
+		if !found {
+			jsonTable = append(jsonTable, JsonTable{
+			Tier:  tier,
+			Items: []ElementItem{elementItem},
+			})
+		}
+	}
+
+	// json output
+	jsonData, err := json.MarshalIndent(jsonTable, "", "  ")
+
+	// write to file
+	err = os.WriteFile("data/elements.json",jsonData,0644)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Println("JSON data successfully written to output.json")
+
 	return true
+}
+
+func parseRecipes(recipeStr string) [][]string {
+	recipePairs := strings.Split(recipeStr, "|")
+	var recipes [][]string
+	for _, pair := range recipePairs {
+		parts := strings.Split(strings.TrimSpace(pair), "+")
+		if len(parts) == 2 {
+			left := strings.ToLower(strings.TrimSpace(parts[0]))
+			right := strings.ToLower(strings.TrimSpace(parts[1]))
+			recipes = append(recipes, []string{left, right})
+		}
+	}
+	return recipes
+}
+
+func parseTier(category string) string {
+	// Use a regular expression to match "Tier <number>"
+	re := regexp.MustCompile(`Tier (\d+)`)
+	match := re.FindStringSubmatch(category)
+
+	if len(match) > 1 {
+		// match[1] will contain the tier number
+		return match[1]
+	}
+	return ""
 }
 
 func processRecipe(s *goquery.Selection) string {
