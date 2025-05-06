@@ -1,15 +1,19 @@
 import { useEffect, useState } from "react";
+import { useAppContext } from "./hooks/AppContext";
 import Spinner from "./components/Spinner";
 function App() {
     const [message, setMessage] = useState<string | null>(null);
     const [error, setError] = useState<string | null>(null);
-    const [isScraping, setIsScraping] = useState(false);
+    const [globalState, setGlobalState] = useAppContext();
 
     useEffect(() => {
         (async () => {
             try {
                 setMessage("Loading Recipes...");
-                setIsScraping(true);
+                setGlobalState({
+                    ...globalState,
+                    isScraping: true,
+                });
                 const response = await fetch("/api/scrape");
                 if (!response.ok) {
                     throw new Error("Network response was not ok");
@@ -22,7 +26,10 @@ function App() {
                 setMessage(null);
                 setError("Failed to connect to the backend. Is it running?");
             } finally {
-                setIsScraping(false);
+                setGlobalState({
+                    ...globalState,
+                    isScraping: false,
+                });
             }
         })();
     }, []);
@@ -66,7 +73,7 @@ function App() {
                     Little Alchemy 2 Recipe Finder!
                 </h2>
             </div>
-            {isScraping && <Spinner />}
+            {globalState.isScraping && <Spinner />}
             {message && (
                 <div className="my-5 p-4 bg-green-100 rounded-md">
                     <p className="font-medium">
