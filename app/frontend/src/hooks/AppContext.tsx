@@ -4,7 +4,9 @@ interface AppState {
     isScraping: boolean;
     target: string | null;
     traversal: string | null;
+    //traversal dfs/bfs
     direction: string | null;
+    // direction top->down / bottom->up
     recipes: any[];
 }
 
