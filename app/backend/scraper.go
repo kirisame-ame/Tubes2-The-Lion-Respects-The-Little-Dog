@@ -18,6 +18,7 @@ type Entry struct {
 	Category string
 	Element  string
 	Recipes  string
+	ImageURL string
 }
 
 func scrape() bool{
@@ -72,7 +73,15 @@ func scrape() bool{
 				return
 			}
 
+			// Extract element name
 			element := html.UnescapeString(strings.TrimSpace(cells.Eq(0).Text()))
+
+			// Extract image URL from <a> tag
+			imageURL := ""
+			link := cells.Eq(0).Find("a.mw-file-description.image")
+			if href, exists := link.Attr("href"); exists {
+				imageURL = href
+			}
 
 			// Process recipes from the second cell
 			recipeCell := cells.Eq(1)
@@ -99,6 +108,7 @@ func scrape() bool{
 				Category: category,
 				Element:  element,
 				Recipes:  strings.Join(uniqueRecipes, " | "),
+				ImageURL: imageURL,
 			})
 		})
 	})
@@ -119,14 +129,14 @@ func scrape() bool{
 	defer csvWriter.Flush()
 
 	// Write header
-	if err := csvWriter.Write([]string{"Category", "Element", "Recipes"}); err != nil {
+	if err := csvWriter.Write([]string{"Category", "Element", "Recipes", "ImageURL"}); err != nil {
 		log.Fatal(err)
 		return false
 	}
 
 	// Write rows
 	for _, entry := range data {
-		row := []string{entry.Category, entry.Element, entry.Recipes}
+		row := []string{entry.Category, entry.Element, entry.Recipes, entry.ImageURL}
 		if err := csvWriter.Write(row); err != nil {
 			log.Fatal(err)
 			return false
