@@ -91,7 +91,7 @@ function App() {
                     <p className="font-medium">❌ {error}</p>
                 </div>
             )}
-            <div>
+            <div className="flex gap-x-5">
                 <ComboBox options={["DFS", "BFS"]} param={"target"} />
                 <ComboBox options={["DFS", "BFS"]} param={"traversal"} />
                 <ComboBox
