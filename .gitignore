@@ -1,2 +1,3 @@
 app/backend/.air.toml
 app/backend/tmp
+/app/backend/tmp
