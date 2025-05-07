@@ -3,6 +3,10 @@ import { useAppContext } from "./hooks/AppContext";
 import Spinner from "./components/Spinner";
 import { ComboBox } from "./components/ComboBox";
 import CustomImage from "./components/CustomImage";
+import bfsImage from "/src/assets/images/bfs.png";
+import dfsImage from "/src/assets/images/dfs.png";
+import upArrowImage from "/src/assets/images/up_arrow.png";
+import downArrowImage from "/src/assets/images/down_arrow.png";
 interface Entry {
     category: string;
     element: string;
@@ -136,9 +140,11 @@ function App() {
                     <ComboBox options={["DFS", "BFS"]} param={"traversal"} />
                     <CustomImage
                         url={
-                            "/images/" +
-                            globalState.traversal?.toLowerCase() +
-                            ".png"
+                            globalState.traversal === "DFS"
+                                ? dfsImage
+                                : globalState.traversal === "BFS"
+                                  ? bfsImage
+                                  : undefined
                         }
                     ></CustomImage>
                 </div>
@@ -146,9 +152,11 @@ function App() {
                     <ComboBox options={["Up", "Down"]} param={"direction"} />
                     <CustomImage
                         url={
-                            "/images/" +
-                            globalState.direction?.toLowerCase() +
-                            "_arrow.png"
+                            globalState.direction === "Up"
+                                ? upArrowImage
+                                : globalState.direction === "Down"
+                                  ? downArrowImage
+                                  : undefined
                         }
                     ></CustomImage>
                 </div>
