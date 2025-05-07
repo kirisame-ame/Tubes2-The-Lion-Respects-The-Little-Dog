@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useAppContext } from "./hooks/AppContext";
 import Spinner from "./components/Spinner";
 import { ComboBox } from "./components/ComboBox";
+import CustomImage from "./components/CustomImage";
 interface Entry {
     category: string;
     element: string;
@@ -108,7 +109,12 @@ function App() {
                     Little Alchemy 2 Recipe Finder!
                 </h2>
             </div>
-            {globalState.isScraping && <Spinner />}
+            {globalState.isScraping && (
+                <div>
+                    <h1 className="text-2xl text-xyellow">Loading Data</h1>
+                    <Spinner />
+                </div>
+            )}
             {message && (
                 <div className="my-5 p-4 bg-green-100 rounded-md">
                     <p className="font-medium">
@@ -126,22 +132,20 @@ function App() {
                 </div>
             )}
             <div className="flex gap-x-5">
-                <div className="flex flex-col items-center">
+                <div className="flex flex-col gap-y-4 items-center">
                     <ComboBox
                         options={globalState.recipes.map(
                             (entry) => entry.element,
                         )}
                         param={"target"}
                     />
-                    <img
-                        src={
+                    <CustomImage
+                        url={
                             globalState.recipes.find(
                                 (entry) => entry.element === globalState.target,
                             )?.imageUrl
                         }
-                        alt="target"
-                        className="w-32 h-32 mt-2 rounded-md shadow-md"
-                    ></img>
+                    />
                 </div>
 
                 <ComboBox options={["DFS", "BFS"]} param={"traversal"} />

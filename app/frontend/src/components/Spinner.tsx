@@ -1,9 +1,6 @@
 function Spinner() {
     return (
         <div className="flex flex-col items-center">
-            <h1 className="text-4xl text-center text-white font-bold mb-4">
-                Loading Recipes
-            </h1>
             <svg
                 className="animate-spin h-24 w-24 text-xyellow"
                 xmlns="http://www.w3.org/2000/svg"
