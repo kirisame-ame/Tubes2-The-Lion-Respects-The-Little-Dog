@@ -12,7 +12,7 @@ interface AppState {
     traversal: string | null;
     //traversal dfs/bfs
     direction: string | null;
-    // direction top->down / bottom->up
+    // direction up/down
     recipes: Entry[];
 }
 

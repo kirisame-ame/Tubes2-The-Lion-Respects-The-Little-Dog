@@ -100,7 +100,7 @@ function App() {
         }
     };
     return (
-        <div className="mx-auto p-6 bg-cover bg-center bg-xpurple h-screen flex flex-col items-center font-sans">
+        <div className="mx-auto my-auto p-6 bg-cover bg-center bg-xpurple min-h-screen flex flex-col items-center font-sans">
             <div>
                 <h1 className="text-3xl font-bold mb-6 text-center text-xyellow">
                     Little Alchetree!
@@ -110,28 +110,13 @@ function App() {
                 </h2>
             </div>
             {globalState.isScraping && (
-                <div>
-                    <h1 className="text-2xl text-xyellow">Loading Data</h1>
+                <div className="mb-3">
+                    <h1 className="text-2xl text-xyellow mb-3">Loading Data</h1>
                     <Spinner />
                 </div>
             )}
-            {message && (
-                <div className="my-5 p-4 bg-green-100 rounded-md">
-                    <p className="font-medium">
-                        ✅ Backend connection successful!
-                    </p>
-                    <p>
-                        <strong>{message}</strong>
-                    </p>
-                </div>
-            )}
 
-            {error && (
-                <div className="my-5 p-4 bg-red-100 rounded-md">
-                    <p className="font-medium">❌ {error}</p>
-                </div>
-            )}
-            <div className="flex gap-x-5">
+            <div className="flex flex-col gap-x-5 md:flex-row">
                 <div className="flex flex-col gap-y-4 items-center">
                     <ComboBox
                         options={globalState.recipes.map(
@@ -147,12 +132,26 @@ function App() {
                         }
                     />
                 </div>
-
-                <ComboBox options={["DFS", "BFS"]} param={"traversal"} />
-                <ComboBox
-                    options={["Top-down", "Bottom-up"]}
-                    param={"direction"}
-                />
+                <div className="flex flex-col gap-y-4 items-center">
+                    <ComboBox options={["DFS", "BFS"]} param={"traversal"} />
+                    <CustomImage
+                        url={
+                            "/images/" +
+                            globalState.traversal?.toLowerCase() +
+                            ".png"
+                        }
+                    ></CustomImage>
+                </div>
+                <div className="flex flex-col gap-y-4 items-center">
+                    <ComboBox options={["Up", "Down"]} param={"direction"} />
+                    <CustomImage
+                        url={
+                            "/images/" +
+                            globalState.direction?.toLowerCase() +
+                            "_arrow.png"
+                        }
+                    ></CustomImage>
+                </div>
             </div>
             <div className="flex flex-col justify-center mt-8 text-xyellow">
                 <h1>Target: {globalState.target}</h1>
@@ -172,6 +171,24 @@ function App() {
                 >
                     Call Jovkon API
                 </button>
+            </div>
+            <div className="flex invisible md:visible absolute bottom-0 left-max right-0 justify-center mt-8 mx-6">
+                {message && (
+                    <div className="my-5 p-4 bg-green-100 rounded-md">
+                        <p className="font-medium">
+                            ✅ Backend connection successful!
+                        </p>
+                        <p>
+                            <strong>{message}</strong>
+                        </p>
+                    </div>
+                )}
+
+                {error && (
+                    <div className="my-5 p-4 bg-red-100 rounded-md">
+                        <p className="font-medium">❌ {error}</p>
+                    </div>
+                )}
             </div>
         </div>
     );
