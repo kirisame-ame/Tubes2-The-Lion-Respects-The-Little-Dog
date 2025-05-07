@@ -94,7 +94,7 @@ func scrape() bool{
 			imageURL := ""
 			link := cells.Eq(0).Find("a.mw-file-description.image")
 			if href, exists := link.Attr("href"); exists {
-				imageURL = href
+				imageURL = strings.Split(href, "/revision")[0]
 			}
 
 			// Process recipes from the second cell

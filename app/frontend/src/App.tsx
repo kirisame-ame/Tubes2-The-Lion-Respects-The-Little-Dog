@@ -126,10 +126,24 @@ function App() {
                 </div>
             )}
             <div className="flex gap-x-5">
-                <ComboBox
-                    options={globalState.recipes.map((entry) => entry.element)}
-                    param={"target"}
-                />
+                <div className="flex flex-col items-center">
+                    <ComboBox
+                        options={globalState.recipes.map(
+                            (entry) => entry.element,
+                        )}
+                        param={"target"}
+                    />
+                    <img
+                        src={
+                            globalState.recipes.find(
+                                (entry) => entry.element === globalState.target,
+                            )?.imageUrl
+                        }
+                        alt="target"
+                        className="w-32 h-32 mt-2 rounded-md shadow-md"
+                    ></img>
+                </div>
+
                 <ComboBox options={["DFS", "BFS"]} param={"traversal"} />
                 <ComboBox
                     options={["Top-down", "Bottom-up"]}
