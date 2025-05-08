@@ -2,11 +2,13 @@ import { useEffect, useState } from "react";
 import { useAppContext } from "./hooks/AppContext";
 import Spinner from "./components/Spinner";
 import { ComboBox } from "./components/ComboBox";
+import CustomSwitch from "./components/CustomSwitch";
+
 import CustomImage from "./components/CustomImage";
 import bfsImage from "/src/assets/images/bfs.png";
 import dfsImage from "/src/assets/images/dfs.png";
 import upArrowImage from "/src/assets/images/up_arrow.png";
-import downArrowImage from "/src/assets/images/down_arrow.png";
+import bidirecImage from "/src/assets/images/bidirectional.png";
 interface Entry {
     category: string;
     element: string;
@@ -18,6 +20,7 @@ function App() {
     const [error, setError] = useState<string | null>(null);
     const [globalState, setGlobalState] = useAppContext();
 
+    // Load recipes on component mount i.e. Page's First Render
     useEffect(() => {
         (async () => {
             try {
@@ -75,7 +78,7 @@ function App() {
             }
             const data = await response.json();
             setMessage(data.message);
-            setError(null); // Clear any previous error
+            setError(null);
         } catch (error) {
             console.error("Error fetching data:", error);
             setError("Failed to connect to the backend. Is it running?");
@@ -90,19 +93,32 @@ function App() {
                     "&traversal=" +
                     globalState.traversal +
                     "&direction=" +
-                    globalState.direction,
+                    globalState.direction +
+                    "&isMulti=" +
+                    globalState.isMultiSearch +
+                    "&num=" +
+                    globalState.searchNumber,
             );
             if (!response.ok) {
                 throw new Error("Network response was not ok");
             }
             const data = await response.json();
             setMessage(data.results[0]["Category"]);
-            setError(null); // Clear any previous error
+            setError(null);
         } catch (error) {
             console.error("Error fetching data:", error);
             setError("Failed to connect to the backend. Is it running?");
         }
     };
+    const handleSearchNumberChange = (
+        e: React.ChangeEvent<HTMLInputElement>,
+    ) => {
+        setGlobalState({
+            ...globalState,
+            searchNumber: parseInt(e.target.value, 10),
+        });
+    };
+
     return (
         <div className="mx-auto my-auto p-6 bg-cover bg-center bg-xpurple min-h-screen flex flex-col items-center font-sans">
             <div>
@@ -149,22 +165,53 @@ function App() {
                     ></CustomImage>
                 </div>
                 <div className="flex flex-col gap-y-4 items-center">
-                    <ComboBox options={["Up", "Down"]} param={"direction"} />
+                    <ComboBox
+                        options={["Single", "Bidirectional"]}
+                        param={"direction"}
+                    />
                     <CustomImage
                         url={
-                            globalState.direction === "Up"
+                            globalState.direction === "Single"
                                 ? upArrowImage
-                                : globalState.direction === "Down"
-                                  ? downArrowImage
+                                : globalState.direction === "Bidirectional"
+                                  ? bidirecImage
                                   : undefined
                         }
                     ></CustomImage>
                 </div>
             </div>
-            <div className="flex flex-col justify-center mt-8 text-xyellow">
+            <div className="flex flex-col items-center">
+                <CustomSwitch label="Find Multiple Recipes" />
+                <div
+                    className={`flex items-center mt-2 transition-opacity duration-300 ${
+                        globalState.isMultiSearch ? "opacity-100" : "opacity-0"
+                    }`}
+                >
+                    <label className="text-xyellow">
+                        Number of Recipes to Find:
+                    </label>
+                    <input
+                        type="number"
+                        min="1"
+                        className="ml-2 w-10 text-center rounded-sm"
+                        placeholder="1"
+                        value={globalState.searchNumber ?? ""}
+                        onChange={handleSearchNumberChange}
+                    />
+                </div>
+            </div>
+            <div className="flex flex-col justify-center mt-5 text-xyellow">
                 <h1>Target: {globalState.target}</h1>
                 <h1>Traversal: {globalState.traversal}</h1>
                 <h1>Direction: {globalState.direction}</h1>
+                <h1>
+                    Multi Search: {globalState.isMultiSearch ? "Yes" : "No"}
+                </h1>
+                <h1
+                    className={`${globalState.isMultiSearch ? "opacity-100" : "opacity-0"}`}
+                >
+                    Search Number: {globalState.searchNumber ?? "Not Set"}
+                </h1>
             </div>
             <div className="flex justify-center mt-8">
                 <button

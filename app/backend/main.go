@@ -55,6 +55,8 @@ func main() {
 			target := c.Query("target")
 			traversal := c.Query("traversal")
 			direction := c.Query("direction")
+			isMulti := c.Query("isMulti")
+			searchNum := c.Query("num")
 			if target == "" {
 				c.JSON(http.StatusBadRequest, gin.H{"error": "Target parameter is required"})
 				return
@@ -66,7 +68,15 @@ func main() {
 			if direction == ""{
 				c.JSON(http.StatusBadRequest, gin.H{"error": "Direction parameter is required"})
 			}
-			results := search(target,traversal,direction)
+			if isMulti == "" {
+				c.JSON(http.StatusBadRequest, gin.H{"error": "isMulti parameter is required"})
+				return
+			}
+			if searchNum == "" {
+				c.JSON(http.StatusBadRequest, gin.H{"error": "searchNum parameter is required"})
+				return
+			}
+			results := search(target,traversal,direction, isMulti, searchNum)
 			if len(results) == 0 {
 				c.JSON(http.StatusNotFound, gin.H{"message": "No results found"})
 			} else {

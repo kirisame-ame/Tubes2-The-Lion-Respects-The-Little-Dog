@@ -12,8 +12,11 @@ interface AppState {
     traversal: string | null;
     //traversal dfs/bfs
     direction: string | null;
-    // direction up/down
+    // direction single/bidirectional
     recipes: Entry[];
+    isMultiSearch: boolean;
+    searchNumber?: number;
+    // number of search results to show
 }
 
 type AppContextType = [
@@ -30,6 +33,8 @@ export function AppProvider({ children }: { children: ReactNode }) {
         traversal: null,
         direction: null,
         recipes: [],
+        isMultiSearch: false,
+        searchNumber: 1,
     });
 
     return (
