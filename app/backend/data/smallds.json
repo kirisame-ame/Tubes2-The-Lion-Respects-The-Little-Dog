@@ -1,0 +1,280 @@
+[
+  {
+    "Tier": "1",
+    "Items": [
+      {
+        "Element": "Dust",
+        "Recipes": [
+          [
+            "earth",
+            "air"
+          ],
+          [
+            "soil",
+            "air"
+          ],
+          [
+            "land",
+            "air"
+          ]
+        ],
+        "ImageUrl": "https://static.wikia.nocookie.net/little-alchemy/images/a/a4/Dust_2.svg"
+      },
+      {
+        "Element": "Energy",
+        "Recipes": [
+          [
+            "fire",
+            "fire"
+          ],
+          [
+            "fire",
+            "science"
+          ],
+          [
+            "fire",
+            "atmosphere"
+          ],
+          [
+            "heat",
+            "science"
+          ]
+        ],
+        "ImageUrl": "https://static.wikia.nocookie.net/little-alchemy/images/e/ed/Energy_2.svg"
+      },
+      {
+        "Element": "Land",
+        "Recipes": [
+          [
+            "soil",
+            "soil"
+          ],
+          [
+            "soil",
+            "big"
+          ],
+          [
+            "continent",
+            "small"
+          ],
+          [
+            "earth",
+            "earth"
+          ],
+          [
+            "earth",
+            "stone"
+          ]
+        ],
+        "ImageUrl": "https://static.wikia.nocookie.net/little-alchemy/images/9/9b/Land_2.svg"
+      },
+      {
+        "Element": "Lava",
+        "Recipes": [
+          [
+            "earth",
+            "fire"
+          ],
+          [
+            "earth",
+            "heat"
+          ],
+          [
+            "earth",
+            "liquid"
+          ]
+        ],
+        "ImageUrl": "https://static.wikia.nocookie.net/little-alchemy/images/8/85/Lava_2.svg"
+      },
+      {
+        "Element": "Mist",
+        "Recipes": [
+          [
+            "air",
+            "water"
+          ],
+          [
+            "air",
+            "steam"
+          ],
+          [
+            "air",
+            "rain"
+          ]
+        ],
+        "ImageUrl": "https://static.wikia.nocookie.net/little-alchemy/images/e/e3/Mist_2.svg"
+      },
+      {
+        "Element": "Mud",
+        "Recipes": [
+          [
+            "water",
+            "earth"
+          ],
+          [
+            "water",
+            "soil"
+          ]
+        ],
+        "ImageUrl": "https://static.wikia.nocookie.net/little-alchemy/images/8/8b/Mud_2.svg"
+      },
+      {
+        "Element": "Pressure",
+        "Recipes": [
+          [
+            "air",
+            "air"
+          ],
+          [
+            "air",
+            "atmosphere"
+          ],
+          [
+            "atmosphere",
+            "atmosphere"
+          ],
+          [
+            "geyser",
+            "science"
+          ],
+          [
+            "ocean",
+            "ocean"
+          ]
+        ],
+        "ImageUrl": "https://static.wikia.nocookie.net/little-alchemy/images/7/7a/Pressure_2.svg"
+      },
+      {
+        "Element": "Puddle",
+        "Recipes": [
+          [
+            "water",
+            "water"
+          ],
+          [
+            "pond",
+            "small"
+          ]
+        ],
+        "ImageUrl": "https://static.wikia.nocookie.net/little-alchemy/images/c/c3/Puddle_2.svg"
+      },
+      {
+        "Element": "Smoke",
+        "Recipes": [
+          [
+            "earth",
+            "gas"
+          ],
+          [
+            "campfire",
+            "water"
+          ],
+          [
+            "campfire",
+            "time"
+          ],
+          [
+            "campfire",
+            "storm"
+          ],
+          [
+            "fire",
+            "plant"
+          ],
+          [
+            "fire",
+            "grass"
+          ],
+          [
+            "fire",
+            "tree"
+          ],
+          [
+            "fire",
+            "wood"
+          ],
+          [
+            "fire",
+            "air"
+          ]
+        ],
+        "ImageUrl": "https://static.wikia.nocookie.net/little-alchemy/images/3/32/Smoke_2.svg"
+      },
+      {
+        "Element": "Steam",
+        "Recipes": [
+          [
+            "water",
+            "heat"
+          ],
+          [
+            "water",
+            "fire"
+          ],
+          [
+            "water",
+            "lava"
+          ],
+          [
+            "water",
+            "gas"
+          ]
+        ],
+        "ImageUrl": "https://static.wikia.nocookie.net/little-alchemy/images/9/95/Steam_2.svg"
+      }
+    ]
+  }, 
+  {
+    "Tier": "2",
+    "Items": [
+      {
+        "Element": "Brick",
+        "Recipes": [
+          [
+            "mud",
+            "fire"
+          ],
+          [
+            "mud",
+            "sun"
+          ],
+          [
+            "clay",
+            "fire"
+          ],
+          [
+            "clay",
+            "sun"
+          ],
+          [
+            "clay",
+            "stone"
+          ]
+        ],
+        "ImageUrl": "https://static.wikia.nocookie.net/little-alchemy/images/6/64/Brick_2.svg"
+      },
+      {
+        "Element": "Continent",
+        "Recipes": [
+          [
+            "land",
+            "big"
+          ],
+          [
+            "land",
+            "land"
+          ],
+          [
+            "land",
+            "earth"
+          ],
+          [
+            "mountain range",
+            "mountain range"
+          ]
+        ],
+        "ImageUrl": "https://static.wikia.nocookie.net/little-alchemy/images/4/4d/Continent_2.svg"
+      }
+    ]
+    }
+]
