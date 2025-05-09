@@ -10,9 +10,7 @@ interface AppState {
     isScraping: boolean;
     target: string | null;
     traversal: string | null;
-    //traversal dfs/bfs
-    direction: string | null;
-    // direction single/bidirectional
+    //traversal dfs/bfs/bidirectional
     recipes: Entry[];
     isMultiSearch: boolean;
     isShortestPath: boolean;
@@ -32,7 +30,6 @@ export function AppProvider({ children }: { children: ReactNode }) {
         isScraping: true,
         target: null,
         traversal: null,
-        direction: null,
         recipes: [],
         isMultiSearch: false,
         isShortestPath: false,

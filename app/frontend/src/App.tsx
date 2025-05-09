@@ -7,7 +7,6 @@ import CustomSwitch from "./components/CustomSwitch";
 import CustomImage from "./components/CustomImage";
 import bfsImage from "/src/assets/images/bfs.png";
 import dfsImage from "/src/assets/images/dfs.png";
-import upArrowImage from "/src/assets/images/up_arrow.png";
 import bidirecImage from "/src/assets/images/bidirectional.png";
 interface Entry {
     category: string;
@@ -92,8 +91,6 @@ function App() {
                     globalState.target +
                     "&traversal=" +
                     globalState.traversal +
-                    "&direction=" +
-                    globalState.direction +
                     "&isMulti=" +
                     globalState.isMultiSearch +
                     "&num=" +
@@ -103,7 +100,7 @@ function App() {
                 throw new Error("Network response was not ok");
             }
             const data = await response.json();
-            setMessage(data.results[0]["Category"]);
+            setMessage(data.results[0]["Element"]);
             setError(null);
         } catch (error) {
             console.error("Error fetching data:", error);
@@ -153,45 +150,40 @@ function App() {
                     />
                 </div>
                 <div className="flex flex-col gap-y-4 items-center">
-                    <ComboBox options={["DFS", "BFS"]} param={"traversal"} />
+                    <ComboBox
+                        options={["DFS", "BFS", "Bidirectional"]}
+                        param={"traversal"}
+                    />
                     <CustomImage
                         url={
                             globalState.traversal === "DFS"
                                 ? dfsImage
                                 : globalState.traversal === "BFS"
                                   ? bfsImage
-                                  : undefined
-                        }
-                    ></CustomImage>
-                </div>
-                <div className="flex flex-col gap-y-4 items-center">
-                    <ComboBox
-                        options={["Single", "Bidirectional"]}
-                        param={"direction"}
-                    />
-                    <CustomImage
-                        url={
-                            globalState.direction === "Single"
-                                ? upArrowImage
-                                : globalState.direction === "Bidirectional"
-                                  ? bidirecImage
-                                  : undefined
+                                  : globalState.traversal === "Bidirectional"
+                                    ? bidirecImage
+                                    : undefined
                         }
                     ></CustomImage>
                 </div>
             </div>
-            <div className="flex flex-col gap-y-2">
+            <div className="flex flex-col mt-5 gap-y-2">
                 <CustomSwitch
                     label="Find Shortest Path"
                     param="isShortestPath"
                 ></CustomSwitch>
                 <CustomSwitch
+                    className={`${
+                        globalState.isShortestPath
+                            ? "pointer-events-none opacity-15"
+                            : ""
+                    }`}
                     label="Find Multiple Recipes"
                     param="isMultiSearch"
                 />
                 <div
                     className={`flex items-center transition-opacity duration-300 ${
-                        globalState.isMultiSearch
+                        globalState.isMultiSearch && !globalState.isShortestPath
                             ? "opacity-100"
                             : "opacity-0 invisible"
                     }`}
@@ -212,7 +204,6 @@ function App() {
             <div className="flex flex-col justify-center mt-5 text-xyellow">
                 <h1>Target: {globalState.target}</h1>
                 <h1>Traversal: {globalState.traversal}</h1>
-                <h1>Direction: {globalState.direction}</h1>
                 <h1>
                     Multi Search: {globalState.isMultiSearch ? "Yes" : "No"}
                 </h1>

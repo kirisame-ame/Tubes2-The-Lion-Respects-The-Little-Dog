@@ -4,7 +4,7 @@ import (
 	"log"
 	"strconv"
 )
-func search(target string, traversal string, direction string, isMulti string, num string) []Entry {
+func search(target string, traversal string, isMulti string, num string) []Entry {
 	numInt, err := strconv.Atoi(num)
 	if err != nil {
 		log.Printf("Error converting num to int: %v", err)
@@ -17,12 +17,12 @@ func search(target string, traversal string, direction string, isMulti string, n
 	}
 	if isMultiBool {
 		// Handle multi search logic here
-		log.Printf("Performing multi search for target: %s, traversal: %s, direction: %s, numSearch: %d",target, traversal, direction,numInt)
+		log.Printf("Performing multi search for target: %s, traversal: %s, numSearch: %d",target, traversal,numInt)
 	} else {
 		// Handle single search logic here
-		log.Printf("Performing single search for target: %s, traversal: %s, direction: %s", target, traversal, direction)
+		log.Printf("Performing single search for target: %s, traversal: %s", target, traversal,)
 	}
 	return []Entry{
-		{target, traversal, direction,"https://example.com/image.png"},
+		{"Tier 1", target,"料理する","https://example.com/image.png"},
 	}
 }
