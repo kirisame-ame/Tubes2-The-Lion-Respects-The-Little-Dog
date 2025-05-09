@@ -15,6 +15,7 @@ interface AppState {
     // direction single/bidirectional
     recipes: Entry[];
     isMultiSearch: boolean;
+    isShortestPath: boolean;
     searchNumber?: number;
     // number of search results to show
 }
@@ -34,6 +35,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
         direction: null,
         recipes: [],
         isMultiSearch: false,
+        isShortestPath: false,
         searchNumber: 1,
     });
 

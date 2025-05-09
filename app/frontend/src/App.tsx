@@ -180,11 +180,20 @@ function App() {
                     ></CustomImage>
                 </div>
             </div>
-            <div className="flex flex-col items-center">
-                <CustomSwitch label="Find Multiple Recipes" />
+            <div className="flex flex-col gap-y-2">
+                <CustomSwitch
+                    label="Find Shortest Path"
+                    param="isShortestPath"
+                ></CustomSwitch>
+                <CustomSwitch
+                    label="Find Multiple Recipes"
+                    param="isMultiSearch"
+                />
                 <div
-                    className={`flex items-center mt-2 transition-opacity duration-300 ${
-                        globalState.isMultiSearch ? "opacity-100" : "opacity-0"
+                    className={`flex items-center transition-opacity duration-300 ${
+                        globalState.isMultiSearch
+                            ? "opacity-100"
+                            : "opacity-0 invisible"
                     }`}
                 >
                     <label className="text-xyellow">
