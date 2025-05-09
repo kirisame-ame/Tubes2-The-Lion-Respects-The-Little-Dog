@@ -4,10 +4,13 @@ import (
 	"encoding/json"
 	"fmt"
 	"os"
+	"strconv"
 	"strings"
+	"sync"
 )
 
 type Element struct {
+    Tier    string     `json:"Tier"`
     Name    string     `json:"Element"`
     Recipes [][]string `json:"Recipes"`
 }
@@ -32,7 +35,11 @@ func loadEntries(path string) ([]Element, error) {
     }
     var all []Element
     for _, g := range groups {
-        all = append(all, g.Items...)
+        for _, item := range g.Items {
+            // Assign group Tier to each element
+            item.Tier = g.Tier
+            all = append(all, item)
+        }
     }
     return all, nil
 }
@@ -45,7 +52,15 @@ func buildIndex(entries []Element) map[string]Element {
     return idx
 }
 
-func buildRecipeTree(product string, idx map[string]Element, visited map[string]bool) *RecipeNode {
+func isBase(s string) bool {
+    switch strings.ToLower(s) {
+    case "air", "earth", "fire", "water":
+        return true
+    }
+    return false
+}
+
+func buildRecipeTree(product string, idx map[string]Element, visited map[string]bool,  Nrecipe int, countRecipe *int, countMu *sync.Mutex) *RecipeNode {
     key := strings.ToLower(product)
     if visited[key] {
         return nil
@@ -57,42 +72,137 @@ func buildRecipeTree(product string, idx map[string]Element, visited map[string]
     if !ok {
         return nil
     }
+
+    prodTier, err := strconv.Atoi(e.Tier)
+    if err != nil {
+        prodTier = 0
+    }
+
     root := &RecipeNode{Product: product}
+
+    var (
+        wg  sync.WaitGroup
+        mu  sync.Mutex
+    )
+
     for _, rec := range e.Recipes {
         ing1, ing2 := rec[0], rec[1]
+
+        countMu.Lock()
+        if (*countRecipe) >= Nrecipe {
+            countMu.Unlock()
+            break
+        }
+        countMu.Unlock()
+
+        wg.Add(1)
+        go func(ing1, ing2 string) {
+        defer wg.Done()
+
+        if isBase(ing1) && isBase(ing2) {
+            
+            countMu.Lock()
+            (*countRecipe)++
+            reached := *countRecipe
+            countMu.Unlock()
+
+            
+            if reached > Nrecipe {
+                return
+            }
+
+            mu.Lock()
+            root.Children = append(root.Children, &RecipeNode{
+                Ingredients: [2]string{ing1, ing2},
+                Product:     product,
+            })
+            mu.Unlock()
+            return
+        }
+
         combo := &RecipeNode{
             Ingredients: [2]string{ing1, ing2},
             Product:     product,
         }
-        if sub := buildRecipeTree(ing1, idx, visited); sub != nil {
+
+        childelmt1, ok1 := idx[strings.ToLower(ing1)]
+        childelmt2, ok2 := idx[strings.ToLower(ing2)]
+        var tier1 int
+        if ok1 {
+            if t, err := strconv.Atoi(childelmt1.Tier); err == nil {
+                tier1 = t
+            } else {
+                tier1 = 0
+            }
+        } else {
+            tier1 = 0
+        }
+
+        var tier2 int
+        if ok2 {
+            if t, err := strconv.Atoi(childelmt2.Tier); err == nil {
+                tier2 = t
+            } else {
+                tier2 = 0
+            }
+        } else {
+            tier2 = 0
+        }
+
+        visCopy := make(map[string]bool, len(visited))
+        for k, v := range visited {
+            visCopy[k] = v
+        }
+
+        if(tier1 < prodTier){
+        if sub := buildRecipeTree(ing1, idx, visCopy, Nrecipe, countRecipe, countMu); sub != nil {
             combo.Children = append(combo.Children, sub)
         }
-        if sub := buildRecipeTree(ing2, idx, visited); sub != nil {
+        }
+
+        visCopy2 := make(map[string]bool, len(visited))
+            for k, v := range visited {
+                visCopy2[k] = v
+            }
+
+        if(tier2 < prodTier){
+        if sub := buildRecipeTree(ing2, idx, visCopy2, Nrecipe, countRecipe, countMu); sub != nil {
             combo.Children = append(combo.Children, sub)
         }
-        root.Children = append(root.Children, combo)
-    }
+        }
+        mu.Lock()
+            root.Children = append(root.Children, combo)
+        mu.Unlock()
+    }(ing1, ing2)
+}
+
+    wg.Wait()
     return root
 }
 
+// Masukin Nrecipe pakai countRecipe saja
+func GetRecipe(RecipeRoot *RecipeNode, Nrecipe int) {
+}
 
-func printRecipeTree(n *RecipeNode, indent string) {
+func printRecipeTree(n *RecipeNode, indent string, count *int) {
     if n == nil {
         return
     }
+
+    (*count)++
     if n.Ingredients != [2]string{} {
         fmt.Printf("%s[%s + %s] → %s\n",
-            indent, n.Ingredients[0], n.Ingredients[1], n.Product)
+            indent, n.Ingredients[0] , n.Ingredients[1], n.Product)
     } else {
         fmt.Printf("%s%s\n", indent, n.Product)
     }
     for _, c := range n.Children {
-        printRecipeTree(c, indent+"  ")
+        printRecipeTree(c, indent+"  ", count)
     }
 }
 
 // func main() {
-//     entries, err := loadEntries("data/smallds.json")
+//     entries, err := loadEntries("data/elements.json")
 //     if err != nil {
 //         fmt.Println("Error loading entries:", err)
 //         return
@@ -100,11 +210,19 @@ func printRecipeTree(n *RecipeNode, indent string) {
 //     idx := buildIndex(entries)
 // 	visited := make(map[string]bool)
 
-//     target := "dust"
-//     tree := buildRecipeTree(target, idx,visited)
+//     target := "lake"
+//     Nrecipe := 3
+//     var countMu sync.Mutex
+//     countRecipe := 0
+
+//     tree := buildRecipeTree(target, idx,visited, Nrecipe, &countRecipe, &countMu)
 //     if tree == nil {
 //         fmt.Printf("No recipes for %q\n", target)
 //         return
 //     }
-//     printRecipeTree(tree, "-")
+
+
+//     var count int = 0
+//     printRecipeTree(tree, "-",&count)
+//         fmt.Printf("Nodes traversed: %d", count)
 // }
