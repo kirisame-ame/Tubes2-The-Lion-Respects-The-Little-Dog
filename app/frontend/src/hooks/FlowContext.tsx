@@ -1,5 +1,5 @@
 import React, { createContext, useContext, ReactNode } from "react";
-import { ReactFlowInstance, Node, Edge } from "@xyflow/react";
+import { ReactFlowInstance, Node } from "@xyflow/react";
 
 type FlowContextType = {
     reactFlowInstance: ReactFlowInstance | null;
