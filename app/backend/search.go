@@ -22,7 +22,14 @@ func search(target string, traversal string, isMulti string, num string) []Entry
 		// Handle single search logic here
 		log.Printf("Performing single search for target: %s, traversal: %s", target, traversal,)
 	}
-	return []Entry{
-		{"Tier 1", target,"料理する","https://example.com/image.png"},
+	result := getEntries()
+	for _, entry := range result {
+		if entry.Element == target {
+			return []Entry{
+				{entry.Category, entry.Element, entry.Recipes, entry.ImageUrl},
+			}
+		}
 	}
+	log.Printf("No entries found for target: %s", target)
+	return nil
 }
