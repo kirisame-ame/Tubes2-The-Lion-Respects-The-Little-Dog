@@ -48,7 +48,7 @@ function FlowGraph() {
         [setEdges],
     );
     return (
-        <div className="h-[500px] w-1/2 mt-4 relative">
+        <div className="h-[500px] w-full md:w-1/2 mt-4 relative">
             {nodes.length === 0 && (
                 <div className="absolute inset-0 flex items-center justify-center text-xyellow z-10">
                     Search for an element to see its recipe graph
