@@ -1,64 +1,10 @@
 package main
 
 import (
-	"encoding/json"
-	"fmt"
-	"os"
 	"strconv"
 	"strings"
 	"sync"
 )
-
-type Element struct {
-    Tier    string     `json:"Tier"`
-    Name    string     `json:"Element"`
-    Recipes [][]string `json:"Recipes"`
-}
-
-type RecipeNode struct {
-    Ingredients [2]string
-    Product     string
-    Children    []*RecipeNode
-}
-
-func loadEntries(path string) ([]Element, error) {
-    raw, err := os.ReadFile(path)
-    if err != nil {
-        return nil, err
-    }
-    var groups []struct {
-        Tier  string    `json:"Tier"`
-        Items []Element `json:"Items"`
-    }
-    if err := json.Unmarshal(raw, &groups); err != nil {
-        return nil, err
-    }
-    var all []Element
-    for _, g := range groups {
-        for _, item := range g.Items {
-            // Assign group Tier to each element
-            item.Tier = g.Tier
-            all = append(all, item)
-        }
-    }
-    return all, nil
-}
-
-func buildIndex(entries []Element) map[string]Element {
-    idx := make(map[string]Element, len(entries))
-    for _, e := range entries {
-        idx[strings.ToLower(e.Name)] = e
-    }
-    return idx
-}
-
-func isBase(s string) bool {
-    switch strings.ToLower(s) {
-    case "air", "earth", "fire", "water":
-        return true
-    }
-    return false
-}
 
 func buildRecipeTree(product string, idx map[string]Element, visited map[string]bool,  Nrecipe int, countRecipe *int, countMu *sync.Mutex) *RecipeNode {
     key := strings.ToLower(product)
@@ -78,7 +24,11 @@ func buildRecipeTree(product string, idx map[string]Element, visited map[string]
         prodTier = 0
     }
 
-    root := &RecipeNode{Product: product}
+    root := &RecipeNode{
+        Product:  product,
+        ImageUrl1: e.ImageUrl,
+        Ingredients: [2]string{"", ""},
+    }
 
     var (
         wg  sync.WaitGroup
@@ -88,10 +38,13 @@ func buildRecipeTree(product string, idx map[string]Element, visited map[string]
     for _, rec := range e.Recipes {
         ing1, ing2 := rec[0], rec[1]
 
+        url1 := idx[strings.ToLower(ing1)].ImageUrl
+        url2 := idx[strings.ToLower(ing2)].ImageUrl
+
         countMu.Lock()
         if (*countRecipe) >= Nrecipe {
             countMu.Unlock()
-            break
+            return root
         }
         countMu.Unlock()
 
@@ -115,6 +68,8 @@ func buildRecipeTree(product string, idx map[string]Element, visited map[string]
             root.Children = append(root.Children, &RecipeNode{
                 Ingredients: [2]string{ing1, ing2},
                 Product:     product,
+                ImageUrl1:    url1,
+                ImageUrl2:    url2,
             })
             mu.Unlock()
             return
@@ -123,6 +78,8 @@ func buildRecipeTree(product string, idx map[string]Element, visited map[string]
         combo := &RecipeNode{
             Ingredients: [2]string{ing1, ing2},
             Product:     product,
+            ImageUrl1:    url1,
+            ImageUrl2:    url2,
         }
 
         childelmt1, ok1 := idx[strings.ToLower(ing1)]
@@ -180,26 +137,6 @@ func buildRecipeTree(product string, idx map[string]Element, visited map[string]
     return root
 }
 
-// Masukin Nrecipe pakai countRecipe saja
-func GetRecipe(RecipeRoot *RecipeNode, Nrecipe int) {
-}
-
-func printRecipeTree(n *RecipeNode, indent string, count *int) {
-    if n == nil {
-        return
-    }
-
-    (*count)++
-    if n.Ingredients != [2]string{} {
-        fmt.Printf("%s[%s + %s] → %s\n",
-            indent, n.Ingredients[0] , n.Ingredients[1], n.Product)
-    } else {
-        fmt.Printf("%s%s\n", indent, n.Product)
-    }
-    for _, c := range n.Children {
-        printRecipeTree(c, indent+"  ", count)
-    }
-}
 
 // func main() {
 //     entries, err := loadEntries("data/elements.json")
