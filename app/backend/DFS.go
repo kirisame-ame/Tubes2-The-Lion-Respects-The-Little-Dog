@@ -75,15 +75,11 @@ func buildRecipeTree(product string, idx map[string]Element, visited map[string]
             return
         }
 
-        combo := &RecipeNode{
-            Ingredients: [2]string{ing1, ing2},
-            Product:     product,
-            ImageUrl1:    url1,
-            ImageUrl2:    url2,
-        }
+        
 
         childelmt1, ok1 := idx[strings.ToLower(ing1)]
         childelmt2, ok2 := idx[strings.ToLower(ing2)]
+
         var tier1 int
         if ok1 {
             if t, err := strconv.Atoi(childelmt1.Tier); err == nil {
@@ -104,6 +100,21 @@ func buildRecipeTree(product string, idx map[string]Element, visited map[string]
             }
         } else {
             tier2 = 0
+        }
+
+        if(tier1 >= prodTier) {
+            url1 = ""
+        }
+
+        if(tier2 >= prodTier) {
+            url2 = ""
+        }
+
+        combo := &RecipeNode{
+            Ingredients: [2]string{ing1, ing2},
+            Product:     product,
+            ImageUrl1:    url1,
+            ImageUrl2:    url2,
         }
 
         visCopy := make(map[string]bool, len(visited))

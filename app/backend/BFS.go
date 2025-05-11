@@ -66,6 +66,24 @@ func buildBFSRecipeTree(product string, idx map[string]Element, Nrecipe int, cou
 			url1 := idx[strings.ToLower(ing1)].ImageUrl
 			url2 := idx[strings.ToLower(ing2)].ImageUrl
 
+			tier1, err1 := strconv.Atoi(idx[strings.ToLower(ing1)].Tier)
+			tier2, err2 := strconv.Atoi(idx[strings.ToLower(ing2)].Tier)
+
+			if err1 != nil {
+				tier1 = 0
+			}
+			if err2 != nil {
+				tier2 = 0
+			}
+
+			if(tier1 >= prodTier){
+				url1 = ""
+			}
+
+			if(tier2 >= prodTier){
+				url2 = ""
+			}
+
 			combo := &RecipeNode{
                 Ingredients: [2]string{ing1, ing2},
                 Product:     curr.Product,
@@ -81,16 +99,6 @@ func buildBFSRecipeTree(product string, idx map[string]Element, Nrecipe int, cou
 				countMu.Lock()
             	(*countRecipe)++
 				countMu.Unlock()
-			}
-
-			tier1, err1 := strconv.Atoi(idx[strings.ToLower(ing1)].Tier)
-			tier2, err2 := strconv.Atoi(idx[strings.ToLower(ing2)].Tier)
-
-			if err1 != nil {
-				tier1 = 0
-			}
-			if err2 != nil {
-				tier2 = 0
 			}
 
 			var child []string
