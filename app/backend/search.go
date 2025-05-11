@@ -31,5 +31,5 @@ func search(target string, traversal string, isMulti string, num string) []Entry
 		}
 	}
 	log.Printf("No entries found for target: %s", target)
-	return nil
+	return []Entry {{"err", "err", "err", "err"}}
 }
