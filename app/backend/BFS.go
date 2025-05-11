@@ -71,9 +71,11 @@ func buildBFSRecipeTree(product string, idx map[string]Element, Nrecipe int, cou
 
 			if err1 != nil {
 				tier1 = 0
+				url1 = getBaseUrl(ing1)
 			}
 			if err2 != nil {
 				tier2 = 0
+				url2 = getBaseUrl(ing2)
 			}
 
 			if(tier1 >= prodTier){
