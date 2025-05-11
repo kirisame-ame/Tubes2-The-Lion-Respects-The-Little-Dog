@@ -25,8 +25,8 @@ type RecipeNode struct {
 type JSONNode struct {
     Product     string      `json:"product"`
     Ingredients [2]string   `json:"ingredients,omitempty"`
-    ImageUrl1   string      `json:"imageUrl1,omitempty"`
-    ImageUrl2   string      `json:"imageUrl2,omitempty"`
+    ImageUrl1   string      `json:"imageUrl1"`
+    ImageUrl2   string      `json:"imageUrl2"`
     Children    []*JSONNode `json:"children,omitempty"`
 }
 
@@ -76,6 +76,23 @@ func isBase(s string) bool {
 		return true
 	}
 	return false
+}
+
+func getBaseUrl(s string) string {
+    switch strings.ToLower(s){
+    case "air":
+        return "https://static.wikia.nocookie.net/little-alchemy/images/0/03/Air_2.svg"
+        
+    case "earth":
+        return "https://static.wikia.nocookie.net/little-alchemy/images/2/21/Earth_2.svg"
+        
+    case "fire":
+        return "https://static.wikia.nocookie.net/little-alchemy/images/0/01/Fire_2.svg"
+        
+    case "water":
+        return "https://static.wikia.nocookie.net/little-alchemy/images/f/f4/Water_2.svg"
+    }
+    return ""
 }
 
 func printRecipeTree(n *RecipeNode, indent string, count *int) {

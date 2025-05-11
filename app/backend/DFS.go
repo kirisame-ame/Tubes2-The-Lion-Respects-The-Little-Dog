@@ -65,6 +65,8 @@ func buildRecipeTree(product string, idx map[string]Element, visited map[string]
             }
 
             mu.Lock()
+            url1  =  getBaseUrl(ing1)
+            url2  =  getBaseUrl(ing2)
             root.Children = append(root.Children, &RecipeNode{
                 Ingredients: [2]string{ing1, ing2},
                 Product:     product,
