@@ -24,9 +24,16 @@ func buildRecipeTree(product string, idx map[string]Element, visited map[string]
         prodTier = 0
     }
 
+    var urlRoot string
+    if(depth == 0){
+        urlRoot = e.ImageUrl
+    } else {
+        urlRoot = ""
+    }
+
     root := &RecipeNode{
         Product:  product,
-        ImageUrl1: "",
+        ImageUrl1: urlRoot,
         Ingredients: [2]string{"", ""},
     }
 
