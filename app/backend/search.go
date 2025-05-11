@@ -3,8 +3,9 @@ package main
 import (
 	"log"
 	"strconv"
+	"sync"
 )
-func search(target string, traversal string, isMulti string, num string) []Entry {
+func search(target string, traversal string, isMulti string, num string) []byte{
 	numInt, err := strconv.Atoi(num)
 	if err != nil {
 		log.Printf("Error converting num to int: %v", err)
@@ -22,14 +23,58 @@ func search(target string, traversal string, isMulti string, num string) []Entry
 		// Handle single search logic here
 		log.Printf("Performing single search for target: %s, traversal: %s", target, traversal,)
 	}
-	result := getEntries()
-	for _, entry := range result {
-		if entry.Element == target {
-			return []Entry{
-				{entry.Category, entry.Element, entry.Recipes, entry.ImageUrl},
-			}
+
+	entries, err := loadEntries("data/elements.json")
+	if err != nil {
+        log.Fatalf("Gagal load entries: %v", err)
+    }
+	idx := buildIndex(entries)
+
+
+	if(traversal == "BFS") {
+		rootname := target
+		var countMu sync.Mutex
+		var Nrecipe int
+		countRecipe := 0
+		if(!isMultiBool) {
+			Nrecipe = 1
+		} else {
+			Nrecipe = numInt
 		}
+
+		tree := buildBFSRecipeTree(rootname, idx , Nrecipe, &countRecipe, &countMu)
+
+		treeResult := getSolutionTree(tree)
+		b, err := ExportTreeAsJSON(treeResult)
+		if err != nil {
+			log.Printf("Error exporting tree to JSON: %v", err)
+			return nil
+		}
+		log.Printf("%s",b)
+		return b
+
+	} else {
+
+		rootname := target
+		var countMu sync.Mutex
+		var Nrecipe int
+		countRecipe := 0
+		visited := make(map[string]bool)
+		if(!isMultiBool) {
+			Nrecipe = 1
+		} else {
+			Nrecipe = numInt
+		}
+
+		tree := buildRecipeTree(rootname, idx, visited, Nrecipe, &countRecipe, &countMu)
+		treeResult := getSolutionTree(tree)
+		b, err := ExportTreeAsJSON(treeResult)
+		if err != nil {
+			log.Printf("Error exporting tree to JSON: %v", err)
+			return nil
+		}
+
+		log.Printf("%s",b)
+		return b 
 	}
-	log.Printf("No entries found for target: %s", target)
-	return []Entry {{"err", "err", "err", "err"}}
 }
