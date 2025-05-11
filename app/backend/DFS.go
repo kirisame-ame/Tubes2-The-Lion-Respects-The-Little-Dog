@@ -6,17 +6,17 @@ import (
 	"sync"
 )
 
-func buildRecipeTree(product string, idx map[string]Element, visited map[string]bool,  Nrecipe int, countRecipe *int, countMu *sync.Mutex) *RecipeNode {
+func buildRecipeTree(product string, idx map[string]Element, visited map[string]bool,  Nrecipe int, countRecipe *int, countMu *sync.Mutex, depth int) (*RecipeNode, bool) {
     key := strings.ToLower(product)
     if visited[key] {
-        return nil
+        return nil, false
     }
     visited[key] = true
     defer delete(visited, key)
 
     e, ok := idx[key]
     if !ok {
-        return nil
+        return nil, true
     }
 
     prodTier, err := strconv.Atoi(e.Tier)
@@ -44,38 +44,13 @@ func buildRecipeTree(product string, idx map[string]Element, visited map[string]
         countMu.Lock()
         if (*countRecipe) >= Nrecipe {
             countMu.Unlock()
-            return root
+            return root, true
         }
         countMu.Unlock()
 
         wg.Add(1)
         go func(ing1, ing2 string) {
         defer wg.Done()
-
-        if isBase(ing1) && isBase(ing2) {
-            
-            countMu.Lock()
-            (*countRecipe)++
-            reached := *countRecipe
-            countMu.Unlock()
-
-            
-            if reached > Nrecipe {
-                return
-            }
-
-            mu.Lock()
-            url1  =  getBaseUrl(ing1)
-            url2  =  getBaseUrl(ing2)
-            root.Children = append(root.Children, &RecipeNode{
-                Ingredients: [2]string{ing1, ing2},
-                Product:     product,
-                ImageUrl1:    url1,
-                ImageUrl2:    url2,
-            })
-            mu.Unlock()
-            return
-        }
 
         
 
@@ -112,6 +87,13 @@ func buildRecipeTree(product string, idx map[string]Element, visited map[string]
             url2 = ""
         }
 
+        if(tier1 == 0 ){
+            url1 = getBaseUrl(ing1)
+        }
+        if(tier2 == 0 ){
+            url2 = getBaseUrl(ing2)
+        }
+
         combo := &RecipeNode{
             Ingredients: [2]string{ing1, ing2},
             Product:     product,
@@ -119,35 +101,49 @@ func buildRecipeTree(product string, idx map[string]Element, visited map[string]
             ImageUrl2:    url2,
         }
 
-        visCopy := make(map[string]bool, len(visited))
-        for k, v := range visited {
-            visCopy[k] = v
-        }
+        visCopy := copyMap(visited)
+        visCopy2 := copyMap(visited)
+
+        var leaf1, leaf2 bool
+        leaf1 = false
+        leaf2 = false
 
         if(tier1 < prodTier){
-        if sub := buildRecipeTree(ing1, idx, visCopy, Nrecipe, countRecipe, countMu); sub != nil {
+        depth ++
+        sub, l := buildRecipeTree(ing1, idx, visCopy, Nrecipe, countRecipe, countMu, depth)
+        leaf1 = l
+        if sub != nil {
             combo.Children = append(combo.Children, sub)
         }
         }
-
-        visCopy2 := make(map[string]bool, len(visited))
-            for k, v := range visited {
-                visCopy2[k] = v
-            }
 
         if(tier2 < prodTier){
-        if sub := buildRecipeTree(ing2, idx, visCopy2, Nrecipe, countRecipe, countMu); sub != nil {
+        depth ++
+        sub, l := buildRecipeTree(ing2, idx, visCopy2, Nrecipe, countRecipe, countMu, depth)
+        leaf2 = l
+        if sub != nil {
             combo.Children = append(combo.Children, sub)
         }
         }
+
+        if(depth == 0 ){
+            if(leaf1 && leaf2) {
+            countMu.Lock()
+            (*countRecipe)++
+            countMu.Unlock()
+        }
+        }
+
+        if(leaf1 && leaf2) {
         mu.Lock()
             root.Children = append(root.Children, combo)
         mu.Unlock()
+        }
     }(ing1, ing2)
 }
 
     wg.Wait()
-    return root
+    return root,true
 }
 
 
