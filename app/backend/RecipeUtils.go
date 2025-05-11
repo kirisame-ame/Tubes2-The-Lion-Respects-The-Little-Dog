@@ -158,10 +158,6 @@ func ExportTreeAsJSON(root *RecipeNode) ([]byte, error) {
     return json.MarshalIndent(jroot, "", "  ")
 }
 
-func searching(target, traversal, direction string) ([]byte,error) {
-	
-	return nil, nil
-}
 
 
 // func main() {
