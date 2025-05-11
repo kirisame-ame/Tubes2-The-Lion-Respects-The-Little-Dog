@@ -10,10 +10,12 @@ interface AppState {
     isScraping: boolean;
     target: string | null;
     traversal: string | null;
-    //traversal dfs/bfs
-    direction: string | null;
-    // direction up/down
+    //traversal dfs/bfs/bidirectional
     recipes: Entry[];
+    isMultiSearch: boolean;
+    isShortestPath: boolean;
+    searchNumber?: number;
+    // number of search results to show
 }
 
 type AppContextType = [
@@ -28,8 +30,10 @@ export function AppProvider({ children }: { children: ReactNode }) {
         isScraping: true,
         target: null,
         traversal: null,
-        direction: null,
         recipes: [],
+        isMultiSearch: false,
+        isShortestPath: false,
+        searchNumber: 1,
     });
 
     return (

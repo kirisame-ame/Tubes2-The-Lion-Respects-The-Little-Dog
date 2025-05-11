@@ -2,11 +2,17 @@ import { useEffect, useState } from "react";
 import { useAppContext } from "./hooks/AppContext";
 import Spinner from "./components/Spinner";
 import { ComboBox } from "./components/ComboBox";
+import CustomSwitch from "./components/CustomSwitch";
+
 import CustomImage from "./components/CustomImage";
 import bfsImage from "/src/assets/images/bfs.png";
 import dfsImage from "/src/assets/images/dfs.png";
-import upArrowImage from "/src/assets/images/up_arrow.png";
-import downArrowImage from "/src/assets/images/down_arrow.png";
+import bidirecImage from "/src/assets/images/bidirectional.png";
+import FlowGraph from "./components/FlowGraph";
+import SearchResultDisplay from "./components/SearchResultDisplay";
+import { ReactFlowProvider } from "@xyflow/react";
+import { useFlowContext } from "./hooks/FlowContext";
+import "@xyflow/react/dist/style.css";
 interface Entry {
     category: string;
     element: string;
@@ -14,10 +20,18 @@ interface Entry {
     imageUrl: string;
 }
 function App() {
+    const { appendNode } = useFlowContext();
     const [message, setMessage] = useState<string | null>(null);
     const [error, setError] = useState<string | null>(null);
     const [globalState, setGlobalState] = useAppContext();
+    const [searchResults, setSearchResults] = useState<
+        Array<{
+            Element: string;
+            ImageUrl: string;
+        }>
+    >([]);
 
+    // Load recipes on component mount i.e. Page's First Render
     useEffect(() => {
         (async () => {
             try {
@@ -69,19 +83,28 @@ function App() {
 
     const handleTestButtonClick = async () => {
         try {
-            const response = await fetch("/api/hello");
+            const response = await fetch(
+                "/api/search?target=" +
+                    globalState.target +
+                    "&traversal=" +
+                    globalState.traversal +
+                    "&isMulti=" +
+                    globalState.isMultiSearch +
+                    "&num=" +
+                    globalState.searchNumber,
+            );
             if (!response.ok) {
                 throw new Error("Network response was not ok");
             }
             const data = await response.json();
-            setMessage(data.message);
-            setError(null); // Clear any previous error
+            setMessage(data.results[0]["Element"]);
+            setError(null);
+            appendNode(data.results[0]["Element"], data.results[0]["ImageUrl"]);
         } catch (error) {
             console.error("Error fetching data:", error);
             setError("Failed to connect to the backend. Is it running?");
         }
     };
-
     const handleSearchButtonClick = async () => {
         try {
             const response = await fetch(
@@ -89,20 +112,34 @@ function App() {
                     globalState.target +
                     "&traversal=" +
                     globalState.traversal +
-                    "&direction=" +
-                    globalState.direction,
+                    "&isMulti=" +
+                    globalState.isMultiSearch +
+                    "&num=" +
+                    globalState.searchNumber,
             );
             if (!response.ok) {
                 throw new Error("Network response was not ok");
             }
             const data = await response.json();
-            setMessage(data.results[0]["Category"]);
-            setError(null); // Clear any previous error
+            setMessage(data.results[0]["Element"]);
+            setError(null);
+
+            // Update the UI to show search results - this will automatically update the graph
+            setSearchResults(data.results);
         } catch (error) {
             console.error("Error fetching data:", error);
             setError("Failed to connect to the backend. Is it running?");
         }
     };
+    const handleSearchNumberChange = (
+        e: React.ChangeEvent<HTMLInputElement>,
+    ) => {
+        setGlobalState({
+            ...globalState,
+            searchNumber: parseInt(e.target.value, 10),
+        });
+    };
+
     return (
         <div className="mx-auto my-auto p-6 bg-cover bg-center bg-xpurple min-h-screen flex flex-col items-center font-sans">
             <div>
@@ -119,7 +156,6 @@ function App() {
                     <Spinner />
                 </div>
             )}
-
             <div className="flex flex-col gap-x-5 md:flex-row">
                 <div className="flex flex-col gap-y-4 items-center">
                     <ComboBox
@@ -137,50 +173,76 @@ function App() {
                     />
                 </div>
                 <div className="flex flex-col gap-y-4 items-center">
-                    <ComboBox options={["DFS", "BFS"]} param={"traversal"} />
+                    <ComboBox
+                        options={["DFS", "BFS", "Bidirectional"]}
+                        param={"traversal"}
+                    />
                     <CustomImage
                         url={
                             globalState.traversal === "DFS"
                                 ? dfsImage
                                 : globalState.traversal === "BFS"
                                   ? bfsImage
-                                  : undefined
-                        }
-                    ></CustomImage>
-                </div>
-                <div className="flex flex-col gap-y-4 items-center">
-                    <ComboBox options={["Up", "Down"]} param={"direction"} />
-                    <CustomImage
-                        url={
-                            globalState.direction === "Up"
-                                ? upArrowImage
-                                : globalState.direction === "Down"
-                                  ? downArrowImage
-                                  : undefined
+                                  : globalState.traversal === "Bidirectional"
+                                    ? bidirecImage
+                                    : undefined
                         }
                     ></CustomImage>
                 </div>
             </div>
-            <div className="flex flex-col justify-center mt-8 text-xyellow">
-                <h1>Target: {globalState.target}</h1>
-                <h1>Traversal: {globalState.traversal}</h1>
-                <h1>Direction: {globalState.direction}</h1>
+            <div className="flex flex-col mt-5 gap-y-2">
+                <CustomSwitch
+                    label="Find Shortest Path"
+                    param="isShortestPath"
+                ></CustomSwitch>
+                <CustomSwitch
+                    className={`${
+                        globalState.isShortestPath
+                            ? "pointer-events-none opacity-30"
+                            : ""
+                    }`}
+                    label="Find Multiple Recipes"
+                    param="isMultiSearch"
+                />
+                <div
+                    className={`flex items-center transition-opacity duration-300 ${
+                        globalState.isMultiSearch && !globalState.isShortestPath
+                            ? "opacity-100"
+                            : "opacity-30 pointer-events-none"
+                    }`}
+                >
+                    <label className="text-xyellow">
+                        Number of Recipes to Find:
+                    </label>
+                    <input
+                        type="number"
+                        min="1"
+                        className="ml-2 w-10 text-center rounded-sm"
+                        placeholder="1"
+                        value={globalState.searchNumber ?? ""}
+                        onChange={handleSearchNumberChange}
+                    />
+                </div>
             </div>
-            <div className="flex justify-center mt-8">
+            <div className="flex justify-center mt-4">
                 <button
                     className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
                     onClick={handleSearchButtonClick}
                 >
-                    Click me
+                    Search
                 </button>
                 <button
                     onClick={handleTestButtonClick}
                     className="ml-4 px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition-colors"
                 >
-                    Call Jovkon API
+                    Append to Root
                 </button>
             </div>
-            <div className="flex invisible md:visible absolute bottom-0 left-max right-0 justify-center mt-8 mx-6">
+            <SearchResultDisplay results={searchResults} />
+            <ReactFlowProvider>
+                <FlowGraph />
+            </ReactFlowProvider>
+            <div className="flex invisible md:visible absolute left-max right-0 justify-center mt-8 mx-6">
                 {message && (
                     <div className="my-5 p-4 bg-green-100 rounded-md">
                         <p className="font-medium">
