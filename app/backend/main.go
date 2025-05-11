@@ -76,7 +76,7 @@ func main() {
 			if len(results) == 0 {
 				c.JSON(http.StatusNotFound, gin.H{"message": "No results found"})
 			} else {
-				c.JSON(http.StatusOK, gin.H{"results": results})
+				c.Data(http.StatusOK, "application/json", results)
 			}
 		})
 	}

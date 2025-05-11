@@ -26,7 +26,7 @@ func buildRecipeTree(product string, idx map[string]Element, visited map[string]
 
     root := &RecipeNode{
         Product:  product,
-        ImageUrl1: e.ImageUrl,
+        ImageUrl1: "",
         Ingredients: [2]string{"", ""},
     }
 

@@ -11,7 +11,7 @@ func buildBFSRecipeTree(product string, idx map[string]Element, Nrecipe int, cou
 	lower := strings.ToLower(product)
 	root := &RecipeNode{
 		Product:  product,
-		ImageUrl1: idx[lower].ImageUrl,
+		ImageUrl1: "",
 		Ingredients: [2]string{"", ""},
 	}
 
@@ -111,7 +111,7 @@ func buildBFSRecipeTree(product string, idx map[string]Element, Nrecipe int, cou
 
                     child := &RecipeNode{
                         Product:  ing,
-                        ImageUrl1: idx[key].ImageUrl,
+                        ImageUrl1: "",
 						Ingredients: [2]string{"", ""},
                     }
 					queuemu.Lock()
