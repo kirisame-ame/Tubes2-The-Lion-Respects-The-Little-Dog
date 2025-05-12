@@ -11,6 +11,10 @@ export default function GraphNode({ data }: NodeProps<GraphNode>) {
             <div className="text-center mt-2 text-xyellow">{data.element}</div>
             <Handle type="target" position={Position.Bottom} />
             <Handle type="source" position={Position.Top} />
+            <Handle type="source" position={Position.Right} id="s-right" />
+            <Handle type="source" position={Position.Left} id="s-left" />
+            <Handle type="target" position={Position.Left} id="t-left" />
+            <Handle type="target" position={Position.Right} id="t-right" />
         </div>
     );
 }

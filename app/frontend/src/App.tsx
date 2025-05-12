@@ -9,7 +9,6 @@ import bfsImage from "/src/assets/images/bfs.png";
 import dfsImage from "/src/assets/images/dfs.png";
 import bidirecImage from "/src/assets/images/bidirectional.png";
 import FlowGraph from "./components/FlowGraph";
-import SearchResultDisplay from "./components/SearchResultDisplay";
 import { ReactFlowProvider } from "@xyflow/react";
 import { useFlowContext } from "./hooks/FlowContext";
 import "@xyflow/react/dist/style.css";
@@ -20,16 +19,10 @@ interface Entry {
     imageUrl: string;
 }
 function App() {
-    const { appendNode } = useFlowContext();
+    const { clearAndAddNode, appendChildRecipe } = useFlowContext();
     const [message, setMessage] = useState<string | null>(null);
     const [error, setError] = useState<string | null>(null);
     const [globalState, setGlobalState] = useAppContext();
-    const [searchResults, setSearchResults] = useState<
-        Array<{
-            Element: string;
-            ImageUrl: string;
-        }>
-    >([]);
 
     // Load recipes on component mount i.e. Page's First Render
     useEffect(() => {
@@ -99,7 +92,6 @@ function App() {
             const data = await response.json();
             setMessage(data.results[0]["Element"]);
             setError(null);
-            appendNode(data.results[0]["Element"], data.results[0]["ImageUrl"]);
         } catch (error) {
             console.error("Error fetching data:", error);
             setError("Failed to connect to the backend. Is it running?");
@@ -121,14 +113,86 @@ function App() {
                 throw new Error("Network response was not ok");
             }
             const data = await response.json();
-            setMessage(data.results[0]["Element"]);
+            console.log("Data received:", data);
+            setMessage(data.product);
             setError(null);
 
-            // Update the UI to show search results - this will automatically update the graph
-            setSearchResults(data.results);
+            // Clear the flow and create the root node before DFS
+            clearAndAddNode(data.product, data.imageUrl1);
+
+            // DFS recursive function with unique nodeId tracking for every node
+            let nodeIdCounter = 1; // root is 0
+            let depthWidth = 1000;
+            function dfsBuildTree(
+                node: any,
+                parentId: number,
+                parentX: number,
+                parentY: number,
+                depthWidth: number,
+            ) {
+                if (!node) return;
+                // If node has ingredients, create child nodes and attach to parentId
+                if (node.ingredients && node.ingredients[0] !== "") {
+                    // Assign unique IDs for left and right children
+                    const leftChildId = nodeIdCounter++;
+                    const rightChildId = nodeIdCounter++;
+                    // Attach both children to the parent, passing their unique IDs
+                    appendChildRecipe(
+                        node.ingredients[0],
+                        node.imageUrl1,
+                        leftChildId,
+                        node.ingredients[1],
+                        node.imageUrl2,
+                        rightChildId,
+                        parentId,
+                        parentX,
+                        parentY,
+                        depthWidth,
+                    );
+                    // Recursively build the tree for each child, passing their unique IDs as parentId
+                    if (node.children && node.children.length > 0) {
+                        if (node.children[0]) {
+                            dfsBuildTree(
+                                node.children[0],
+                                leftChildId,
+                                parentX,
+                                parentY - 100,
+                                depthWidth / 2,
+                            );
+                        }
+                        if (node.children[1]) {
+                            dfsBuildTree(
+                                node.children[1],
+                                rightChildId,
+                                parentX,
+                                parentY - 100,
+                                depthWidth / 2,
+                            );
+                        }
+                    }
+                } else if (node.children && node.children.length > 0) {
+                    // If this node is a dummy node (ingredients are empty), just recurse to its children
+                    for (let i = 0; i < node.children.length; i++) {
+                        dfsBuildTree(
+                            node.children[i],
+                            parentId,
+                            parentX,
+                            parentY - 100,
+                            depthWidth,
+                        );
+                    }
+                }
+            }
+            // Start DFS from the root's children, root nodeId is 0
+            if (data.children && data.children.length > 0) {
+                for (let i = 0; i < data.children.length; i++) {
+                    dfsBuildTree(data.children[i], 0, 0, 300, depthWidth);
+                }
+            }
         } catch (error) {
             console.error("Error fetching data:", error);
             setError("Failed to connect to the backend. Is it running?");
+            setMessage(null);
         }
     };
     const handleSearchNumberChange = (
@@ -238,12 +302,12 @@ function App() {
                     Append to Root
                 </button>
             </div>
-            <SearchResultDisplay results={searchResults} />
+
             <ReactFlowProvider>
                 <FlowGraph />
             </ReactFlowProvider>
             <div className="flex invisible md:visible absolute left-max right-0 justify-center mt-8 mx-6">
-                {message && (
+                {message && !error && (
                     <div className="my-5 p-4 bg-green-100 rounded-md">
                         <p className="font-medium">
                             ✅ Backend connection successful!
@@ -254,7 +318,7 @@ function App() {
                     </div>
                 )}
 
-                {error && (
+                {error && !message && (
                     <div className="my-5 p-4 bg-red-100 rounded-md">
                         <p className="font-medium">❌ {error}</p>
                     </div>
