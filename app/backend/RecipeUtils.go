@@ -6,6 +6,7 @@ import (
 	"math"
 	"os"
 	"strings"
+	"time"
 )
 
 type Element struct {
@@ -29,6 +30,11 @@ type JSONNode struct {
     ImageUrl1   string      `json:"imageUrl1"`
     ImageUrl2   string      `json:"imageUrl2"`
     Children    []*JSONNode `json:"children,omitempty"`
+}
+
+type Envelope struct {
+    Tree    *JSONNode `json:"tree"`
+    Elapsed string    `json:"elapsed"`
 }
 
 
@@ -197,9 +203,14 @@ func toJSONNode(n *RecipeNode) *JSONNode {
     return jn
 }
 
-func ExportTreeAsJSON(root *RecipeNode) ([]byte, error) {
+func ExportTreeAsJSON(root *RecipeNode, elapsed time.Duration) ([]byte, error) {
     jroot := toJSONNode(root)
-    return json.MarshalIndent(jroot, "", "  ")
+
+    env := Envelope{
+        Tree:    jroot,
+        Elapsed: elapsed.String(),
+    }
+    return json.MarshalIndent(env, "", "  ")
 }
 
 
