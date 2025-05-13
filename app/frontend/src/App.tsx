@@ -125,8 +125,6 @@ function App() {
             function dfsBuildAll(node: any, parentId: number | null) {
                 // Root Constructor
                 if (parentId === null) {
-                    console.log("ThisId", 0);
-                    console.log("Node", node.product);
                     nodes.push({
                         id: `node-${0}`,
                         type: "graphNode",
@@ -142,9 +140,6 @@ function App() {
                     }
                 } else if (node.ingredients[0] !== "") {
                     const thisId = nodeIdCounter++;
-                    console.log("ThisId", thisId);
-                    console.log("Ingredient1", node.ingredients[0]);
-                    console.log("Ingredient2", node.ingredients[1]);
                     nodes.push(
                         {
                             id: `node-${thisId}`,
@@ -186,7 +181,7 @@ function App() {
                                 sourceHandle: "s-right",
                                 target: `node-${thisId + 1}`,
                                 targetHandle: "t-left",
-                                animated: true,
+                                animated: false,
                             },
                         );
                         if (node.children && node.children.length > 0) {
@@ -213,8 +208,7 @@ function App() {
                 }
             }
             dfsBuildAll(data, null);
-            console.log("Nodes:", nodes);
-            console.log("Edges:", edges);
+            console.log("Node counts:", nodeIdCounter);
             setGraphNodes(nodes);
             setGraphEdges(edges);
         } catch (error) {

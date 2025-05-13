@@ -19,8 +19,8 @@ const nodeTypes = { graphNode: GraphNode };
 // Dagre layout helper
 const dagreGraph = new Dagre.graphlib.Graph();
 dagreGraph.setDefaultEdgeLabel(() => ({}));
-const nodeWidth = 128;
-const nodeHeight = 128;
+const nodeWidth = 180;
+const nodeHeight = 180;
 
 function getLayoutedElements(nodes: Node[], edges: Edge[]) {
     dagreGraph.setGraph({ rankdir: "BT" });
@@ -58,7 +58,12 @@ function FlowGraph({ nodes, edges }: { nodes: Node[]; edges: Edge[] }) {
 
     // Auto-layout nodes and edges when they change
     const layoutedNodes =
-        nodes.length > 0 ? getLayoutedElements(nodes, edges) : [];
+        nodes.length > 0
+            ? getLayoutedElements(
+                  nodes,
+                  edges.filter((edge) => edge.animated !== false),
+              )
+            : [];
 
     return (
         <div className="h-[500px] w-full mt-4 relative">
