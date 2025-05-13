@@ -120,6 +120,14 @@ function App() {
 
             // Build all nodes and edges at once from the tree
             let nodeIdCounter = 0;
+            const colors = [
+                "#FF0000",
+                "#00FF00",
+                "#0000FF",
+                "#FFFF00",
+                "#FF00FF",
+                "#00FFFF",
+            ];
             const nodes: Node[] = [];
             const edges: Edge[] = [];
             function dfsBuildAll(node: any, parentId: number | null) {
@@ -162,18 +170,28 @@ function App() {
                     );
                     nodeIdCounter++;
                     if (parentId !== null) {
+                        let randColor =
+                            colors[Math.floor(Math.random() * colors.length)];
                         edges.push(
                             {
                                 id: `edge-${parentId}-${thisId}`,
                                 source: `node-${parentId}`,
                                 target: `node-${thisId}`,
                                 animated: true,
+                                style: {
+                                    stroke: randColor,
+                                    strokeWidth: 2,
+                                },
                             },
                             {
                                 id: `edge-${parentId}-${thisId + 1}`,
                                 source: `node-${parentId}`,
                                 target: `node-${thisId + 1}`,
                                 animated: true,
+                                style: {
+                                    stroke: randColor,
+                                    strokeWidth: 2,
+                                },
                             },
                             {
                                 id: `edge-${thisId}-${thisId + 1}`,
