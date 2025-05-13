@@ -23,6 +23,8 @@ function App() {
     const [globalState, setGlobalState] = useAppContext();
     const [graphNodes, setGraphNodes] = useState<Node[]>([]);
     const [graphEdges, setGraphEdges] = useState<Edge[]>([]);
+    const [nodeCount, setNodeCount] = useState(0);
+    const [runTime, setRunTime] = useState(0);
 
     // Load recipes on component mount i.e. Page's First Render
     useEffect(() => {
@@ -91,6 +93,7 @@ function App() {
             }
             const data = await response.json();
             console.log("Data received:", data);
+            setRunTime(data.elapsed);
             setMessage(data.product);
             setError(null);
 
@@ -201,10 +204,10 @@ function App() {
                     }
                 }
             }
-            dfsBuildAll(data, null);
-            console.log("Node counts:", nodeIdCounter);
+            dfsBuildAll(data.tree, null);
             setGraphNodes(nodes);
             setGraphEdges(edges);
+            setNodeCount(nodeIdCounter);
         } catch (error) {
             console.error("Error fetching data:", error);
             setError("Failed to connect to the backend. Is it running?");
@@ -254,7 +257,7 @@ function App() {
                 </div>
                 <div className="flex flex-col gap-y-4 items-center">
                     <ComboBox
-                        options={["DFS", "BFS", "Bidirectional"]}
+                        options={["DFS", "BFS", "Bidirectional (WIP)"]}
                         param={"traversal"}
                     />
                     <CustomImage
@@ -263,7 +266,8 @@ function App() {
                                 ? dfsImage
                                 : globalState.traversal === "BFS"
                                   ? bfsImage
-                                  : globalState.traversal === "Bidirectional"
+                                  : globalState.traversal ===
+                                      "Bidirectional (WIP)"
                                     ? bidirecImage
                                     : undefined
                         }
@@ -295,13 +299,15 @@ function App() {
                     />
                 </div>
             </div>
-            <div className="flex justify-center mt-4">
+            <div className="flex flex-col justify-center mt-4">
                 <button
                     className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
                     onClick={handleSearchButtonClick}
                 >
                     Search
                 </button>
+                <h1 className="text-xyellow mt-2">Run Time : {runTime}</h1>
+                <h1 className="text-xyellow mt-2">Node Count : {nodeCount}</h1>
             </div>
 
             <ReactFlowProvider>
