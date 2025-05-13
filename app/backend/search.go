@@ -4,6 +4,7 @@ import (
 	"log"
 	"strconv"
 	"sync"
+	"time"
 )
 func search(target string, traversal string, isMulti string, num string) []byte{
 	numInt, err := strconv.Atoi(num)
@@ -41,10 +42,11 @@ func search(target string, traversal string, isMulti string, num string) []byte{
 		} else {
 			Nrecipe = numInt
 		}
-
+		start := time.Now()
 		tree := buildBFSRecipeTree(rootname, idx , Nrecipe, &countRecipe, &countMu)
+		elapsed := time.Since(start)
 		treeResult := getSolutionTree(tree, 0)
-		b, err := ExportTreeAsJSON(treeResult)
+		b, err := ExportTreeAsJSON(treeResult, elapsed)
 		if err != nil {
 			log.Printf("Error exporting tree to JSON: %v", err)
 			return nil
@@ -65,9 +67,11 @@ func search(target string, traversal string, isMulti string, num string) []byte{
 			Nrecipe = numInt
 		}
 
+		start := time.Now()
 		tree,_ := buildRecipeTree(rootname, idx, visited, Nrecipe, &countRecipe, &countMu, 0)
+		elapsed := time.Since(start)
 		treeResult := getSolutionTree(tree, 0)
-		b, err := ExportTreeAsJSON(treeResult)
+		b, err := ExportTreeAsJSON(treeResult, elapsed)
 		if err != nil {
 			log.Printf("Error exporting tree to JSON: %v", err)
 			return nil
