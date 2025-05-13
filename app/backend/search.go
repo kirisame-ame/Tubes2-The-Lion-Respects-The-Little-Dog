@@ -43,7 +43,7 @@ func search(target string, traversal string, isMulti string, num string) []byte{
 		}
 
 		tree := buildBFSRecipeTree(rootname, idx , Nrecipe, &countRecipe, &countMu)
-		treeResult := getSolutionTree(tree)
+		treeResult := getSolutionTree(tree, 0)
 		b, err := ExportTreeAsJSON(treeResult)
 		if err != nil {
 			log.Printf("Error exporting tree to JSON: %v", err)
@@ -66,7 +66,7 @@ func search(target string, traversal string, isMulti string, num string) []byte{
 		}
 
 		tree,_ := buildRecipeTree(rootname, idx, visited, Nrecipe, &countRecipe, &countMu, 0)
-		treeResult := getSolutionTree(tree)
+		treeResult := getSolutionTree(tree, 0)
 		b, err := ExportTreeAsJSON(treeResult)
 		if err != nil {
 			log.Printf("Error exporting tree to JSON: %v", err)
