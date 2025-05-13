@@ -81,8 +81,9 @@ function FlowGraph({ nodes, edges }: { nodes: Node[]; edges: Edge[] }) {
                 onEdgesChange={() => {}}
                 onConnect={() => {}}
                 nodeTypes={nodeTypes}
+                minZoom={0.01}
                 fitView
-                fitViewOptions={{ padding: 0.2 }}
+                fitViewOptions={{ padding: 0.2, minZoom: 0.01 }}
                 className="bg-white/5 rounded-lg shadow-md"
             ></ReactFlow>
         </div>

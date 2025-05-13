@@ -75,29 +75,6 @@ function App() {
         })();
     }, []);
 
-    const handleTestButtonClick = async () => {
-        try {
-            const response = await fetch(
-                "/api/search?target=" +
-                    globalState.target +
-                    "&traversal=" +
-                    globalState.traversal +
-                    "&isMulti=" +
-                    globalState.isMultiSearch +
-                    "&num=" +
-                    globalState.searchNumber,
-            );
-            if (!response.ok) {
-                throw new Error("Network response was not ok");
-            }
-            const data = await response.json();
-            setMessage(data.results[0]["Element"]);
-            setError(null);
-        } catch (error) {
-            console.error("Error fetching data:", error);
-            setError("Failed to connect to the backend. Is it running?");
-        }
-    };
     const handleSearchButtonClick = async () => {
         try {
             const response = await fetch(
@@ -296,21 +273,12 @@ function App() {
             </div>
             <div className="flex flex-col mt-5 gap-y-2">
                 <CustomSwitch
-                    label="Find Shortest Path"
-                    param="isShortestPath"
-                ></CustomSwitch>
-                <CustomSwitch
-                    className={`${
-                        globalState.isShortestPath
-                            ? "pointer-events-none opacity-30"
-                            : ""
-                    }`}
                     label="Find Multiple Recipes"
                     param="isMultiSearch"
                 />
                 <div
                     className={`flex items-center transition-opacity duration-300 ${
-                        globalState.isMultiSearch && !globalState.isShortestPath
+                        globalState.isMultiSearch
                             ? "opacity-100"
                             : "opacity-30 pointer-events-none"
                     }`}
@@ -334,12 +302,6 @@ function App() {
                     onClick={handleSearchButtonClick}
                 >
                     Search
-                </button>
-                <button
-                    onClick={handleTestButtonClick}
-                    className="ml-4 px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition-colors"
-                >
-                    Append to Root
                 </button>
             </div>
 
