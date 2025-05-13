@@ -137,6 +137,10 @@ func buildRecipeTree(product string, idx map[string]Element, visited map[string]
             if(leaf1 && leaf2) {
             countMu.Lock()
             (*countRecipe)++
+            if((*countRecipe) >= Nrecipe) {
+                countMu.Unlock()
+                return
+            }
             countMu.Unlock()
         }
         }
