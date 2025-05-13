@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"math"
 	"os"
 	"strings"
 )
@@ -112,23 +113,40 @@ func printRecipeTree(n *RecipeNode, indent string, count *int) {
     }
 }
 
-func getSolutionTree(n *RecipeNode) *RecipeNode {
-	// Melakukan pruning pada jalur yang tidak menuju solusi
+func minDepthLeaf(n *RecipeNode) int {
+    if n == nil {
+        return math.MaxInt32
+    }
+    // leaf check
+    if isBase(n.Ingredients[0]) && isBase(n.Ingredients[1]) {
+        return 0
+    }
+    best := math.MaxInt32
+    for _, c := range n.Children {
+        if d := minDepthLeaf(c); d < best {
+            best = d
+        }
+    }
+    if best < math.MaxInt32 {
+        return best + 1
+    }
+    return best
+}
+
+func getSolutionTree(n *RecipeNode, lvl int) *RecipeNode {
     if n == nil {
         return nil
     }
 
-    var prunedChildren []*RecipeNode
+    var pruned []*RecipeNode
     for _, c := range n.Children {
-        if pc := getSolutionTree(c); pc != nil {
-            prunedChildren = append(prunedChildren, pc)
+        if pc := getSolutionTree(c, lvl+1); pc != nil {
+            pruned = append(pruned, pc)
         }
     }
 
-    if len(prunedChildren) == 0 {
-        
+    if len(pruned) == 0 {
         if isBase(n.Ingredients[0]) && isBase(n.Ingredients[1]) {
-            
             return &RecipeNode{
                 Ingredients: n.Ingredients,
                 Product:     n.Product,
@@ -137,8 +155,17 @@ func getSolutionTree(n *RecipeNode) *RecipeNode {
                 Children:    nil,
             }
         }
-        
         return nil
+    }
+
+    if lvl >= 4 && lvl%2 == 0 {
+        bestIdx, bestDepth := 0, math.MaxInt32
+        for i, child := range pruned {
+            if d := minDepthLeaf(child); d < bestDepth {
+                bestDepth, bestIdx = d, i
+            }
+        }
+        pruned = pruned[bestIdx : bestIdx+1]
     }
 
     return &RecipeNode{
@@ -146,7 +173,7 @@ func getSolutionTree(n *RecipeNode) *RecipeNode {
         Product:     n.Product,
         ImageUrl1:   n.ImageUrl1,
         ImageUrl2:   n.ImageUrl2,
-        Children:    prunedChildren,
+        Children:    pruned,
     }
 }
 
@@ -175,37 +202,4 @@ func ExportTreeAsJSON(root *RecipeNode) ([]byte, error) {
     return json.MarshalIndent(jroot, "", "  ")
 }
 
-
-
-// func main() {
-
-//     entries, err := loadEntries("data/elements.json")
-//     if err != nil {
-//         log.Fatalf("Gagal load entries: %v", err)
-//     }
-
-//     idx := buildIndex(entries)
-
-//     rootName := "Lake"      
-// 	var countMu sync.Mutex
-// 	countRecipe := 0
-// 	Nrecipe := 3
-// 	// visited := make(map[string]bool)
-//     tree := buildBFSRecipeTree(rootName, idx, Nrecipe, &countRecipe, &countMu)
-// 	// treeDFS := buildRecipeTree(rootName, idx,visited, Nrecipe, &countRecipe, &countMu)
-
-
-// 	var count int = 0
-// 	treeresult := getSolutionTree(tree)
-// 	printRecipeTree(treeresult, "-", &count)
-
-// 	b, err := ExportTreeAsJSON(treeresult)
-//     if err != nil {
-//         fmt.Println("Error serializing JSON:", err)
-//         return
-//     }
-
-//     fmt.Println(string(b))
-
-// }
 
