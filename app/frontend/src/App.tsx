@@ -9,7 +9,7 @@ import bfsImage from "/src/assets/images/bfs.png";
 import dfsImage from "/src/assets/images/dfs.png";
 import bidirecImage from "/src/assets/images/bidirectional.png";
 import FlowGraph from "./components/FlowGraph";
-import { ReactFlowProvider } from "@xyflow/react";
+import { ReactFlowProvider, Node, Edge } from "@xyflow/react";
 import { useFlowContext } from "./hooks/FlowContext";
 import "@xyflow/react/dist/style.css";
 interface Entry {
@@ -19,10 +19,11 @@ interface Entry {
     imageUrl: string;
 }
 function App() {
-    const { clearAndAddNode, appendChildRecipe } = useFlowContext();
     const [message, setMessage] = useState<string | null>(null);
     const [error, setError] = useState<string | null>(null);
     const [globalState, setGlobalState] = useAppContext();
+    const [graphNodes, setGraphNodes] = useState<Node[]>([]);
+    const [graphEdges, setGraphEdges] = useState<Edge[]>([]);
 
     // Load recipes on component mount i.e. Page's First Render
     useEffect(() => {
@@ -117,78 +118,105 @@ function App() {
             setMessage(data.product);
             setError(null);
 
-            // Clear the flow and create the root node before DFS
-            clearAndAddNode(data.product, data.imageUrl1);
-
-            // DFS recursive function with unique nodeId tracking for every node
-            let nodeIdCounter = 1; // root is 0
-            let depthWidth = 1000;
-            function dfsBuildTree(
-                node: any,
-                parentId: number,
-                parentX: number,
-                parentY: number,
-                depthWidth: number,
-            ) {
-                if (!node) return;
-                // If node has ingredients, create child nodes and attach to parentId
-                if (node.ingredients && node.ingredients[0] !== "") {
-                    // Assign unique IDs for left and right children
-                    const leftChildId = nodeIdCounter++;
-                    const rightChildId = nodeIdCounter++;
-                    // Attach both children to the parent, passing their unique IDs
-                    appendChildRecipe(
-                        node.ingredients[0],
-                        node.imageUrl1,
-                        leftChildId,
-                        node.ingredients[1],
-                        node.imageUrl2,
-                        rightChildId,
-                        parentId,
-                        parentX,
-                        parentY,
-                        depthWidth,
-                    );
-                    // Recursively build the tree for each child, passing their unique IDs as parentId
-                    if (node.children && node.children.length > 0) {
-                        if (node.children[0]) {
-                            dfsBuildTree(
-                                node.children[0],
-                                leftChildId,
-                                parentX,
-                                parentY - 100,
-                                depthWidth / 2,
-                            );
-                        }
-                        if (node.children[1]) {
-                            dfsBuildTree(
-                                node.children[1],
-                                rightChildId,
-                                parentX,
-                                parentY - 100,
-                                depthWidth / 2,
-                            );
-                        }
-                    }
-                } else if (node.children && node.children.length > 0) {
-                    // If this node is a dummy node (ingredients are empty), just recurse to its children
+            // Build all nodes and edges at once from the tree
+            let nodeIdCounter = 0;
+            const nodes: Node[] = [];
+            const edges: Edge[] = [];
+            function dfsBuildAll(node: any, parentId: number | null) {
+                // Root Constructor
+                if (parentId === null) {
+                    console.log("ThisId", 0);
+                    console.log("Node", node.product);
+                    nodes.push({
+                        id: `node-${0}`,
+                        type: "graphNode",
+                        data: {
+                            element: node.product,
+                            imageUrl: node.imageUrl1,
+                        },
+                        position: { x: 0, y: 1000 },
+                    });
+                    nodeIdCounter++;
                     for (let i = 0; i < node.children.length; i++) {
-                        dfsBuildTree(
-                            node.children[i],
-                            parentId,
-                            parentX,
-                            parentY - 100,
-                            depthWidth,
+                        dfsBuildAll(node.children[i], 0);
+                    }
+                } else if (node.ingredients[0] !== "") {
+                    const thisId = nodeIdCounter++;
+                    console.log("ThisId", thisId);
+                    console.log("Ingredient1", node.ingredients[0]);
+                    console.log("Ingredient2", node.ingredients[1]);
+                    nodes.push(
+                        {
+                            id: `node-${thisId}`,
+                            type: "graphNode",
+                            data: {
+                                element: node.ingredients[0],
+                                imageUrl: node.imageUrl1,
+                            },
+                            position: { x: 0, y: 0 }, //auto layouted
+                        },
+                        {
+                            id: `node-${thisId + 1}`,
+                            type: "graphNode",
+                            data: {
+                                element: node.ingredients[1],
+                                imageUrl: node.imageUrl2,
+                            },
+                            position: { x: 0, y: 0 },
+                        },
+                    );
+                    nodeIdCounter++;
+                    if (parentId !== null) {
+                        edges.push(
+                            {
+                                id: `edge-${parentId}-${thisId}`,
+                                source: `node-${parentId}`,
+                                target: `node-${thisId}`,
+                                animated: true,
+                            },
+                            {
+                                id: `edge-${parentId}-${thisId + 1}`,
+                                source: `node-${parentId}`,
+                                target: `node-${thisId + 1}`,
+                                animated: true,
+                            },
+                            {
+                                id: `edge-${thisId}-${thisId + 1}`,
+                                source: `node-${thisId}`,
+                                sourceHandle: "s-right",
+                                target: `node-${thisId + 1}`,
+                                targetHandle: "t-left",
+                                animated: true,
+                            },
                         );
+                        if (node.children && node.children.length > 0) {
+                            for (let i = 0; i < node.children.length; i++) {
+                                if (
+                                    node.children[i].product ===
+                                    node.ingredients[0]
+                                ) {
+                                    dfsBuildAll(node.children[i], thisId);
+                                } else if (
+                                    node.children[i].product ===
+                                    node.ingredients[1]
+                                ) {
+                                    dfsBuildAll(node.children[i], thisId + 1);
+                                }
+                            }
+                        }
+                    }
+                } else {
+                    // Container node
+                    for (let i = 0; i < node.children.length; i++) {
+                        dfsBuildAll(node.children[i], parentId);
                     }
                 }
             }
-            // Start DFS from the root's children, root nodeId is 0
-            if (data.children && data.children.length > 0) {
-                for (let i = 0; i < data.children.length; i++) {
-                    dfsBuildTree(data.children[i], 0, 0, 300, depthWidth);
-                }
-            }
+            dfsBuildAll(data, null);
+            console.log("Nodes:", nodes);
+            console.log("Edges:", edges);
+            setGraphNodes(nodes);
+            setGraphEdges(edges);
         } catch (error) {
             console.error("Error fetching data:", error);
             setError("Failed to connect to the backend. Is it running?");
@@ -304,7 +332,7 @@ function App() {
             </div>
 
             <ReactFlowProvider>
-                <FlowGraph />
+                <FlowGraph nodes={graphNodes} edges={graphEdges} />
             </ReactFlowProvider>
             <div className="flex invisible md:visible absolute left-max right-0 justify-center mt-8 mx-6">
                 {message && !error && (
